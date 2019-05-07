@@ -3,10 +3,8 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
-//import lib.ui.mobile_web.MWCamDriveTime;
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.junit.rules.Verifier;
 
 import java.util.Calendar;
 
@@ -40,7 +38,7 @@ public class MonitoringCamDriveRecords extends CoreTestCase {
         CamDrivePageObject.choiseTheCurrentDay();
 
         //*******************************
-        for (int h = 0; h < 23; h ++){
+        for (int h = 0; h < currentHour; h ++){
             paramHour = paramHour + 1;
             //==========================================================
             if (paramHour <10){
@@ -96,18 +94,22 @@ public class MonitoringCamDriveRecords extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
+                CamDrivePageObject.waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
                 CamDrivePageObject.waitForElementAndClick("id:container_pl","Not found play button after 10 seconds wait",10);
+
                 CamDrivePageObject.checkLoadVideo();
+
+//                assertEquals(
+//                        "Video is not load after 10 seconds",
+//                        CamDrivePageObject.waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","ASERT",10),
+//                        CamDrivePageObject.waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","ASERT",10));
+
                 CamDrivePageObject.waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","Not found player form after 10 seconds wait",10);
                 String attribute = CamDrivePageObject.waitForElementAndGetAtribute("xpath://*[contains(@class,'x-controlbar-Android-seek-loading-right')]","max","Time line is not visible",2);
                 System.out.println(attribute);
-
                 CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-                //Thread.sleep(5000);
-                //CamDrivePageObject.clickElementToTheLeft("xpath://*[@id='ext-gen1003']","barabara");
-                //CamDrivePageObject.clickBackButtonOnArchiveScreen();
                 CamDrivePageObject.tryClickElementWithFewAttempts("xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1040')]","nooooo",10);
-                Thread.sleep(5000);
+                Thread.sleep(1500);
             }
             CamDrivePageObject.clickBackButtonOnArchiveScreen();
         }
