@@ -1,4 +1,4 @@
-package tests;
+package testsCamDriveRecordsForAndroid.experimentalTest;
 
 import org.junit.Test;
 

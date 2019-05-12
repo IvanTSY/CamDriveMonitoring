@@ -7,7 +7,7 @@
 //
 //    static {
 //        //TODO: Часы и минуты нужно сделать динамическими!!! брать час и день из системы
-//        HOUR_TEST = "id:2019-{Month}-{Day}-{Hour}-00-00_2019-{Month}-{Day}-{Hour}-59-59";
+//        DYNAMIC_HOUR_XPATH = "id:2019-{Month}-{Day}-{Hour}-00-00_2019-{Month}-{Day}-{Hour}-59-59";
 //        HOUR_0 = "id:2019-{Month}-{Day}-00-00-00_2019-{Month}-{Day}-00-59-59";
 //        HOUR_1 = "id:2019-{Month}-{Day}-01-00-00_2019-{Month}-{Day}-01-59-59";
 //        HOUR_2 = "id:2019-{Month}-{Day}-02-00-00_2019-{Month}-{Day}-02-59-59";
@@ -34,7 +34,7 @@
 //        HOUR_23 = "id:2019-{Month}-{Day}-23-00-00_2019-{Month}-{Day}-23-59-59";
 //
 ////==================================================================================
-//        MINUTE_TEST = "id:2019-{Month}-{Day}-{Hour}-{MinuteFirst}-00_2019-{Month}-{Day}-{Hour}-{MinuteLast}-59";
+//        DYNAMIC_MINUTE_XPATH = "id:2019-{Month}-{Day}-{Hour}-{MinuteFirst}-00_2019-{Month}-{Day}-{Hour}-{MinuteLast}-59";
 //        MINUTE_0 = "id:2019-{Month}-{Day}-00-00-00_2019-{Month}-{Day}-00-04-59";
 //        MINUTE_1 = "id:2019-{Month}-{Day}-00-05-00_2019-{Month}-{Day}-00-09-59";
 //        MINUTE_2 = "id:2019-{Month}-{Day}-00-10-00_2019-{Month}-{Day}-00-14-59";
