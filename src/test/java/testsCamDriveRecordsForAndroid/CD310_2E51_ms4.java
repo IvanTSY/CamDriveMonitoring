@@ -34,7 +34,7 @@ public class CD310_2E51_ms4 extends CoreTestCase {
 
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
-        System.out.println("Start test in "+currentHourCONVERTED+":"+currentMinuteCONVERTED);
+        System.out.println("Start test in "+currentHour+" hour and "+currentMinute+" minutes");
 
         //==========================================================
         if (currentMinute <10){

@@ -34,7 +34,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
 
         CamDrivePageObject.choiseN1001_3A00_bwd();
         CamDrivePageObject.choiseTheCurrentDay();
-        System.out.println("Start test in "+currentHourCONVERTED+":"+currentMinuteCONVERTED);
+        System.out.println("Start test in "+currentHour+" hour and "+currentMinute+" minutes");
 
         //==========================================================
         if (currentMinute <10){

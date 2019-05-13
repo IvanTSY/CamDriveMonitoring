@@ -34,7 +34,7 @@ public class CD320_AA78_ms5 extends CoreTestCase {
 
         CamDrivePageObject.choiseCD320_AA78_MS5();
         CamDrivePageObject.choiseTheCurrentDay();
-        System.out.println("Start test in "+currentHourCONVERTED+":"+currentMinuteCONVERTED);
+        System.out.println("Start test in "+currentHour+" hour and "+currentMinute+" minutes");
 
         //==========================================================
         if (currentMinute <10){
