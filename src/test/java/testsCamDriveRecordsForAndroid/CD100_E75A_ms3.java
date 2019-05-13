@@ -43,10 +43,11 @@ public class CD100_E75A_ms3 extends CoreTestCase {
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
 
+//Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
-
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+//*Открытие потока для фантика
 
         //==========================================================
         if (currentMinute <10){

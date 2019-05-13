@@ -4,7 +4,10 @@ import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
+import org.seleniumhq.jetty9.util.IO;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 
 public class CD100_E772_ms4 extends CoreTestCase {
@@ -12,6 +15,7 @@ public class CD100_E772_ms4 extends CoreTestCase {
     int currentDay;
     int currentMonth;
     int currentMinute;
+    int currentYear;
 
     String currentMinuteCONVERTED;
     String currentFirstMinuteCONVERTED;
@@ -21,21 +25,24 @@ public class CD100_E772_ms4 extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testCD100_E772_MS4() throws InterruptedException {
+    public void testCD100_E772_MS4() throws InterruptedException, IOException {
 
         currentHour = Calendar.getInstance().getTime().getHours();
         currentDay = Calendar.getInstance().getTime().getDate();
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
         currentMinute = Calendar.getInstance().getTime().getMinutes();
-
+        currentYear = Calendar.getInstance().getWeekYear();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD100_E772_MS4();
         CamDrivePageObject.choiseTheCurrentDay();
-        System.out.println("Start test in "+currentHour+" hour and "+currentMinute+" minutes");
-
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+//*Открытие потока для фантика
         //==========================================================
         if (currentMinute <10){
             currentMinuteCONVERTED = "0"+currentMinute;
@@ -90,7 +97,11 @@ public class CD100_E772_ms4 extends CoreTestCase {
             }else currentMonthCONVERTED = Integer.toString(currentMonth);
             //==========================================================
 
-            System.out.println("Iteration of 5 minutes = "+ (m + 1));
+//Фантик
+            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
+            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+//*Фантик
+
             CamDrivePageObject.clickMinute(
                     currentDayCONVERTED,
                     currentMonthCONVERTED,
@@ -102,17 +113,26 @@ public class CD100_E772_ms4 extends CoreTestCase {
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){
-                System.out.println("Error load archive video. Month-"+currentMonthCONVERTED+"-Day-"+currentDayCONVERTED+"-hh-"+currentHourCONVERTED+"-mm:"+currentFirstMinuteCONVERTED+"-"+currentLastMinuteCONVERTED );
+//Фантик
+                System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min" );
+                testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min" );
+//*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenCD100_E772();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
-            System.out.println(attribute);
+//Фантик
+            System.out.println(attribute+" sec");
+            testFile.write(attribute+" sec\n");
+//*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenCD100_E772();
             Thread.sleep(2500); //Убрать тред
         }
         CamDrivePageObject.clickBackOnHourScreenCD100_E772();
+//Закрытие потока для фантика
+        testFile.close();
+//*Закрытие потока для фантика
     }
 }

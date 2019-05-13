@@ -5,6 +5,8 @@ import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 
 public class CD630_910D_ms6 extends CoreTestCase {
@@ -12,17 +14,20 @@ public class CD630_910D_ms6 extends CoreTestCase {
     int currentDay;
     int currentMonth;
     int currentMinute;
+    int currentYear;
 
-    String currentMinuteCONVERTED;
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
+    String currentMinuteCONVERTED;
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
 
-    @Test
-    public void testCD630_910D_MS6() throws InterruptedException {
 
+    @Test
+    public void testCD630_910D_MS6() throws InterruptedException, IOException {
+
+        currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
         currentDay = Calendar.getInstance().getTime().getDate();
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
@@ -34,7 +39,11 @@ public class CD630_910D_ms6 extends CoreTestCase {
 
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
-        System.out.println("Start test in "+currentHour+" hour and "+currentMinute+" minutes");
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+//*Открытие потока для фантика
 
         //==========================================================
         if (currentMinute <10){
@@ -90,7 +99,10 @@ public class CD630_910D_ms6 extends CoreTestCase {
             }else currentMonthCONVERTED = Integer.toString(currentMonth);
             //==========================================================
 
-            System.out.println("Iteration of 5 minutes = "+ (m + 1));
+//Фантик
+            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
+            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+//*Фантик
             CamDrivePageObject.clickMinute(
                     currentDayCONVERTED,
                     currentMonthCONVERTED,
@@ -102,17 +114,26 @@ public class CD630_910D_ms6 extends CoreTestCase {
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){
-                System.out.println("Error load archive video. Month-"+currentMonthCONVERTED+"-Day-"+currentDayCONVERTED+"-hh-"+currentHourCONVERTED+"-mm:"+currentFirstMinuteCONVERTED+"-"+currentLastMinuteCONVERTED );
+//Фантик
+                System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min" );
+                testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min" );
+//*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenCD630_910D();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
-            System.out.println(attribute);
+//Фантик
+            System.out.println(attribute+" sec");
+            testFile.write(attribute+" sec\n");
+//*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenCD630_910D();
             Thread.sleep(2500); //Убрать тред
         }
         CamDrivePageObject.clickBackOnHourScreenCD630_910D();
+//Закрытие потока для фантика
+        testFile.close();
+//*Закрытие потока для фантика
     }
 }
