@@ -96,7 +96,7 @@ public class MainPageObject {
                     .release()
                     .perform();
         }else {
-            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
+            System.out.println("Method does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
 
     }
@@ -106,7 +106,7 @@ public class MainPageObject {
         if(driver instanceof AppiumDriver) {
             swipeUp(200);
         }else {
-            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
+            System.out.println("Method does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
     }
 

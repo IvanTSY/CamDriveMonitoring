@@ -37,6 +37,7 @@ public class CamDrivePageObject extends MainPageObject{
             BACK_BTN_ON_HOUR_SCREEN_CD100_E772,
             BACK_BTN_ON_MINUTE_SCREEN_N1001_3A00,
             BACK_BTN_ON_HOUR_SCREEN_N1001_3A00,
+            DAY_TODAY,
             DAY,
             ClOSE_BTN,
             BACK_BTN_ON_MINUTE_SCREEN_CD120,
@@ -54,7 +55,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
     public void choiseTheCurrentDay(){
-        waitForElementAndClick(DAY,"Current day not have the record",15);
+        waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
     }
     //TODO: Проверка появления видео формы
     public void checkLoadVideoPlayer(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
@@ -73,7 +74,16 @@ public class CamDrivePageObject extends MainPageObject{
         attribute = this.waitForElementAndGetAtribute("xpath://*[contains(@class,'x-controlbar-Android-seek-loading-right')]","max","Time line is not visible",2);
         return attribute;
     }
-//************************************************************
+
+    public String getTypeOfRecords(String attribute){
+        attribute = this.waitForElementAndGetAtribute(DYNAMIC_MINUTE_XPATH,"max","Time line is not visible",2);
+        return attribute;
+    }
+    //=======================================================================================================================================================
+    //=======================================================================================================================================================
+    //=======================================================================================================================================================
+    //=======================================================================================================================================================
+    //=======================================================================================================================================================
     public void choiseCD120MS5(){
 
         waitForElementAndClick(CD120_EAF9_SERV_MS5,"Not find camera",15);
@@ -223,6 +233,25 @@ public class CamDrivePageObject extends MainPageObject{
                 .replace("{Hour}",currentHourCONVERTED);
     }
 //======================================================================================================================
+    public String clickMinute(
+            String currentDayCONVERTED,
+            String currentMonthCONVERTED,
+            String currentHourCONVERTED,
+            String minuteFirst,
+            String minuteLast,
+            String type_of_record)
+    {
+        String minute_element = getCurrentDayAndMonthAndMinuteForIDElements(
+                currentDayCONVERTED,
+                currentMonthCONVERTED,
+                currentHourCONVERTED,
+                minuteFirst,
+                minuteLast);
+        //TODO Проверить нужно ли привязывать к веб элементу часы
+        this.waitForElementAndClick(minute_element,"Current 5 minute not have records for this camera",10);
+        type_of_record = this.waitForElementAndGetAtribute(minute_element,"class","Not find attribute",5);
+        return type_of_record;
+    }
     public void clickMinute(
             String currentDayCONVERTED,
             String currentMonthCONVERTED,
@@ -238,6 +267,7 @@ public class CamDrivePageObject extends MainPageObject{
                 minuteLast);
         //TODO Проверить нужно ли привязывать к веб элементу часы
         this.waitForElementAndClick(minute_element,"Current 5 minute not have records for this camera",10);
+
     }
 
     private String getCurrentDayAndMonthAndMinuteForIDElements(
@@ -253,6 +283,26 @@ public class CamDrivePageObject extends MainPageObject{
                 .replace("{Hour}",currentHourCONVERTED)
                 .replace("{MinuteFirst}",minuteFirst)
                 .replace("{MinuteLast}",minuteLast);
+    }
+//======================================================================================================================
+public void choiseDay(
+        String currentDayCONVERTED,
+        String currentMonthCONVERTED)
+{
+    String day_element = getCurrentDayAndMonth(
+            currentDayCONVERTED,
+            currentMonthCONVERTED);
+    //TODO Проверить нужно ли привязывать к веб элементу часы
+    this.waitForElementAndClick(day_element,"Current 5 minute not have records for this camera",10);
+}
+
+    private String getCurrentDayAndMonth(
+            String Day,
+            String Month)
+    {
+        return DAY
+                .replace("{Day}", Day)
+                .replace("{Month}", Month);
     }
 //======================================================================================================================
 

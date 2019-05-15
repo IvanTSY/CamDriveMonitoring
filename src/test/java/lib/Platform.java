@@ -100,7 +100,8 @@ public class Platform {
 //============================================================
         Map<String, String> mobileEmulation = new HashMap<>();
 
-        mobileEmulation.put("deviceName", "Nexus 5");
+        mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
+        mobileEmulation.put("deviceName", "iPhone X");
 
 
         ChromeOptions chromeOptions = new ChromeOptions();

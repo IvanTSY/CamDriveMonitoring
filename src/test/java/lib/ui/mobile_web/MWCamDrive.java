@@ -5,11 +5,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class MWCamDrive extends CamDrivePageObject {
     static {
-        LOGIN = "css:#ext-gen1129";
-        PASSWORD = "css:#ext-gen1134";
-        ENTER_BUTTON = "css:#ext-gen1142";
+        LOGIN = "xpath://input[@name='username']"; //"css:#ext-gen1129";
+        PASSWORD = "xpath://input[@name='password']"; //"css:#ext-gen1134";
+        ENTER_BUTTON = "xpath://span[text()='Войти']";//"css:#ext-gen1142";
+        DAY_TODAY = "xpath://*[contains(@class,'day today')]"; //текущий день
+        DAY = "id:2019/{Month}/{Day}"; //любой день
 
-        DAY = "xpath://*[contains(@class,'day today')]";
         ClOSE_BTN = "css:#conteiner_vac > div.closeFullscreen";
         DYNAMIC_MINUTE_XPATH = "id:2019-{Month}-{Day}-{Hour}-{MinuteFirst}-00_2019-{Month}-{Day}-{Hour}-{MinuteLast}-59";
         DYNAMIC_HOUR_XPATH = "id:2019-{Month}-{Day}-{Hour}-00-00_2019-{Month}-{Day}-{Hour}-59-59";
