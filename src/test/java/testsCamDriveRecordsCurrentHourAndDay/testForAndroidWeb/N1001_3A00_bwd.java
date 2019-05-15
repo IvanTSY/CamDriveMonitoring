@@ -17,7 +17,6 @@ public class N1001_3A00_bwd extends CoreTestCase {
     int currentMinute;
     int currentYear;
     int tick;
-    int corr;
 
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
@@ -27,7 +26,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testN1001_3A00_bwd() throws InterruptedException, IOException {
+    public void testN1001_3A00_bwd() throws  IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
@@ -66,15 +65,16 @@ public class N1001_3A00_bwd extends CoreTestCase {
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
 
-        CamDrivePageObject.clickHour(
-                currentDayCONVERTED,
-                currentMonthCONVERTED,
-                currentHourCONVERTED);
+
 
         if(Platform.getInstance().isMWIos()){
              tick = 10;
         }else{
             tick = 5;
+            CamDrivePageObject.clickHour(
+                    currentDayCONVERTED,
+                    currentMonthCONVERTED,
+                    currentHourCONVERTED);
         }
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
@@ -94,8 +94,8 @@ public class N1001_3A00_bwd extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+ " minutes ");
+            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+ " minutes \n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
