@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay;
+package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
@@ -85,18 +85,6 @@ public class CD600_EF78_ms6 extends CoreTestCase {
                 currentLastMinuteCONVERTED = "0"+currentLastMinute;
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
-            if (currentHour <10){
-                currentHourCONVERTED = "0"+currentHour;
-            }else currentHourCONVERTED = Integer.toString(currentHour);
-            //==========================================================
-            if (currentDay <10){
-                currentDayCONVERTED = ""+currentDay;
-            }else currentDayCONVERTED = Integer.toString(currentDay );
-            //==========================================================
-            if (currentMonth <10){
-                currentMonthCONVERTED = "0"+currentMonth;
-            }else currentMonthCONVERTED = Integer.toString(currentMonth);
-            //==========================================================
 
 //Фантик
             System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
@@ -138,7 +126,6 @@ public class CD600_EF78_ms6 extends CoreTestCase {
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenCD600_EF78();
-//            Thread.sleep(2500); //Убрать тред
         }
         CamDrivePageObject.clickBackOnHourScreenCD600_EF78();
 //Закрытие потока для фантика

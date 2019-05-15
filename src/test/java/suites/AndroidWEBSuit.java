@@ -3,7 +3,7 @@ package suites;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import testsCamDriveRecordsCurrentHourAndDay.*;
+import testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.*;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({

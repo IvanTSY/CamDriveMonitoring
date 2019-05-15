@@ -8,7 +8,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class CamDrivePageObjectFactory {
     public static CamDrivePageObject get(RemoteWebDriver driver)
     {
-        Platform.getInstance().isMW();
-        return new MWCamDrive(driver);
+        if(Platform.getInstance().isMWAndroid()||Platform.getInstance().isMWIos()){
+
+        }return new MWCamDrive(driver);
+
     }
 }

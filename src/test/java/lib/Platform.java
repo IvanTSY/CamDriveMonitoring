@@ -2,7 +2,6 @@ package lib;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,7 +15,8 @@ public class Platform {
 
     private static final String PLATFORM_IOS = "ios";
     private static final String PLATFORM_ANDROID = "android";
-    private static final String PLATFORM_MOBILE_WEB = "mobile_web";
+    private static final String PLATFORM_MOBILE_WEB_ANDROID = "mobile_web_android";
+    private static final String PLATFORM_MOBILE_WEB_IOS = "mobile_web_ios";
 
     private static final String APPIUM_URL = "http://0.0.0.0:4723/wd/hub";
 
@@ -39,10 +39,13 @@ public class Platform {
             return new AndroidDriver(URL, this.getAndroidDesiredcCapabilities());
         } else if (this.isIOS()){
             return new IOSDriver(URL, this.getIOSDesiredcCapabilities());
-        } else  if (this.isMW()){
-            return new ChromeDriver(this.getMWChromeOptions());
-        }else
+        } else  if (this.isMWAndroid()){
+            return new ChromeDriver(this.getMWChromeOptionsForAndroid());
+        } else if(this.isMWIos()){
+            return new ChromeDriver(this.getMWChromeOptionsForIOS());
+        }else{
             throw new Exception("Cannot detect type of the Driver. Platform value:" + this.getPlatformVar());
+        }
     }
 
 
@@ -56,10 +59,15 @@ public class Platform {
         return isPlatform(PLATFORM_IOS);
     }
 
-    public boolean isMW()  // определяет является ли платформа WEB
+    public boolean isMWAndroid()  // определяет является ли платформа WEB_Android
     {
-        return isPlatform(PLATFORM_MOBILE_WEB);
+        return isPlatform(PLATFORM_MOBILE_WEB_ANDROID);
     }
+    public boolean isMWIos()  // определяет является ли платформа WEB_Android
+    {
+        return isPlatform(PLATFORM_MOBILE_WEB_IOS);
+    }
+
 
 
     private DesiredCapabilities getAndroidDesiredcCapabilities()  // capabilities для Android
@@ -85,7 +93,7 @@ public class Platform {
         return capabilities;
     }
 
-    private ChromeOptions getMWChromeOptions() // запускает браузер Chrome
+    private ChromeOptions getMWChromeOptionsForAndroid() // запускает браузер Chrome
     {
 //        Map<String, Object> deviceMetrics = new HashMap<String, Object>();
 //        deviceMetrics.put("width", 360); //высота девайса
@@ -101,16 +109,25 @@ public class Platform {
         Map<String, String> mobileEmulation = new HashMap<>();
 
         mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
-        mobileEmulation.put("deviceName", "iPhone X");
+        //mobileEmulation.put("deviceName", "iPhone X");
 
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+        ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
+        chromeOptionsForAndroid.setExperimentalOption("mobileEmulation", mobileEmulation);
         //WebDriver driver = new ChromeDriver(chromeOptions);
 //============================================================
+        return chromeOptionsForAndroid;
+    }
+    private ChromeOptions getMWChromeOptionsForIOS() // запускает браузер Chrome
+    {
+        Map<String, String> mobileEmulation = new HashMap<>();
 
+        mobileEmulation.put("deviceName", "iPhone X");
 
-        return chromeOptions;
+        ChromeOptions chromeOptionsForIOS = new ChromeOptions();
+        chromeOptionsForIOS.setExperimentalOption("mobileEmulation", mobileEmulation);
+//============================================================
+        return chromeOptionsForIOS;
     }
 
     private boolean isPlatform(String my_platform)// сравнивание с переменной которая приходит на вход

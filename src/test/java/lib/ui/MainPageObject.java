@@ -146,7 +146,7 @@ public class MainPageObject {
     public boolean isElementLocatedOnTheScreen(String locator)
     {
         int element_location_by_y = this.waitForElementPresent(locator, "Cannot find element by locator",10).getLocation().getY();
-        if (Platform.getInstance().isMW()) // этот if вычисление позиции для скрола в WEB
+        if (Platform.getInstance().isMWAndroid() || Platform.getInstance().isMWIos()) // этот if вычисление позиции для скрола в WEB
         {
             JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
             Object js_result = JSExecutor.executeScript("return window.pageYOffset");
@@ -271,7 +271,7 @@ public class MainPageObject {
     }
     public void scrollWebPageUp()  // скрол для web
     {
-        if (Platform.getInstance().isMW()){
+        if (Platform.getInstance().isMWAndroid() || Platform.getInstance().isMWIos()){
             JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;  // исполнение джава скрипт на данной странице
             JSExecutor.executeScript("window.scrollBy(0, 250)");  //  по пиксельный скролл от пикселя 0 до пикселя 250
         } else {

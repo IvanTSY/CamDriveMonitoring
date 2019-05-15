@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay;
+package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class N1001_3A00_bwd extends CoreTestCase {
+public class CD310_2E51_ms4 extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
@@ -24,7 +24,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testN1001_3A00_bwd() throws InterruptedException, IOException {
+    public void testCD310_2E51_MS4() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
@@ -36,11 +36,11 @@ public class N1001_3A00_bwd extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
-        CamDrivePageObject.choiseN1001_3A00_bwd();
+        CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 //*Открытие потока для фантика
 
@@ -85,25 +85,11 @@ public class N1001_3A00_bwd extends CoreTestCase {
                 currentLastMinuteCONVERTED = "0"+currentLastMinute;
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
-            if (currentHour <10){
-                currentHourCONVERTED = "0"+currentHour;
-            }else currentHourCONVERTED = Integer.toString(currentHour);
-            //==========================================================
-            if (currentDay <10){
-                currentDayCONVERTED = ""+currentDay;
-            }else currentDayCONVERTED = Integer.toString(currentDay );
-            //==========================================================
-            if (currentMonth <10){
-                currentMonthCONVERTED = "0"+currentMonth;
-            }else currentMonthCONVERTED = Integer.toString(currentMonth);
-            //==========================================================
 
 //Фантик
             System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
             testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
 //*Фантик
-
-
             try{
                 CamDrivePageObject.clickMinute(
                         currentDayCONVERTED,
@@ -129,7 +115,8 @@ public class N1001_3A00_bwd extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+
+                CamDrivePageObject.clickBackOnMinuteScreenCD310_2E51();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -139,10 +126,9 @@ public class N1001_3A00_bwd extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
-//            Thread.sleep(2500); //Убрать тред
+            CamDrivePageObject.clickBackOnMinuteScreenCD310_2E51();
         }
-        CamDrivePageObject.clickBackOnHourScreenN1001_3A00();
+        CamDrivePageObject.clickBackOnHourScreenCD310_2E51();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика

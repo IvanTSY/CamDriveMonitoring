@@ -5,8 +5,6 @@ import junit.framework.TestCase;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.time.Duration;
-
 public class CoreTestCase extends TestCase {
 
     protected RemoteWebDriver driver;
@@ -55,13 +53,14 @@ public class CoreTestCase extends TestCase {
 
 
 
-    protected  void openCamDriveWebPageForMobileWeb() // открытие страницы браузера для wiki
+    protected  void openCamDriveWebPageForMobileWeb() // открытие страницы браузера
     {
-        if (Platform.getInstance().isMW()) {
-            //driver.get("https://www.camdrive.com/"); как на ПК
+        if (Platform.getInstance().isMWAndroid()) {
             driver.get("https://www.camdrive.com/mobile/phone/");
+        }if(Platform.getInstance().isMWIos()){
+            driver.get("https://www.camdrive.com/mobile/iphone");
         } else {
-            System.out.println("Method openCamdriveWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
+            System.out.println("Method open CamdriveWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
     }
 

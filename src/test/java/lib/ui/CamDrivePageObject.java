@@ -19,29 +19,11 @@ public class CamDrivePageObject extends MainPageObject{
             CD310_2E51_MS4_DEV,
             CD100_E772_MS4,
             N1001_3A00_bwd,
-            BACK_BTN_ON_MINUTE_SCREEN_CD100_E75A,
-            BACK_BTN_ON_HOUR_SCREEN_CD100_E75A,
-            BACK_BTN_ON_MINUTE_SCREEN_CD630_910D,
-            BACK_BTN_ON_HOUR_SCREEN_CD630_910D,
-            BACK_BTN_ON_MINUTE_SCREEN_CD320_AA06,
-            BACK_BTN_ON_HOUR_SCREEN_CD320_AA06,
-            BACK_BTN_ON_MINUTE_SCREEN_CD100_E778,
-            BACK_BTN_ON_HOUR_SCREEN_CD100_E778,
-            BACK_BTN_ON_MINUTE_SCREEN_CD600_EF78,
-            BACK_BTN_ON_HOUR_SCREEN_CD600_EF78,
-            BACK_BTN_ON_MINUTE_SCREEN_CD320_AA78,
-            BACK_BTN_ON_HOUR_SCREEN_CD320_AA78,
-            BACK_BTN_ON_MINUTE_SCREEN_CD310_2E51,
-            BACK_BTN_ON_HOUR_SCREEN_CD310_2E51,
-            BACK_BTN_ON_MINUTE_SCREEN_CD100_E772,
-            BACK_BTN_ON_HOUR_SCREEN_CD100_E772,
-            BACK_BTN_ON_MINUTE_SCREEN_N1001_3A00,
-            BACK_BTN_ON_HOUR_SCREEN_N1001_3A00,
             DAY_TODAY,
             DAY,
             ClOSE_BTN,
-            BACK_BTN_ON_MINUTE_SCREEN_CD120,
-            BACK_BTN_ON_HOUR_SCREEN_CD120,
+            BACK_BTN_ON_MINUTE_SCREEN,
+            BACK_BTN_ON_HOUR_SCREEN,
             DYNAMIC_HOUR_XPATH,
             DYNAMIC_MINUTE_XPATH;
 
@@ -90,125 +72,101 @@ public class CamDrivePageObject extends MainPageObject{
     }
 
     public void clickBackOnMinuteScreenCD120MS5(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD120,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
 
     public void clickBackOnHourScreenCD120MS5(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD120,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD100_E75A_MS3_DEV(){
         waitForElementAndClick(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD100_E75A(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD100_E75A,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD100_E75A(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD100_E75A,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD630_910D_MS6_DEV(){
         waitForElementAndClick(CD630_910D_MS6_DEV,"Not find camera CD630_910D_MS6_DEV",15);
     }
     public void clickBackOnMinuteScreenCD630_910D(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD630_910D,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD630_910D(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD630_910D,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD320_AA06_MS3_DEV(){
         waitForElementAndClick(CD320_AA06_MS3_DEV,"Not find camera CD320_AA06_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD320_AA06(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD320_AA06,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD320_AA06(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD320_AA06,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD100_E778_MS5(){
-
         waitForElementAndClick(CD100_E778_MS5,"Not find camera CD100_E778_MS5",15);
     }
     public void clickBackOnMinuteScreenCD100_E778(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD100_E778,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD100_E778(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD100_E778,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD600_EF78_MS6_SERV(){
         waitForElementAndClick(CD600_EF78_MS6_SERV,"Not find camera CD600_EF78_MS6_SERV",15);
     }
     public void clickBackOnMinuteScreenCD600_EF78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD600_EF78,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD600_EF78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD600_EF78,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD320_AA78_MS5(){
-
         waitForElementAndClick(CD320_AA78_MS5,"Not find camera CD320_AA78_MS5",15);
     }
     public void clickBackOnMinuteScreenCD320_AA78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD320_AA78,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD320_AA78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD320_AA78,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD310_2E51_MS4_DEV(){
         waitForElementAndClick(CD310_2E51_MS4_DEV,"Not find camera CD310_2E51_MS4_DEV",15);
     }
     public void clickBackOnMinuteScreenCD310_2E51(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD310_2E51,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD310_2E51(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD310_2E51,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
     public void choiseCD100_E772_MS4(){
-
         waitForElementAndClick(CD100_E772_MS4,"Not find camera CD100_E772_MS4",15);
     }
     public void clickBackOnMinuteScreenCD100_E772(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_CD100_E772,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenCD100_E772(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_CD100_E772,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
-
     //************************************************************
     public void choiseN1001_3A00_bwd(){
-
         waitForElementAndClick(N1001_3A00_bwd,"Not find camera N1001_3A00_bwd",15);
     }
     public void clickBackOnMinuteScreenN1001_3A00(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_N1001_3A00,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
-
     public void clickBackOnHourScreenN1001_3A00(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN_N1001_3A00,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
-
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }
     //************************************************************
 
@@ -219,7 +177,7 @@ public class CamDrivePageObject extends MainPageObject{
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
         //TODO Проверить нужно ли привязывать к веб элементу минуты
-        this.waitForElementAndClick(hour_element,"Current hour not have records for this camera",30);
+        this.waitForElementAndClick(hour_element,"Current hour not have records for this camera",10);
     }
 
     private String getCurrentDayAndMonthAndHourForIDElements(
@@ -233,25 +191,6 @@ public class CamDrivePageObject extends MainPageObject{
                 .replace("{Hour}",currentHourCONVERTED);
     }
 //======================================================================================================================
-    public String clickMinute(
-            String currentDayCONVERTED,
-            String currentMonthCONVERTED,
-            String currentHourCONVERTED,
-            String minuteFirst,
-            String minuteLast,
-            String type_of_record)
-    {
-        String minute_element = getCurrentDayAndMonthAndMinuteForIDElements(
-                currentDayCONVERTED,
-                currentMonthCONVERTED,
-                currentHourCONVERTED,
-                minuteFirst,
-                minuteLast);
-        //TODO Проверить нужно ли привязывать к веб элементу часы
-        this.waitForElementAndClick(minute_element,"Current 5 minute not have records for this camera",10);
-        type_of_record = this.waitForElementAndGetAtribute(minute_element,"class","Not find attribute",5);
-        return type_of_record;
-    }
     public void clickMinute(
             String currentDayCONVERTED,
             String currentMonthCONVERTED,
@@ -267,9 +206,7 @@ public class CamDrivePageObject extends MainPageObject{
                 minuteLast);
         //TODO Проверить нужно ли привязывать к веб элементу часы
         this.waitForElementAndClick(minute_element,"Current 5 minute not have records for this camera",10);
-
     }
-
     private String getCurrentDayAndMonthAndMinuteForIDElements(
             String currentDayCONVERTED,
             String currentMonthCONVERTED,
@@ -305,8 +242,4 @@ public void choiseDay(
                 .replace("{Month}", Month);
     }
 //======================================================================================================================
-
-
-
-
 }
