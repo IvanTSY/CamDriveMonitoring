@@ -58,7 +58,7 @@ public class CoreTestCase extends TestCase {
         if (Platform.getInstance().isMWAndroid()) {
             driver.get("https://www.camdrive.com/mobile/phone/");
         }if(Platform.getInstance().isMWIos()){
-            driver.get("https://www.camdrive.com/mobile/iphone");
+            driver.get("https://www.camdrive.com/mobile/ipad");
         } else {
             System.out.println("Method open CamdriveWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
         }

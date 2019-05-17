@@ -110,7 +110,7 @@ public class CD100_E75A_ms3 extends CoreTestCase {
 //*Фантик
                 continue;
             }
-            CamDrivePageObject.loadArchiveVideo();
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){

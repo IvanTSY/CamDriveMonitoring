@@ -107,7 +107,7 @@ public class CD310_2E51_ms4 extends CoreTestCase {
 //*Фантик
                 continue;
             }
-            CamDrivePageObject.loadArchiveVideo();
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){

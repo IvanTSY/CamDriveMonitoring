@@ -93,7 +93,7 @@ public class CD120_EAF9_SERV_MS5 extends CoreTestCase {
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
 
-                CamDrivePageObject.loadArchiveVideo();
+                CamDrivePageObject.loadArchiveVideoAndroid();
                 try {
                     CamDrivePageObject.checkLoadVideoPlayer();
                 }catch (RuntimeException e){

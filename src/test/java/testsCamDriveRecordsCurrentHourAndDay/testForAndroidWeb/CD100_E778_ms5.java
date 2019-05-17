@@ -106,7 +106,7 @@ public class CD100_E778_ms5 extends CoreTestCase {
                 continue;
             }
 
-            CamDrivePageObject.loadArchiveVideo();
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){

@@ -1,5 +1,6 @@
 package lib.ui;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 
@@ -43,10 +44,17 @@ public class CamDrivePageObject extends MainPageObject{
     public void checkLoadVideoPlayer(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
     public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 10 seconds",15);}
 
-    public void loadArchiveVideo(){
+    public void loadArchiveVideoAndroid(){
         waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
         waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
     }
+
+    public void loadArchiveVideoIOS() {
+        waitForElementPresent("id:pl_va","Not found play button after 10 seconds wait",10);
+        tryClickElementWithFewAttempts("id:pl_va","Video is not load after 10 seconds wait",10);
+    }
+
+
 
     public void clickOnVideoForm(){
         waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","Not found player form after 10 seconds wait",10);
@@ -205,6 +213,7 @@ public class CamDrivePageObject extends MainPageObject{
                 minuteFirst,
                 minuteLast);
         //TODO Проверить нужно ли привязывать к веб элементу часы
+
         this.waitForElementAndClick(minute_element,"Current 5 minute not have records for this camera",10);
     }
     private String getCurrentDayAndMonthAndMinuteForIDElements(
