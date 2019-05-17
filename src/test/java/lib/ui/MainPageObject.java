@@ -158,9 +158,12 @@ public class MainPageObject {
 //TODO Доделать скрипт
     public void getTimeDurationVideoForIOSArchive() throws InterruptedException {
         ///waitForElementAndGetAtribute("id:pl_va",js_result,"GET JS IMPOSSIBLE",10);
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
+
+
         JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
-        Object js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
+        JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
+        Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
         System.out.println(js_result);
     }
 
