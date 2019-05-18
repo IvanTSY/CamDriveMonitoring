@@ -107,7 +107,7 @@ public class CD320_AA78_ms5 extends CoreTestCase {
 //*Фантик
                 continue;
             }
-            CamDrivePageObject.loadArchiveVideo();
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){

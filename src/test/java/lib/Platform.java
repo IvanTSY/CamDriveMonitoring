@@ -122,7 +122,7 @@ public class Platform {
     {
         Map<String, String> mobileEmulation = new HashMap<>();
 
-        mobileEmulation.put("deviceName", "iPhone X");
+        mobileEmulation.put("deviceName", "iPhone X"); //"iPhone X" изменить интерфейс видеопроигрывателя
 
         ChromeOptions chromeOptionsForIOS = new ChromeOptions();
         chromeOptionsForIOS.setExperimentalOption("mobileEmulation", mobileEmulation);

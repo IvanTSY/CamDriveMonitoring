@@ -109,7 +109,7 @@ public class CD630_910D_ms6 extends CoreTestCase {
                 continue;
             }
 
-            CamDrivePageObject.loadArchiveVideo();
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){

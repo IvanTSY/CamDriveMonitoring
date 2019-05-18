@@ -155,6 +155,18 @@ public class MainPageObject {
         int screen_size_by_y = driver.manage().window().getSize().getHeight();
         return element_location_by_y < screen_size_by_y;
     }
+//TODO Доделать скрипт
+    public void getTimeDurationVideoForIOSArchive() throws InterruptedException {
+        ///waitForElementAndGetAtribute("id:pl_va",js_result,"GET JS IMPOSSIBLE",10);
+        //Thread.sleep(10000);
+
+
+        JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
+        JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
+        Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
+        System.out.println(js_result);
+    }
+
 
     public void clickElementToTheLeft(String locator, String error_message)  //клик по кнопке удалить статью для ios
     {
@@ -277,6 +289,12 @@ public class MainPageObject {
         } else {
             System.out.println("Method scrollWebPageUp() does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
+    }
+//TODO Переделать. Написать адекватное поведение
+    public void scrollIntoView() {
+        WebElement element = this.waitForElementPresent("xpath://*[@id='ext-gen1107']/table/tbody/tr[24]/td[1]/div","123",5);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
     }
 
     public void scrollWebPageTitleElementNotVisible(String locator, String error_message, int max_swipes) // делает скрол пока нужный элемент не появится на экране

@@ -38,7 +38,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
-        CamDrivePageObject.choiseN1001_3A00_bwd();
+        CamDrivePageObject.choiseCD630_910D_MS6_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
@@ -70,6 +70,10 @@ public class N1001_3A00_bwd extends CoreTestCase {
         if(Platform.getInstance().isMWIos()){
              tick = 10;
         }else{
+            CamDrivePageObject.clickHour(
+                    currentDayCONVERTED,
+                    currentMonthCONVERTED,
+                    currentHourCONVERTED);
             tick = 5;
             CamDrivePageObject.clickHour(
                     currentDayCONVERTED,
@@ -97,6 +101,11 @@ public class N1001_3A00_bwd extends CoreTestCase {
             System.out.println("\n"+(m + 1)+" Play archive block of "+tick+ " minutes ");
             testFile.write("\n"+(m + 1)+" Play archive block of "+tick+ " minutes \n");
 //*Фантик
+
+            //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
+
+            CamDrivePageObject.scrollIntoView();
+
             try{
                 CamDrivePageObject.clickMinute(
                         currentDayCONVERTED,
@@ -111,7 +120,18 @@ public class N1001_3A00_bwd extends CoreTestCase {
 //*Фантик
                 continue;
             }
-            CamDrivePageObject.loadArchiveVideo();
+
+            if(Platform.getInstance().isMWAndroid()) {
+                CamDrivePageObject.loadArchiveVideoAndroid();
+            }if(Platform.getInstance().isMWIos()){
+                CamDrivePageObject.loadArchiveVideoIOS(); //добавить трайклик
+            }else{
+                System.out.println("Not set current Platform");
+            }
+
+            CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+
+
             try {
                 CamDrivePageObject.checkLoadVideoPlayer();
             }catch (RuntimeException e){
