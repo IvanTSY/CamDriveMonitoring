@@ -1,7 +1,6 @@
 package lib.ui;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 
@@ -70,8 +69,20 @@ public class CamDrivePageObject extends MainPageObject{
 //TODO Тайм для веб айоса
 
     //TODO Переделать данный метод , нужно разобраться с JavaScript callBack function и убрать НАФИГ ТРЕД СЛИП!!!!!
-    public String getTimeDurationVideoForIOSArchive() throws InterruptedException {
+    public Object getTimeDurationVideoForIOSArchive() throws InterruptedException {
         JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
+        Object js_result = null ;
+        for(int i = 0; i <10; i++ ){
+            if(js_result == null){
+                Thread.sleep(1000);
+                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
+            }else{
+                break;
+            }
+        }
+        return js_result;
+
+
         //JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500)");
         //        //Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
 //        JSExecutor.executeScript("function getDuration()" +
@@ -90,18 +101,6 @@ public class CamDrivePageObject extends MainPageObject{
 
 //        Object js_result = JSExecutor.executeScript("for(var i = 0; document.getElementById('va').duration == null || i < 10; i++){if(document.getElementById('va').duration == null){window.setTimeout(arguments[arguments.length - 1], 1500);}else{return document.getElementById('va').duration;}}");
 
-        Object js_result = null ;
-        String js_attribute = null;
-        for(int i = 0; i <10; i++ ){
-            if(js_result == null){
-                Thread.sleep(1000);
-                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
-            }else{
-                js_attribute = (String) js_result;
-                System.out.println(js_result);
-                break;
-            }
-        }return js_attribute;
     }
 
 
@@ -110,10 +109,7 @@ public class CamDrivePageObject extends MainPageObject{
         attribute = this.waitForElementAndGetAtribute(DYNAMIC_MINUTE_XPATH,"max","Time line is not visible",2);
         return attribute;
     }
-    //=======================================================================================================================================================
-    //=======================================================================================================================================================
-    //=======================================================================================================================================================
-    //=======================================================================================================================================================
+
     //=======================================================================================================================================================
     public void choiseCD120MS5(){
 

@@ -157,14 +157,18 @@ public class N1001_3A00_bwd extends CoreTestCase {
                 System.out.println(attribute+" sec");
                 testFile.write(attribute+" sec\n");
 //*Фантик
+                CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
+                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
             }else{
                 //TODO : JSE в тесте
-                CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+                Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+                System.out.println(attribute+" sec");
+                testFile.write(attribute+" sec\n");
+                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
             }
 
 
-            CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+
         }
         //CamDrivePageObject.clickBackOnHourScreenN1001_3A00();
 //Закрытие потока для фантика
