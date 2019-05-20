@@ -1,5 +1,6 @@
 package lib.ui;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -41,7 +42,9 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
     }
     //TODO: Проверка появления видео формы
-    public void checkLoadVideoPlayer(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
+    public void checkLoadVideoPlayerForAndroidMW(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
+    public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'video noPlayBtn')][contains(@id,'va')]","Not found video on Archive play video after 25 seconds",25);}
+
     public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 10 seconds",15);}
 
     public void loadArchiveVideoAndroid(){
@@ -59,11 +62,49 @@ public class CamDrivePageObject extends MainPageObject{
     public void clickOnVideoForm(){
         waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","Not found player form after 10 seconds wait",10);
     }
-
+//TODO Тайм для веб андройда
     public String getTime(String attribute){
         attribute = this.waitForElementAndGetAtribute("xpath://*[contains(@class,'x-controlbar-Android-seek-loading-right')]","max","Time line is not visible",2);
         return attribute;
     }
+//TODO Тайм для веб айоса
+
+    //TODO Переделать данный метод , нужно разобраться с JavaScript callBack function и убрать НАФИГ ТРЕД СЛИП!!!!!
+    public String getTimeDurationVideoForIOSArchive() throws InterruptedException {
+        JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
+        //JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500)");
+        //        //Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
+//        JSExecutor.executeScript("function getDuration()" +
+//                "    {" +
+//                "        var vidos = document.getElementById('va');" +
+//                "        if (vidos)" +
+//                "        {" +
+//                "            return vidos.duration ? vidos.duration : null;" +
+//                "        }" +
+//                "        return null;" +
+//                "    }");
+
+//        Object js_result = JSExecutor.executeScript("document.getElementById('va').oncanplay = function(){" +
+//                "console.log(document.getElementById('va').duration);  " +
+//                "return document.getElementById('va').duration}");
+
+//        Object js_result = JSExecutor.executeScript("for(var i = 0; document.getElementById('va').duration == null || i < 10; i++){if(document.getElementById('va').duration == null){window.setTimeout(arguments[arguments.length - 1], 1500);}else{return document.getElementById('va').duration;}}");
+
+        Object js_result = null ;
+        String js_attribute = null;
+        for(int i = 0; i <10; i++ ){
+            if(js_result == null){
+                Thread.sleep(1000);
+                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
+            }else{
+                js_attribute = (String) js_result;
+                System.out.println(js_result);
+                break;
+            }
+        }return js_attribute;
+    }
+
+
 
     public String getTypeOfRecords(String attribute){
         attribute = this.waitForElementAndGetAtribute(DYNAMIC_MINUTE_XPATH,"max","Time line is not visible",2);

@@ -95,7 +95,7 @@ public class CD120_EAF9_SERV_MS5 extends CoreTestCase {
 
                 CamDrivePageObject.loadArchiveVideoAndroid();
                 try {
-                    CamDrivePageObject.checkLoadVideoPlayer();
+                    CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
                 }catch (RuntimeException e){
                     System.out.println("Error load archive video. Month-"+currentMonthCONVERTED+"-Day-"+currentDayCONVERTED+"-hh-"+currentHourCONVERTED+"-mm:"+currentFirstMinuteCONVERTED+"-"+currentLastMinuteCONVERTED );
                     CamDrivePageObject.clickBackOnMinuteScreenCD120MS5();

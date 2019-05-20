@@ -109,7 +109,7 @@ public class CD600_EF78_ms6 extends CoreTestCase {
             }
             CamDrivePageObject.loadArchiveVideoAndroid();
             try {
-                CamDrivePageObject.checkLoadVideoPlayer();
+                CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );

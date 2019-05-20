@@ -157,39 +157,7 @@ public class MainPageObject {
         int screen_size_by_y = driver.manage().window().getSize().getHeight();
         return element_location_by_y < screen_size_by_y;
     }
-//TODO Переделать данный метод , нужно разобраться с JavaScript callBack function
-    public void getTimeDurationVideoForIOSArchive() throws InterruptedException {
-        JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
-        //JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500)");
-        //        //Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
-//        JSExecutor.executeScript("function getDuration()" +
-//                "    {" +
-//                "        var vidos = document.getElementById('va');" +
-//                "        if (vidos)" +
-//                "        {" +
-//                "            return vidos.duration ? vidos.duration : null;" +
-//                "        }" +
-//                "        return null;" +
-//                "    }");
 
-//        Object js_result = JSExecutor.executeScript("document.getElementById('va').oncanplay = function(){" +
-//                "console.log(document.getElementById('va').duration);  " +
-//                "return document.getElementById('va').duration}");
-
-//        Object js_result = JSExecutor.executeScript("for(var i = 0; document.getElementById('va').duration == null || i < 10; i++){if(document.getElementById('va').duration == null){window.setTimeout(arguments[arguments.length - 1], 1500);}else{return document.getElementById('va').duration;}}");
-
-        Object js_result = null ;
-        for(int i =0; i <10; i++ ){
-            if(js_result == null){
-                Thread.sleep(1000);
-                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
-            }else{
-                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
-                System.out.println(js_result);
-                break;
-            }
-        }
-    }
 
 
     public void clickElementToTheLeft(String locator, String error_message)  //клик по кнопке удалить статью для ios

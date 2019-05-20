@@ -136,12 +136,11 @@ public class N1001_3A00_bwd extends CoreTestCase {
             }else{
                 System.out.println("Not set current Platform");
             }
-//TODO : JSE
-            CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
 
-
+            CamDrivePageObject.checkLoadVideoPlayerForIosMW();
             try {
-                CamDrivePageObject.checkLoadVideoPlayer();
+                //CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
+                CamDrivePageObject.checkLoadVideoPlayerForIosMW();
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -150,16 +149,24 @@ public class N1001_3A00_bwd extends CoreTestCase {
                 CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
                 continue;
             }
-            CamDrivePageObject.clickOnVideoForm();
-            String attribute = CamDrivePageObject.getTime("max");
+
+            if(Platform.getInstance().isMWAndroid()){
+                CamDrivePageObject.clickOnVideoForm();
+                String attribute = CamDrivePageObject.getTime("max");
 //Фантик
-            System.out.println(attribute+" sec");
-            testFile.write(attribute+" sec\n");
+                System.out.println(attribute+" sec");
+                testFile.write(attribute+" sec\n");
 //*Фантик
+            }else{
+                //TODO : JSE в тесте
+                CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+            }
+
+
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
         }
-        CamDrivePageObject.clickBackOnHourScreenN1001_3A00();
+        //CamDrivePageObject.clickBackOnHourScreenN1001_3A00();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
