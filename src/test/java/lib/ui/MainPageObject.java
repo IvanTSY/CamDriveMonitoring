@@ -6,16 +6,18 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import lib.Platform;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.omg.CORBA.OBJ_ADAPTER;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.management.timer.Timer;
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public class MainPageObject {
@@ -155,16 +157,38 @@ public class MainPageObject {
         int screen_size_by_y = driver.manage().window().getSize().getHeight();
         return element_location_by_y < screen_size_by_y;
     }
-//TODO Доделать скрипт
+//TODO Переделать данный метод , нужно разобраться с JavaScript callBack function
     public void getTimeDurationVideoForIOSArchive() throws InterruptedException {
-        ///waitForElementAndGetAtribute("id:pl_va",js_result,"GET JS IMPOSSIBLE",10);
-        //Thread.sleep(10000);
-
-
         JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
-        JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
-        Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
-        System.out.println(js_result);
+        //JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500)");
+        //        //Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
+//        JSExecutor.executeScript("function getDuration()" +
+//                "    {" +
+//                "        var vidos = document.getElementById('va');" +
+//                "        if (vidos)" +
+//                "        {" +
+//                "            return vidos.duration ? vidos.duration : null;" +
+//                "        }" +
+//                "        return null;" +
+//                "    }");
+
+//        Object js_result = JSExecutor.executeScript("document.getElementById('va').oncanplay = function(){" +
+//                "console.log(document.getElementById('va').duration);  " +
+//                "return document.getElementById('va').duration}");
+
+//        Object js_result = JSExecutor.executeScript("for(var i = 0; document.getElementById('va').duration == null || i < 10; i++){if(document.getElementById('va').duration == null){window.setTimeout(arguments[arguments.length - 1], 1500);}else{return document.getElementById('va').duration;}}");
+
+        Object js_result = null ;
+        for(int i =0; i <10; i++ ){
+            if(js_result == null){
+                Thread.sleep(1000);
+                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
+            }else{
+                js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
+                System.out.println(js_result);
+                break;
+            }
+        }
     }
 
 

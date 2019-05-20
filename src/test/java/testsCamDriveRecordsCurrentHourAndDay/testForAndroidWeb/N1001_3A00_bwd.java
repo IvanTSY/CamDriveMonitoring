@@ -17,7 +17,6 @@ public class N1001_3A00_bwd extends CoreTestCase {
     int currentMinute;
     int currentYear;
     int tick;
-    int corr;
 
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
@@ -27,14 +26,25 @@ public class N1001_3A00_bwd extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testN1001_3A00_bwd() throws InterruptedException, IOException {
+    public void testN1001_3A00_bwd() throws IOException, InterruptedException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
         currentDay = Calendar.getInstance().getTime().getDate();
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
         currentMinute = Calendar.getInstance().getTime().getMinutes();
-
+//Определяем шаг интервала в зависимости от WEB платформы
+        if(Platform.getInstance().isMWIos()){
+            tick = 10;
+        }else{
+            tick = 5;
+        }
+//Меняем время , если не сможем выполнить условие для открытия блока архива
+        if(currentMinute < tick){
+            currentMinute = 59;
+            currentHour = currentHour - 1;
+        }
+//========================================================
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
@@ -47,6 +57,8 @@ public class N1001_3A00_bwd extends CoreTestCase {
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 //*Открытие потока для фантика
 
+
+        //if()
         //==========================================================
         if (currentMinute <10){
             currentMinuteCONVERTED = "0"+currentMinute;
@@ -68,14 +80,13 @@ public class N1001_3A00_bwd extends CoreTestCase {
 
 
 
-        if(Platform.getInstance().isMWIos()){
-             tick = 10;
-        }else{
+
+
+        if(Platform.getInstance().isMWAndroid()){
             CamDrivePageObject.clickHour(
                     currentDayCONVERTED,
                     currentMonthCONVERTED,
                     currentHourCONVERTED);
-            tick = 5;
         }
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
@@ -95,8 +106,8 @@ public class N1001_3A00_bwd extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -125,7 +136,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
             }else{
                 System.out.println("Not set current Platform");
             }
-
+//TODO : JSE
             CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
 
 
