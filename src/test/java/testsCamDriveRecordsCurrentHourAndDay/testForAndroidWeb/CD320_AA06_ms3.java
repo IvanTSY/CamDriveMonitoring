@@ -42,6 +42,8 @@ public class CD320_AA06_ms3 extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
         //==========================================================
@@ -110,7 +112,7 @@ public class CD320_AA06_ms3 extends CoreTestCase {
             }
             CamDrivePageObject.loadArchiveVideoAndroid();
             try {
-                CamDrivePageObject.checkLoadVideoPlayer();
+                CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );

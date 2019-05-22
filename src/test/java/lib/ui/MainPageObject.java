@@ -6,16 +6,18 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import lib.Platform;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.omg.CORBA.OBJ_ADAPTER;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.management.timer.Timer;
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public class MainPageObject {
@@ -155,17 +157,7 @@ public class MainPageObject {
         int screen_size_by_y = driver.manage().window().getSize().getHeight();
         return element_location_by_y < screen_size_by_y;
     }
-//TODO Доделать скрипт
-    public void getTimeDurationVideoForIOSArchive() throws InterruptedException {
-        ///waitForElementAndGetAtribute("id:pl_va",js_result,"GET JS IMPOSSIBLE",10);
-        //Thread.sleep(10000);
 
-
-        JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
-        JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
-        Object js_result = JSExecutor.executeAsyncScript("return document.getElementById('va').duration");
-        System.out.println(js_result);
-    }
 
 
     public void clickElementToTheLeft(String locator, String error_message)  //клик по кнопке удалить статью для ios
@@ -292,9 +284,8 @@ public class MainPageObject {
     }
 //TODO Переделать. Написать адекватное поведение
     public void scrollIntoView() {
-        WebElement element = this.waitForElementPresent("xpath://*[@id='ext-gen1107']/table/tbody/tr[24]/td[1]/div","123",5);
+        WebElement element = this.waitForElementPresent("xpath://*[@id='ext-gen1107']/table/tbody/tr[24]/td[1]/div","123",10);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-
     }
 
     public void scrollWebPageTitleElementNotVisible(String locator, String error_message, int max_swipes) // делает скрол пока нужный элемент не появится на экране

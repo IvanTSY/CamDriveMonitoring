@@ -103,7 +103,7 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
                 CamDrivePageObject.waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
                 try {
 
-                    CamDrivePageObject.checkLoadVideoPlayer();
+                    CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
                 }catch (RuntimeException e){
                     System.out.println("Error load archive video. Month-"+currentMonthCONVERTED+"-Day-"+currentDayCONVERTED+"-hh-"+currentHourCONVERTED+"-mm:"+currentFirstMinuteCONVERTED+"-"+currentLastMinuteCONVERTED );
                     CamDrivePageObject.tryClickElementWithFewAttempts("xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1040')]","nooooo",10);
