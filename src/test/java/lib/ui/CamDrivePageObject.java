@@ -1,7 +1,11 @@
 package lib.ui;
 
+import lib.Platform;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class CamDrivePageObject extends MainPageObject{
@@ -102,6 +106,19 @@ public class CamDrivePageObject extends MainPageObject{
 //        Object js_result = JSExecutor.executeScript("for(var i = 0; document.getElementById('va').duration == null || i < 10; i++){if(document.getElementById('va').duration == null){window.setTimeout(arguments[arguments.length - 1], 1500);}else{return document.getElementById('va').duration;}}");
 
     }
+//
+//    public void qwe() throws IOException {
+//        FileWriter testFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
+//        if (Platform.getInstance().isMWIos()){
+//            System.out.println("Imitation web iPhone");
+//            testFile.write("Imitation web iPhone");
+//        }else if (Platform.getInstance().isMWAndroid()){
+//            System.out.println("Imitation web Android");
+//            testFile.write("Imitation web Android");
+//        }else {System.out.println("Unknown WEB Platform");}
+//        testFile.close();
+//
+//    }
 
 
 

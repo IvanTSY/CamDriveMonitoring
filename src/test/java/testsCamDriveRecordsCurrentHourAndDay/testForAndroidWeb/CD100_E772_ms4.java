@@ -41,6 +41,8 @@ public class CD100_E772_ms4 extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
 //*Открытие потока для фантика
         //==========================================================
         if (currentMinute <10){

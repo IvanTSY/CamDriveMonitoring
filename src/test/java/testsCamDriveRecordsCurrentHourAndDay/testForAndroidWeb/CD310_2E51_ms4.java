@@ -40,8 +40,10 @@ public class CD310_2E51_ms4 extends CoreTestCase {
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordCD310_2E51_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
         //==========================================================

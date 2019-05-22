@@ -43,6 +43,8 @@ public class CD630_910D_ms6 extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
         //==========================================================

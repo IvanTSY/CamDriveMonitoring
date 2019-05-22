@@ -1,23 +1,23 @@
 Data: 2019/5/22
-Start test in 17 hour and 47 minutes 
+Start test in 17 hour and 49 minutes 
 
 1 Play archive block of 5 minutes (Android MW)
-307.44 sec
+304.02 sec
 
 2 Play archive block of 5 minutes (Android MW)
-310.28 sec
+304.98 sec
 
 3 Play archive block of 5 minutes (Android MW)
-309.4 sec
+305.991973 sec
 
 4 Play archive block of 5 minutes (Android MW)
-302.72 sec
+Error load archive video. Block: 17:00h. 15min-19min
 
 5 Play archive block of 5 minutes (Android MW)
-304.784989 sec
+Error load archive video. Block: 17:00h. 20min-24min
 
 6 Play archive block of 5 minutes (Android MW)
-308.4 sec
+Error load archive video. Block: 17:00h. 25min-29min
 
 7 Play archive block of 5 minutes (Android MW)
 Error load archive video. Block: 17:00h. 30min-34min

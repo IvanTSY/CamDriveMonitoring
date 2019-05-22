@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
+package testsCamDriveRecordsCurrentHourAndDay.experimentalTest;
 
 import lib.CoreTestCase;
 import lib.Platform;
@@ -10,7 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class N1001_3A00_bwd extends CoreTestCase {
+public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
@@ -59,9 +59,14 @@ public class N1001_3A00_bwd extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
 
+        if (Platform.getInstance().isMWIos()){
+            System.out.println("Imitation web iPhone");
+            testFile.write("Imitation web iPhone");
+        }else if (Platform.getInstance().isMWAndroid()){
+            System.out.println("Imitation web Android");
+            testFile.write("Imitation web Android");
+        }else {System.out.println("Unknown WEB Platform");}
 
 //*Открытие потока для фантика + определение  платформы
 
