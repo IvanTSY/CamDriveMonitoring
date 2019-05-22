@@ -1,7 +1,6 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForIosWeb;
+package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
 import lib.CoreTestCase;
-import lib.Platform;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
@@ -10,14 +9,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class N1001_3A00_bwd extends CoreTestCase {
+public class CD310_2E51_ms4_IOS extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
     int currentMinute;
     int currentYear;
     int tick;
-
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
     String currentMinuteCONVERTED;
@@ -26,7 +24,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testN1001_3A00_bwd() throws IOException, InterruptedException {
+    public void testCD310_2E51_MS4_IOS() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
@@ -47,12 +45,12 @@ public class N1001_3A00_bwd extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
-        CamDrivePageObject.choiseN1001_3A00_bwd();
+        CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 
         System.out.println("Imitation web iPhone");
@@ -105,7 +103,7 @@ public class N1001_3A00_bwd extends CoreTestCase {
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
 //TODO : Очень грязный фикс , СРОЧНО исправить !!!
-            if (currentHour <11){
+            if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
 

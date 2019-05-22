@@ -283,9 +283,9 @@ public class MainPageObject {
         }
     }
 //TODO Переделать. Написать адекватное поведение
-    public void scrollIntoView() {
-        WebElement element = this.waitForElementPresent("xpath://*[@id='ext-gen1107']/table/tbody/tr[24]/td[1]/div","123",10);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    public void scrollIntoView() throws InterruptedException {
+        WebElement element = this.waitForElementPresent("xpath://div[contains(text(),'23:00')]","123",10);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
     }
 
     public void scrollWebPageTitleElementNotVisible(String locator, String error_message, int max_swipes) // делает скрол пока нужный элемент не появится на экране

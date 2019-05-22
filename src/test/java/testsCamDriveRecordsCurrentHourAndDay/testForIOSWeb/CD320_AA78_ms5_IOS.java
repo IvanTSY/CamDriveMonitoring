@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForIosWeb;
+package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class CD320_AA06_ms3 extends CoreTestCase {
+public class CD320_AA78_ms5_IOS extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
@@ -24,7 +24,7 @@ public class CD320_AA06_ms3 extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testCD320_AA06_MS3() throws InterruptedException, IOException {
+    public void testCD320_AA78_MS5_IOS() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
@@ -45,12 +45,12 @@ public class CD320_AA06_ms3 extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
-        CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
+        CamDrivePageObject.choiseCD320_AA78_MS5();
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 
         System.out.println("Imitation web iPhone");
@@ -103,7 +103,7 @@ public class CD320_AA06_ms3 extends CoreTestCase {
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
 //TODO : Очень грязный фикс , СРОЧНО исправить !!!
-            if (currentHour <11){
+            if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
 

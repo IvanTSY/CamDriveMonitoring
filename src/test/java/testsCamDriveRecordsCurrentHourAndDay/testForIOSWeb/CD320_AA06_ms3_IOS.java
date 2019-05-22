@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForIosWeb;
+package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class CD630_910D_ms6 extends CoreTestCase {
+public class CD320_AA06_ms3_IOS extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
@@ -23,9 +23,8 @@ public class CD630_910D_ms6 extends CoreTestCase {
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
 
-
     @Test
-    public void testCD630_910D_MS6() throws InterruptedException, IOException {
+    public void testCD320_AA06_MS3_IOS() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
         currentHour = Calendar.getInstance().getTime().getHours();
@@ -46,12 +45,12 @@ public class CD630_910D_ms6 extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
-        CamDrivePageObject.choiseCD630_910D_MS6_DEV();
+        CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
         CamDrivePageObject.choiseTheCurrentDay();
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 
         System.out.println("Imitation web iPhone");
@@ -104,7 +103,7 @@ public class CD630_910D_ms6 extends CoreTestCase {
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
 //TODO : Очень грязный фикс , СРОЧНО исправить !!!
-            if (currentHour <11){
+            if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
 

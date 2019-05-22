@@ -124,7 +124,7 @@ public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
 //TODO : Очень грязный фикс , СРОЧНО исправить !!!
-            if (Platform.getInstance().isMWIos() & currentHour <11){
+            if (currentHour <11){
                 CamDrivePageObject.scrollIntoView();
             }
 

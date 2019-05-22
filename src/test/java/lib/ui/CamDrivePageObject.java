@@ -46,8 +46,10 @@ public class CamDrivePageObject extends MainPageObject{
     }
     //TODO: Проверка появления видео формы
     public void checkLoadVideoPlayerForAndroidMW(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
-    public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'video noPlayBtn')][contains(@id,'va')]","Not found video on Archive play video after 25 seconds",25);}
+    public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'play play-loader')][contains(@id,'pl_va')]","Not found video on Archive play video after 25 seconds",25);}
+    //public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'video noPlayBtn')][contains(@id,'va')]","Not found video on Archive play video after 25 seconds",25);}
 
+    //play-loader
     public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 10 seconds",15);}
 
     public void loadArchiveVideoAndroid(){
@@ -57,7 +59,7 @@ public class CamDrivePageObject extends MainPageObject{
 
     public void loadArchiveVideoIOS() {
         waitForElementPresent("id:pl_va","Not found play button after 10 seconds wait",10);
-        tryClickElementWithFewAttempts("id:pl_va","Video is not load after 10 seconds wait",10);
+        tryClickElementWithFewAttempts("id:pl_va","Video is not load after 10 seconds wait",30);
     }
 
 
@@ -222,7 +224,7 @@ public class CamDrivePageObject extends MainPageObject{
     }
     //************************************************************
     public void choiseN1001_3A00_bwd(){
-        waitForElementAndClick(N1001_3A00_bwd,"Not find camera N1001_3A00_bwd",15);
+        waitForElementAndClick(N1001_3A00_bwd,"Not find camera N1001_3A00_bwd_IOS",15);
     }
     public void clickBackOnMinuteScreenN1001_3A00(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
