@@ -15,7 +15,7 @@ public class CD100_E772_ms4 extends CoreTestCase {
     int currentMonth;
     int currentMinute;
     int currentYear;
-
+    int tick;
     String currentMinuteCONVERTED;
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
@@ -31,7 +31,12 @@ public class CD100_E772_ms4 extends CoreTestCase {
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
         currentMinute = Calendar.getInstance().getTime().getMinutes();
         currentYear = Calendar.getInstance().getWeekYear();
+        tick = 5;
 
+        if(currentMinute < tick){
+            currentMinute = 59;
+            currentHour = currentHour - 1;
+        }
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -71,7 +76,7 @@ public class CD100_E772_ms4 extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -1)/5; m ++){
+        for (int m = 0; m < (currentMinute -6)/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;

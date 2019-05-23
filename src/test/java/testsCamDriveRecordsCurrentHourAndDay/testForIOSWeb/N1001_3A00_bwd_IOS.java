@@ -84,7 +84,7 @@ public class N1001_3A00_bwd_IOS extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -1)/tick; m ++){
+        for (int m = 0; m < (currentMinute -6)/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
