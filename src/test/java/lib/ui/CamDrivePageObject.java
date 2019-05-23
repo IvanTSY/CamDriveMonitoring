@@ -45,7 +45,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
     }
     //TODO: Проверка появления видео формы
-    public void checkLoadVideoPlayerForAndroidMW(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 10 seconds",25);}
+    public void checkLoadVideoPlayerForAndroidMW(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 25 seconds",25);}
     public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'play play-loader')][contains(@id,'pl_va')]","Not found video on Archive play video after 25 seconds",25);}
     //public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'video noPlayBtn')][contains(@id,'va')]","Not found video on Archive play video after 25 seconds",25);}
 
@@ -147,7 +147,8 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD100_E75A(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",50);
     }
     public void clickBackOnHourScreenCD100_E75A(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);

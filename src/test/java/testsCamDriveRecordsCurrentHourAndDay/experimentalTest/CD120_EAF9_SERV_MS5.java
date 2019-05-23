@@ -19,6 +19,7 @@ public class CD120_EAF9_SERV_MS5 extends CoreTestCase {
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
 
+
     @Test
     public void testCD120_EAF9_SERV_MS5() throws InterruptedException {
 
@@ -26,7 +27,6 @@ public class CD120_EAF9_SERV_MS5 extends CoreTestCase {
         currentDay = Calendar.getInstance().getTime().getDate();
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
         currentMinute = Calendar.getInstance().getTime().getMinutes();
-
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
