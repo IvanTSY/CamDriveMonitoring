@@ -55,6 +55,7 @@ public class CoreTestCase extends TestCase {
 
     protected  void openCamDriveWebPageForMobileWeb() // открытие страницы браузера
     {
+
         if (Platform.getInstance().isMWAndroid()) {
             driver.get("https://www.camdrive.com/mobile/phone/");
         }if(Platform.getInstance().isMWIos()){
