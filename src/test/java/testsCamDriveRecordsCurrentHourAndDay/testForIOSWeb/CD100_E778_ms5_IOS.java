@@ -23,8 +23,7 @@ public class CD100_E778_ms5_IOS extends CoreTestCase {
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
 
-    @Test(
-    )
+    @Test
     public void testCD100_E778_MS5_IOS() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
