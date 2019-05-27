@@ -1,0 +1,5 @@
+Data: 2019/5/27
+Start test in 11 hour and 15 minutes 
+Imitation web Android
+1 Play archive block of 5 minutes (Android MW)
+306.03 sec
