@@ -1,7 +1,6 @@
 package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
 import lib.CoreTestCase;
-import lib.Platform;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
@@ -134,14 +133,14 @@ public class N1001_3A00_bwd_IOS extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenIOS();
                 continue;
             }
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
-            CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+            CamDrivePageObject.clickBackOnMinuteScreenIOS();
         }
 //Закрытие потока для фантика
         testFile.close();

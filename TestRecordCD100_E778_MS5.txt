@@ -1,0 +1,17 @@
+Data: 2019/5/29
+Start test in 12 hour and 32 minutes 
+Imitation web Android
+1 Play archive block of 5 minutes (Android MW)
+308.52 sec
+
+2 Play archive block of 5 minutes (Android MW)
+310.24 sec
+
+3 Play archive block of 5 minutes (Android MW)
+308.48 sec
+
+4 Play archive block of 5 minutes (Android MW)
+307.48 sec
+
+5 Play archive block of 5 minutes (Android MW)
+310.32 sec

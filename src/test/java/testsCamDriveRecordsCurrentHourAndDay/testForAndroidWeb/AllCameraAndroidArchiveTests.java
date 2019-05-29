@@ -117,7 +117,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
 
-                CamDrivePageObject.clickBackOnMinuteScreenCD100_E75A();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -129,7 +130,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD100_E75A();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
@@ -227,7 +228,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD100_E772();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -237,7 +238,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD100_E772();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD100_E772();
 //Закрытие потока для фантика
@@ -334,7 +335,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD100_E778();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -344,7 +345,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD100_E778();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD100_E778();
 //Закрытие потока для фантика
@@ -446,7 +447,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
 
-                CamDrivePageObject.clickBackOnMinuteScreenCD310_2E51();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -456,7 +457,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD310_2E51();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD310_2E51();
 //Закрытие потока для фантика
@@ -557,7 +558,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD320_AA06();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -567,7 +568,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD320_AA06();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD320_AA06();
 //Закрытие потока для фантика
@@ -667,7 +668,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD320_AA78();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -677,7 +678,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD320_AA78();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD320_AA78();
 //Закрытие потока для фантика
@@ -776,7 +777,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD600_EF78();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -786,7 +787,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD600_EF78();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD600_EF78();
 //Закрытие потока для фантика
@@ -888,7 +889,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenCD630_910D();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
@@ -898,7 +899,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             testFile.write(attribute+" sec\n");
 //*Фантик
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenCD630_910D();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
         CamDrivePageObject.clickBackOnHourScreenCD630_910D();
 //Закрытие потока для фантика
@@ -1028,7 +1029,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
                 continue;
             }
 
@@ -1040,13 +1041,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 testFile.write(attribute+" sec\n");
 //*Фантик
                 CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
             }else{
                 //TODO : JSE в тесте
                 Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
                 System.out.println(attribute+" sec");
                 testFile.write(attribute+" sec\n");
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
             }
         }
         //CamDrivePageObject.clickBackOnHourScreenN1001_3A00();

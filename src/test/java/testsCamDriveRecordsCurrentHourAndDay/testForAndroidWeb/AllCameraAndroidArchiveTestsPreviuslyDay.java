@@ -1024,7 +1024,7 @@ public class AllCameraAndroidArchiveTestsPreviuslyDay extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenIOS();
                 continue;
             }
 
@@ -1036,13 +1036,13 @@ public class AllCameraAndroidArchiveTestsPreviuslyDay extends CoreTestCase {
                 testFile.write(attribute+" sec\n");
 //*Фантик
                 CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenIOS();
             }else{
                 //TODO : JSE в тесте
                 Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
                 System.out.println(attribute+" sec");
                 testFile.write(attribute+" sec\n");
-                CamDrivePageObject.clickBackOnMinuteScreenN1001_3A00();
+                CamDrivePageObject.clickBackOnMinuteScreenIOS();
             }
         }
         //CamDrivePageObject.clickBackOnHourScreenN1001_3A00();

@@ -1,11 +1,7 @@
 package lib.ui;
 
-import lib.Platform;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.io.FileWriter;
-import java.io.IOException;
 
 
 public class CamDrivePageObject extends MainPageObject{
@@ -27,7 +23,8 @@ public class CamDrivePageObject extends MainPageObject{
             DAY_TODAY,
             DAY,
             ClOSE_BTN,
-            BACK_BTN_ON_MINUTE_SCREEN,
+            BACK_BTN_ON_MINUTE_SCREEN_IOS,
+            BACK_BTN_ON_MINUTE_SCREEN_ANDROID,
             BACK_BTN_ON_HOUR_SCREEN,
             DYNAMIC_HOUR_XPATH,
             DYNAMIC_MINUTE_XPATH;
@@ -136,7 +133,7 @@ public class CamDrivePageObject extends MainPageObject{
     }
 
     public void clickBackOnMinuteScreenCD120MS5(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
 
     public void clickBackOnHourScreenCD120MS5(){
@@ -147,8 +144,8 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD100_E75A(){
-        waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",50);
+        waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",50);
     }
     public void clickBackOnHourScreenCD100_E75A(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -158,7 +155,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD630_910D_MS6_DEV,"Not find camera CD630_910D_MS6_DEV",15);
     }
     public void clickBackOnMinuteScreenCD630_910D(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD630_910D(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -168,7 +165,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD320_AA06_MS3_DEV,"Not find camera CD320_AA06_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD320_AA06(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD320_AA06(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -178,7 +175,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD100_E778_MS5,"Not find camera CD100_E778_MS5",15);
     }
     public void clickBackOnMinuteScreenCD100_E778(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD100_E778(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -188,7 +185,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD600_EF78_MS6_SERV,"Not find camera CD600_EF78_MS6_SERV",15);
     }
     public void clickBackOnMinuteScreenCD600_EF78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD600_EF78(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -198,7 +195,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD320_AA78_MS5,"Not find camera CD320_AA78_MS5",15);
     }
     public void clickBackOnMinuteScreenCD320_AA78(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD320_AA78(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -208,7 +205,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD310_2E51_MS4_DEV,"Not find camera CD310_2E51_MS4_DEV",15);
     }
     public void clickBackOnMinuteScreenCD310_2E51(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD310_2E51(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -218,7 +215,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(CD100_E772_MS4,"Not find camera CD100_E772_MS4",15);
     }
     public void clickBackOnMinuteScreenCD100_E772(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
     public void clickBackOnHourScreenCD100_E772(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
@@ -227,9 +224,17 @@ public class CamDrivePageObject extends MainPageObject{
     public void choiseN1001_3A00_bwd(){
         waitForElementAndClick(N1001_3A00_bwd,"Not find camera N1001_3A00_bwd_IOS",15);
     }
-    public void clickBackOnMinuteScreenN1001_3A00(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+    public void clickBackOnMinuteScreenIOS(){
+        waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",15);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
+
+    public void clickBackOnMinuteScreenAndroid(){
+        waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",15);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
+    }
+
+
     public void clickBackOnHourScreenN1001_3A00(){
         tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
     }

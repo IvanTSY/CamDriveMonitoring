@@ -14,7 +14,8 @@ public class MWCamDrive extends CamDrivePageObject {
         ClOSE_BTN = "css:#conteiner_vac > div.closeFullscreen";
         DYNAMIC_MINUTE_XPATH = "id:2019-{Month}-{Day}-{Hour}-{MinuteFirst}-00_2019-{Month}-{Day}-{Hour}-{MinuteLast}-59";
         DYNAMIC_HOUR_XPATH = "id:2019-{Month}-{Day}-{Hour}-00-00_2019-{Month}-{Day}-{Hour}-59-59";
-        BACK_BTN_ON_MINUTE_SCREEN = "xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1040')]";//div[contains(@id,'ext-comp-1071')][contains(@class,'x-button white-back x-button-back')]/span[contains(text(),'Назад')]";
+        BACK_BTN_ON_MINUTE_SCREEN_IOS = "xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1040')]";
+                BACK_BTN_ON_MINUTE_SCREEN_ANDROID= "xpath://div[contains(@id,'ext-comp-1071')][contains(@class,'x-button white-back x-button-back')]/span[contains(text(),'Назад')]";
         BACK_BTN_ON_HOUR_SCREEN = "xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1226')]";
 //========================================================Dynamic_xpath_elements_"ext_gen"AND"ext_comp"
         CD120_EAF9_SERV_MS5 = "xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD120(EAF9)_serv_MS5')]";
