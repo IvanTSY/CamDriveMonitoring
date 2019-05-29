@@ -1,11 +1,17 @@
 Data: 2019/5/29
-Start test in 12 hour and 45 minutes 
+Start test in 14 hour and 56 minutes 
 Imitation web iPhone
 1 Play archive block of 10 minutes 
-607.804989 sec
+608.44 sec
 
 2 Play archive block of 10 minutes 
-608.176961 sec
+608.686984 sec
 
 3 Play archive block of 10 minutes 
-609.92 sec
+610.28 sec
+
+4 Play archive block of 10 minutes 
+612.32 sec
+
+5 Play archive block of 10 minutes 
+609.058957 sec

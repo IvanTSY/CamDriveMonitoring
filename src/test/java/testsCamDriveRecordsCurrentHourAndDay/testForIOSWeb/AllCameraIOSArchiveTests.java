@@ -70,7 +70,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -185,7 +185,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -299,7 +299,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -413,7 +413,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -528,7 +528,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -643,7 +643,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -757,7 +757,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -872,7 +872,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -987,7 +987,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;

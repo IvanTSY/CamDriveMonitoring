@@ -229,7 +229,8 @@ public class CamDrivePageObject extends MainPageObject{
         tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }
 
-    public void clickBackOnMinuteScreenAndroid(){
+    public void clickBackOnMinuteScreenAndroid() throws InterruptedException {
+        Thread.sleep(2000); //TODO:: Исправить к хуям , на имплисити вэйт или что то еще ... сервак от нагрузки начинает тупить
         waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",15);
         tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }

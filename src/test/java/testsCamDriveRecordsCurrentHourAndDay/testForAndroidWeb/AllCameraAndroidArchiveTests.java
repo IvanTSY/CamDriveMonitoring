@@ -17,6 +17,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     int currentMinute = Calendar.getInstance().getTime().getMinutes();
     int currentYear = Calendar.getInstance().getWeekYear();
     int tick = 5;
+    int glue = 0;
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
     String currentMinuteCONVERTED;
@@ -29,9 +30,10 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E75A_MS3() throws IOException {
         if(currentMinute < tick){
-            currentMinute = 59;
+            currentMinute = 60;
             currentHour = currentHour - 1;
-        }
+            glue = 0;
+        }else {glue = 6;}
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
@@ -75,7 +77,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 //TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -140,10 +142,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E772_MS4() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -183,7 +181,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue  )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -248,10 +246,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD100_E778_MS5() throws InterruptedException, IOException {
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
@@ -293,7 +287,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -357,11 +351,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD310_2E51_MS4() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -402,7 +391,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -468,11 +457,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA06_MS3() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -513,7 +497,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -579,11 +563,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA78_MS5() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -624,7 +603,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -688,11 +667,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD600_EF78_MS6() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -733,7 +707,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -799,11 +773,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD630_910D_MS6() throws InterruptedException, IOException {
 
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
@@ -844,7 +813,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -901,23 +870,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD630_910D();
+        //CamDrivePageObject.clickBackOnHourScreenCD630_910D();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
     }
     @Test
     public void testN1001_3A00_bwd() throws IOException, InterruptedException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
@@ -968,7 +927,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
