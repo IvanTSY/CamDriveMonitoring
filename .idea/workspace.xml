@@ -3,28 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5cecc024-d2a4-4b62-a467-dd57d4f61ae1" name="Default" comment="Фантики+запись в файл">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E772_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E772_MS4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E778_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E778_MS5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD310_2E51_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD310_2E51_MS4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD320_AA06_MS3_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD320_AA06_MS3_DEV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD320_AA78_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD320_AA78_MS5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD600_EF78_MS6_SERV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD600_EF78_MS6_SERV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordCD630_910D_MS6_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD630_910D_MS6_DEV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E75A_MS3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E75A_MS3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E772_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E772_MS4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E778_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E778_MS5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD630_910D_MS6_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD630_910D_MS6_DEV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRecordN1001_3A00_bwd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordN1001_3A00_bwd.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="763" column="47" lean-forward="true" selection-start-line="763" selection-start-column="47" selection-end-line="763" selection-end-column="47" />
+            <state relative-caret-position="170">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -63,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="232" column="127" selection-start-line="232" selection-start-column="127" selection-end-line="232" selection-end-column="127" />
+            <state relative-caret-position="190">
+              <caret line="231" column="16" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,6 +120,7 @@
       <find>59</find>
       <find>-6</find>
       <find>cd630</find>
+      <find>InterruptedException, IOException</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,11 +175,11 @@
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
       </list>
     </option>
   </component>
@@ -315,7 +295,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559129274550" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559130657464" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -465,14 +445,14 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.15724947" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15724947" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4989339" weight="0.24918744" />
       <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.47334754" weight="0.32719395" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info active="true" anchor="bottom" id="Find" order="5" sideWeight="0.49946696" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49946696" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.7238806" weight="0.4301192" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39802632" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -797,20 +777,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="763" column="47" lean-forward="true" selection-start-line="763" selection-start-column="47" selection-end-line="763" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="232" column="127" selection-start-line="232" selection-start-column="127" selection-end-line="232" selection-end-column="127" />
+        <state relative-caret-position="190">
+          <caret line="231" column="16" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,10 @@ import lib.Platform;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
@@ -28,7 +31,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
 
     @Test
-    public void testCD100_E75A_MS3() throws IOException {
+    public void testCD100_E75A_MS3() throws IOException, InterruptedException {
         if(currentMinute < tick){
             currentMinute = 60;
             currentHour = currentHour - 1;
@@ -663,6 +666,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
+        File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
     }
     @Test
     public void testCD600_EF78_MS6() throws InterruptedException, IOException {
