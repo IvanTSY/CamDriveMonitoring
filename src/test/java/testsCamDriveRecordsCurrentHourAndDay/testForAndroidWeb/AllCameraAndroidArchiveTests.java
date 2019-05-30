@@ -14,13 +14,12 @@ import java.io.IOException;
 import java.util.Calendar;
 
 public class AllCameraAndroidArchiveTests extends CoreTestCase {
-    int currentHour = Calendar.getInstance().getTime().getHours();
+    int currentHour = Calendar.getInstance().getTime().getHours() - 1;
     int currentDay = Calendar.getInstance().getTime().getDate();
     int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
-    int currentMinute = Calendar.getInstance().getTime().getMinutes();
+    int currentMinute = 59;
     int currentYear = Calendar.getInstance().getWeekYear();
     int tick = 5;
-    int glue = 0;
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
     String currentMinuteCONVERTED;
@@ -32,44 +31,52 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD100_E75A_MS3() throws IOException, InterruptedException {
-        if(currentMinute < tick){
-            currentMinute = 60;
-            currentHour = currentHour - 1;
-            glue = 0;
-        }else {glue = 6;}
+//Чистим файл перед запуском теста
+        FileWriter cleanFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
-        //CamDrivePageObject.choiseDay("10","05");
-        CamDrivePageObject.choiseTheCurrentDay();
 
-//Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
-//*Открытие потока для фантика
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD100_E75A_MS3 \n");
+        testFile.write("Camera: CD100_E75A_MS3 \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
@@ -80,7 +87,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
 //TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -96,8 +103,126 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+//*Фантик
+            try{
+                CamDrivePageObject.clickMinute(
+                        currentDayCONVERTED,
+                        currentMonthCONVERTED,
+                        currentHourCONVERTED,
+                        currentFirstMinuteCONVERTED,
+                        currentLastMinuteCONVERTED);
+            }catch (RuntimeException e){
+//Фантик
+                System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+                testFile.write("No records. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+//*Фантик
+                continue;
+            }
+            CamDrivePageObject.loadArchiveVideoAndroid();
+            try {
+                CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
+            }catch (RuntimeException e){
+//Фантик
+                System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+                testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+//*Фантик
+
+                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
+                continue;
+            }
+            CamDrivePageObject.clickOnVideoForm();
+            String attribute = CamDrivePageObject.getTime("max");
+//Фантик
+            System.out.println(attribute+" sec");
+            testFile.write(attribute+" sec\n");
+//*Фантик
+            CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+        }
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
+//Закрытие потока для фантика
+        testFile.close();
+//*Закрытие потока для фантика
+    }
+
+    @Test
+    public void testCD100_E772_MS4() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
+        cleanFile.close();
+
+        CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.authorizationOnCamdrive();
+        CamDrivePageObject.choiseCD100_E772_MS4();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD100_E772_MS4 \n");
+        testFile.write("Camera: CD100_E772_MS4 \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
+
+        CamDrivePageObject.clickHour(
+                currentDayCONVERTED,
+                currentMonthCONVERTED,
+                currentHourCONVERTED);
+
+
+        int currentFirstMinute = -5;
+        int currentLastMinute = -1;
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
+
+            currentFirstMinute = currentFirstMinute +5;
+            currentLastMinute = currentLastMinute + 5;
+
+            //==========================================================
+            if (currentFirstMinute <10){
+                currentFirstMinuteCONVERTED = "0"+currentFirstMinute;
+            }else currentFirstMinuteCONVERTED = Integer.toString(currentFirstMinute);
+            //==========================================================
+            if (currentLastMinute <10){
+                currentLastMinuteCONVERTED = "0"+currentLastMinute;
+            }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
+            //==========================================================
+
+//Фантик
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -142,155 +267,65 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         testFile.close();
 //*Закрытие потока для фантика
     }
+
     @Test
-    public void testCD100_E772_MS4() throws InterruptedException, IOException {
+    public void testCD100_E778_MS5() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD100_E778_MS5.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
-        CamDrivePageObject.choiseCD100_E772_MS4();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
-//*Открытие потока для фантика
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
-        CamDrivePageObject.clickHour(
-                currentDayCONVERTED,
-                currentMonthCONVERTED,
-                currentHourCONVERTED);
-
-        int currentFirstMinute = -5;
-        int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue  )/tick; m ++){
-
-            currentFirstMinute = currentFirstMinute +5;
-            currentLastMinute = currentLastMinute + 5;
-
-            //==========================================================
-            if (currentFirstMinute <10){
-                currentFirstMinuteCONVERTED = "0"+currentFirstMinute;
-            }else currentFirstMinuteCONVERTED = Integer.toString(currentFirstMinute);
-            //==========================================================
-            if (currentLastMinute <10){
-                currentLastMinuteCONVERTED = "0"+currentLastMinute;
-            }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
-            //==========================================================
-
-//Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
-//*Фантик
-
-            try{
-                CamDrivePageObject.clickMinute(
-                        currentDayCONVERTED,
-                        currentMonthCONVERTED,
-                        currentHourCONVERTED,
-                        currentFirstMinuteCONVERTED,
-                        currentLastMinuteCONVERTED);
-
-
-
-            }catch (RuntimeException e){
-//Фантик
-                System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-                testFile.write("No records. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-//*Фантик
-                continue;
-            }
-            CamDrivePageObject.loadArchiveVideoAndroid();
-            try {
-                CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
-            }catch (RuntimeException e){
-//Фантик
-                System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-                testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-//*Фантик
-                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
-                continue;
-            }
-            CamDrivePageObject.clickOnVideoForm();
-            String attribute = CamDrivePageObject.getTime("max");
-//Фантик
-            System.out.println(attribute+" sec");
-            testFile.write(attribute+" sec\n");
-//*Фантик
-            CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
-        }
-        CamDrivePageObject.clickBackOnHourScreenCD100_E772();
-//Закрытие потока для фантика
-        testFile.close();
-//*Закрытие потока для фантика
-    }
-
-    @Test
-    public void testCD100_E778_MS5() throws InterruptedException, IOException {
-
-        CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD100_E778_MS5();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD100_E778_MS5.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD100_E778_MS5 \n");
+        testFile.write("Camera: CD100_E778_MS5 \n");
         System.out.println("Imitation web Android");
         testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
 
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -306,8 +341,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -323,7 +358,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //*Фантик
                 continue;
             }
-
             CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
@@ -332,11 +366,15 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -344,57 +382,70 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD100_E778();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
-
     }
 
     @Test
-    public void testCD310_2E51_MS4() throws InterruptedException, IOException {
+    public void testCD310_2E51_MS4() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD310_2E51_MS4.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD310_2E51_MS4.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD310_2E51_MS4 \n");
+        testFile.write("Camera: CD310_2E51_MS4 \n");
         System.out.println("Imitation web Android");
         testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
 
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -410,8 +461,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -420,9 +471,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
-
-
-
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -440,10 +488,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //*Фантик
 
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -451,56 +502,70 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD310_2E51();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
     }
 
     @Test
-    public void testCD320_AA06_MS3() throws InterruptedException, IOException {
+    public void testCD320_AA06_MS3() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
-//*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD320_AA06_MS3 \n");
+        testFile.write("Camera: CD320_AA06_MS3 \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -515,10 +580,9 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 
-
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -527,9 +591,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
-
-
-
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -545,11 +606,15 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -557,56 +622,70 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD320_AA06();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
     }
 
     @Test
-    public void testCD320_AA78_MS5() throws InterruptedException, IOException {
+    public void testCD320_AA78_MS5() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD320_AA78_MS5.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD320_AA78_MS5();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD320_AA78_MS5.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD320_AA78_MS5 \n");
+        testFile.write("Camera: CD320_AA78_MS5 \n");
         System.out.println("Imitation web Android");
         testFile.write("Imitation web Android");
 //*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
 
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -622,8 +701,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -632,9 +711,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
-
-
-
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -650,11 +726,15 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -662,57 +742,70 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD320_AA78();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
-        File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
     }
+
     @Test
-    public void testCD600_EF78_MS6() throws InterruptedException, IOException {
+    public void testCD600_EF78_MS6() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD600_EF78_MS6_SERV.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD600_EF78_MS6_SERV.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
-//*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD600_EF78_MS6_SERV.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD600_EF78_MS6 \n");
+        testFile.write("Camera: CD600_EF78_MS6 \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -728,8 +821,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -738,9 +831,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
-
-
-
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -756,11 +846,15 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -768,57 +862,70 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        CamDrivePageObject.clickBackOnHourScreenCD600_EF78();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
     }
 
-
     @Test
-    public void testCD630_910D_MS6() throws InterruptedException, IOException {
+    public void testCD630_910D_MS6() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
-//*Открытие потока для фантика
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: CD630_910D_MS6 \n");
+        testFile.write("Camera: CD630_910D_MS6 \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
 
         CamDrivePageObject.clickHour(
                 currentDayCONVERTED,
                 currentMonthCONVERTED,
                 currentHourCONVERTED);
 
+
         int currentFirstMinute = -5;
         int currentLastMinute = -1;
-
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
             currentFirstMinute = currentFirstMinute +5;
             currentLastMinute = currentLastMinute + 5;
@@ -834,8 +941,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             //==========================================================
 
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)");
-            testFile.write("\n"+(m + 1)+" Play archive block of 5 minutes (Android MW)\n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
             try{
                 CamDrivePageObject.clickMinute(
@@ -844,9 +951,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                         currentHourCONVERTED,
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
-
-
-
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
@@ -854,7 +958,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //*Фантик
                 continue;
             }
-
             CamDrivePageObject.loadArchiveVideoAndroid();
             try {
                 CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
@@ -863,11 +966,15 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
             CamDrivePageObject.clickOnVideoForm();
             String attribute = CamDrivePageObject.getTime("max");
+
+
 //Фантик
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
@@ -875,67 +982,73 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
             CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        //CamDrivePageObject.clickBackOnHourScreenCD630_910D();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика
     }
+
     @Test
     public void testN1001_3A00_bwd() throws IOException, InterruptedException {
+        FileWriter cleanFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseN1001_3A00_bwd();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-//======================================================Сделать красиво!
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Imitation web Android");
-        testFile.write("Imitation web Android");
 
-
-//*Открытие потока для фантика + определение  платформы
-
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
 
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
 
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
 
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
 
-
-        if(Platform.getInstance().isMWAndroid()){
-            CamDrivePageObject.clickHour(
-                    currentDayCONVERTED,
-                    currentMonthCONVERTED,
-                    currentHourCONVERTED);
+            CamDrivePageObject.choiseTheCurrentDay();
         }
-        int currentFirstMinute = -tick;
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
+        FileWriter testFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
+        System.out.println("Camera: N1001_3A00_bwd \n");
+        testFile.write("Camera: N1001_3A00_bwd \n");
+        System.out.println("Imitation web Android");
+        testFile.write("Imitation web Android");
+//*Открытие потока для фантика
+
+
+
+        CamDrivePageObject.clickHour(
+                currentDayCONVERTED,
+                currentMonthCONVERTED,
+                currentHourCONVERTED);
+
+
+        int currentFirstMinute = -5;
         int currentLastMinute = -1;
+//TODO: Для камер с включенной склейкой требуется предусмотреть таймаут подготовки блока с записью минимум в 369 секунд
+        for (int m = 0; m < 12; m ++){
 
-        for (int m = 0; m < (currentMinute - glue )/tick; m ++){
-
-            currentFirstMinute = currentFirstMinute + tick;
-            currentLastMinute = currentLastMinute + tick;
+            currentFirstMinute = currentFirstMinute +5;
+            currentLastMinute = currentLastMinute + 5;
 
             //==========================================================
             if (currentFirstMinute <10){
@@ -946,17 +1059,11 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentLastMinuteCONVERTED = "0"+currentLastMinute;
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
+
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
-
-            //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
-            if (Platform.getInstance().isMWIos() & currentHour <11){
-                CamDrivePageObject.scrollIntoView();
-            }
-
             try{
                 CamDrivePageObject.clickMinute(
                         currentDayCONVERTED,
@@ -971,50 +1078,31 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //*Фантик
                 continue;
             }
-
-            if(Platform.getInstance().isMWAndroid()) {
-                CamDrivePageObject.loadArchiveVideoAndroid();
-            }else if(Platform.getInstance().isMWIos()){
-                CamDrivePageObject.loadArchiveVideoIOS(); //добавить трайклик
-            }else{System.out.println("Трай с проверкой видео. Ошибка определения платформы");}
-
-
-            //CamDrivePageObject.checkLoadVideoPlayerForIosMW();
-
-
+            CamDrivePageObject.loadArchiveVideoAndroid();
             try {
-                if(Platform.getInstance().isMWAndroid()){
-                    CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
-                }else if(Platform.getInstance().isMWIos()){
-                    CamDrivePageObject.checkLoadVideoPlayerForIosMW();
-                }else{System.out.println("Трай с проверкой видео. Ошибка определения платформы");}
+                CamDrivePageObject.checkLoadVideoPlayerForAndroidMW();
             }catch (RuntimeException e){
 //Фантик
                 System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
                 testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
 //*Фантик
+
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
+
                 continue;
             }
+            CamDrivePageObject.clickOnVideoForm();
+            String attribute = CamDrivePageObject.getTime("max");
 
-            if(Platform.getInstance().isMWAndroid()){
-                //CamDrivePageObject.clickOnVideoForm();
-                String attribute = CamDrivePageObject.getTime("max");
+
 //Фантик
-                System.out.println(attribute+" sec");
-                testFile.write(attribute+" sec\n");
+            System.out.println(attribute+" sec");
+            testFile.write(attribute+" sec\n");
 //*Фантик
-                CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
-                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
-            }else{
-                //TODO : JSE в тесте
-                Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-                System.out.println(attribute+" sec");
-                testFile.write(attribute+" sec\n");
-                CamDrivePageObject.clickBackOnMinuteScreenAndroid();
-            }
+            CamDrivePageObject.clickCloseButtonOnPlayArchiveScreen();
+            CamDrivePageObject.clickBackOnMinuteScreenAndroid();
         }
-        //CamDrivePageObject.clickBackOnHourScreenN1001_3A00();
+        CamDrivePageObject.clickBackOnHourScreenCD100_E75A();
 //Закрытие потока для фантика
         testFile.close();
 //*Закрытие потока для фантика

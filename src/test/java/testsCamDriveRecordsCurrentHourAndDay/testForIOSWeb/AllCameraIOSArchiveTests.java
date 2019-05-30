@@ -17,60 +17,64 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
     int currentYear = Calendar.getInstance().getWeekYear();
-    int currentHour = Calendar.getInstance().getTime().getHours();
+    int currentHour = Calendar.getInstance().getTime().getHours() - 1;
     int currentDay = Calendar.getInstance().getTime().getDate();
     int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
-    int currentMinute = Calendar.getInstance().getTime().getMinutes();
-//Определяем шаг интервала в зависимости от WEB платформы
+    int currentMinute = 59;
     int tick = 10;
 
     @Test
     public void testCD100_E75A_MS3_IOS() throws InterruptedException, IOException {
-        if (currentMinute < tick) {
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
+        cleanFile.close();
+
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD100_E75A_MS3 \n");
+        testFile.write("Camera: CD100_E75A_MS3 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
 
 //*Открытие потока для фантика + определение  платформы
 
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -85,8 +89,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -135,57 +139,56 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD100_E772_MS4_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD100_E772_MS4();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD100_E772_MS4 \n");
+        testFile.write("Camera: CD100_E772_MS4 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
 
 //*Открытие потока для фантика + определение  платформы
 
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -200,8 +203,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -250,26 +253,47 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD100_E778_MS5_IOS() throws InterruptedException, IOException {
-        //Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD100_E778_MS5();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD100_E778_MS5 \n");
+        testFile.write("Camera: CD100_E778_MS5 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -277,24 +301,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Открытие потока для фантика + определение  платформы
 
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
 
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
@@ -314,8 +320,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -361,59 +367,59 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         testFile.close();
 //*Закрытие потока для фантика
     }
+
     @Test
     public void testCD310_2E51_MS4_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-//======================================================Сделать красиво!
-        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
-        FileWriter testFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
-        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
 
-        System.out.println("Imitation web iPhone");
-        testFile.write("Imitation web iPhone");
-
-
-//*Открытие потока для фантика + определение  платформы
-
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
         //==========================================================
         if (currentMonth <10){
             currentMonthCONVERTED = "0"+currentMonth;
         }else currentMonthCONVERTED = Integer.toString(currentMonth);
         //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+//Открытие потока для фантика
+        System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
+        FileWriter testFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
+        testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
+        System.out.println("Camera: CD310_2E51_MS4 \n");
+        testFile.write("Camera: CD310_2E51_MS4 \n");
+        System.out.println("Imitation web iPhone");
+        testFile.write("Imitation web iPhone");
+
+
+//*Открытие потока для фантика
 
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -428,8 +434,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -478,52 +484,52 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD320_AA06_MS3_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
-//======================================================Сделать красиво!
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+        //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD320_AA06_MS3 \n");
+        testFile.write("Camera: CD320_AA06_MS3 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
 
 //*Открытие потока для фантика + определение  платформы
 
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
 
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
@@ -543,8 +549,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -593,27 +599,47 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD320_AA78_MS5_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD320_AA78_MS5();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+        //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD320_AA78_MS5 \n");
+        testFile.write("Camera: CD320_AA78_MS5 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -621,29 +647,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Открытие потока для фантика + определение  платформы
 
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -658,8 +665,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -707,57 +714,57 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
     @Test
     public void testCD600_EF78_MS6_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
-        CamDrivePageObject.choiseTheCurrentDay();
-//Открытие потока для фантика
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
+        //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD600_EF78_MS6 \n");
+        testFile.write("Camera: CD600_EF78_MS6 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
 
 //*Открытие потока для фантика + определение  платформы
 
-
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -772,8 +779,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -822,27 +829,48 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD630_910D_MS6_IOS() throws InterruptedException, IOException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
+        FileWriter cleanFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
+        cleanFile.close();
 //========================================================
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
+// \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: CD630_910D_MS6 \n");
+        testFile.write("Camera: CD630_910D_MS6 \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -850,29 +878,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Открытие потока для фантика + определение  платформы
 
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -887,8 +896,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
@@ -937,27 +946,46 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testN1001_3A00_bwd_IOS() throws IOException, InterruptedException {
-
-//Меняем время , если не сможем выполнить условие для открытия блока архива
-// Услови следующие - если текущее время "-1"минута не может быть поделено на хотя бы одну целую часть = условие не выполнено,
-// т.к. мы заведомо знаем, что даже если запись в блоке есть то она не полная , т.к.CamDrive не успел ее передать
-        if(currentMinute < tick){
-            currentMinute = 59;
-            currentHour = currentHour - 1;
-        }
-//========================================================
+        FileWriter cleanFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
+        cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
-
         CamDrivePageObject.choiseN1001_3A00_bwd();
-        CamDrivePageObject.choiseTheCurrentDay();
+
+        if (currentHour <10){
+            currentHourCONVERTED = "0"+currentHour;
+        }else currentHourCONVERTED = Integer.toString(currentHour);
+        //==========================================================
+        if (currentMonth <10){
+            currentMonthCONVERTED = "0"+currentMonth;
+        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+        //==========================================================
+//обработка ситуации с полуночью
+        if(currentHour <0){
+            currentHour = 23;
+            currentDay = currentDay -1;
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+        }else {
+
+            if (currentDay <10){
+                currentDayCONVERTED = ""+(currentDay);
+            }else currentDayCONVERTED = Integer.toString(currentDay);
+
+            CamDrivePageObject.choiseTheCurrentDay();
+        }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-
+        System.out.println("Camera: N1001_3A00_bwd \n");
+        testFile.write("Camera: N1001_3A00_bwd \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -965,29 +993,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Открытие потока для фантика + определение  платформы
 
 
-        //==========================================================
-        if (currentMinute <10){
-            currentMinuteCONVERTED = "0"+currentMinute;
-        }else currentMinuteCONVERTED = Integer.toString(currentMinute);
-        //==========================================================
-        if (currentHour <10){
-            currentHourCONVERTED = "0"+currentHour;
-        }else currentHourCONVERTED = Integer.toString(currentHour);
-        //==========================================================
-
-        if (currentDay <10){
-            currentDayCONVERTED = ""+(currentDay);
-        }else currentDayCONVERTED = Integer.toString(currentDay);
-        //==========================================================
-        if (currentMonth <10){
-            currentMonthCONVERTED = "0"+currentMonth;
-        }else currentMonthCONVERTED = Integer.toString(currentMonth);
-        //==========================================================
-
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute )/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -1002,8 +1011,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }else currentLastMinuteCONVERTED = Integer.toString(currentLastMinute);
             //==========================================================
 //Фантик
-            System.out.println("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
-            testFile.write("\n"+(m + 1)+" Play archive block of "+tick+" minutes \n");
+            System.out.println("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
+            testFile.write("\n Block:"+(m + 1)+" Play archive block of "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n");
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);

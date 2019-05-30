@@ -1,35 +1,11 @@
 Data: 2019/5/29
-Start test in 13 hour and 56 minutes 
+Start test in 19 hour and 19 minutes 
 Imitation web Android
 1 Play archive block of 5 minutes (Android MW)
-No records. Block: 13:00h. 00min-04min
+304.97 sec
 
 2 Play archive block of 5 minutes (Android MW)
-No records. Block: 13:00h. 05min-09min
+305.991973 sec
 
 3 Play archive block of 5 minutes (Android MW)
-No records. Block: 13:00h. 10min-14min
-
-4 Play archive block of 5 minutes (Android MW)
-36.98 sec
-
-5 Play archive block of 5 minutes (Android MW)
-79.922993 sec
-
-6 Play archive block of 5 minutes (Android MW)
-37.97 sec
-
-7 Play archive block of 5 minutes (Android MW)
-41.98 sec
-
-8 Play archive block of 5 minutes (Android MW)
-65.943991 sec
-
-9 Play archive block of 5 minutes (Android MW)
-132.956961 sec
-
-10 Play archive block of 5 minutes (Android MW)
-Error load archive video. Block: 13:00h. 45min-49min
-
-11 Play archive block of 5 minutes (Android MW)
-Error load archive video. Block: 13:00h. 50min-54min
+304.97 sec
