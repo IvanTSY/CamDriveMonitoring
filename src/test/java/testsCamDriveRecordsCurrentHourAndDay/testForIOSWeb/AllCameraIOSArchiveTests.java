@@ -1059,7 +1059,4 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         testFile.close();
 //*Закрытие потока для фантика
     }
-
-
-
 }

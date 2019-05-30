@@ -186,7 +186,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
         System.out.println("Camera: CD100_E772_MS4 \n");
         testFile.write("Camera: CD100_E772_MS4 \n");
@@ -546,7 +546,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV",false);
+        FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
         System.out.println("Camera: CD320_AA06_MS3 \n");
         testFile.write("Camera: CD320_AA06_MS3 \n");
