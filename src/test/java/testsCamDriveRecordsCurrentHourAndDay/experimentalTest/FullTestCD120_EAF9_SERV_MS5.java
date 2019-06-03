@@ -35,6 +35,7 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
         CamDrivePageObject.choiseCD120MS5();
         CamDrivePageObject.choiseTheCurrentDay();
 
+
         //*******************************
         for (int h = 0; h <= currentHour; h ++){
             paramHour ++;
