@@ -27,7 +27,7 @@ public class AllCameraAndroidArchiveTestsPreviuslyDay extends CoreTestCase {
 
 
     @Test
-    public void testCD100_E75A_MS3() throws IOException {
+    public void testCD100_E75A_MS3() throws IOException, InterruptedException {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 

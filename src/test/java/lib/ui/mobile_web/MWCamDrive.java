@@ -20,6 +20,8 @@ public class MWCamDrive extends CamDrivePageObject {
 //========================================================Dynamic_xpath_elements_"ext_gen"AND"ext_comp"
         CD120_EAF9_SERV_MS5 = "xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD120(EAF9)_serv_MS5')]";
 //========================================================
+        CD100_E770_TEST ="xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD100 E7:70')]";
+//========================================================
         CD100_E75A_MS3_DEV = "xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD100(E75A)_ms3_dev')]";
 //========================================================
         CD630_910D_MS6_DEV = "xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD630(910D)_ms6_dev')]";

@@ -17,6 +17,7 @@ public class Platform {
     private static final String PLATFORM_ANDROID = "android";
     private static final String PLATFORM_MOBILE_WEB_ANDROID = "mobile_web_android";
     private static final String PLATFORM_MOBILE_WEB_IOS = "mobile_web_ios";
+    private static final String PLATFORM_TEST = "mobile_web_test";
 
     private static final String APPIUM_URL = "http://0.0.0.0:4723/wd/hub";
 
@@ -43,6 +44,8 @@ public class Platform {
             return new ChromeDriver(this.getMWChromeOptionsForAndroid());
         } else if(this.isMWIos()){
             return new ChromeDriver(this.getMWChromeOptionsForIOS());
+        }else if(this.isMWTest()) {
+            return new ChromeDriver(this.getMWChromeOptionsForAndroid());
         }else{
             throw new Exception("Cannot detect type of the Driver. Platform value:" + this.getPlatformVar());
         }
@@ -66,6 +69,9 @@ public class Platform {
     public boolean isMWIos()  // определяет является ли платформа WEB_Android
     {
         return isPlatform(PLATFORM_MOBILE_WEB_IOS);
+    }
+    public boolean isMWTest(){
+        return isPlatform(PLATFORM_TEST);
     }
 
 

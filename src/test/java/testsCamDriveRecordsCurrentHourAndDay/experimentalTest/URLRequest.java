@@ -1,5 +1,8 @@
 package testsCamDriveRecordsCurrentHourAndDay.experimentalTest;
 
+
+import com.google.gson.*;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.*;
@@ -40,7 +43,7 @@ public class URLRequest {
 //        System.out.println("ВОТ - "+containsTable);
 //    }
     public static void main(String args[]) throws Exception {
-        URL url = new URL("https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id=2d9636b2bb3a06b4336adf481a30acb3");
+        URL url = new URL("https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id=30f5db925100159c471379f9e154cac3");
         URLConnection conn = url.openConnection();
 
         conn.setRequestProperty("Cookie",
@@ -52,18 +55,36 @@ public class URLRequest {
         BufferedReader inLogin = new BufferedReader(
                 new InputStreamReader(
                         conn.getInputStream()));
-        String inputLineLogin;
+        String inputLineLogin = inLogin.readLine();
         //==============================================
-        while ((inputLineLogin = inLogin.readLine()) != null)
-            System.out.println("Вот "+inputLineLogin);
+        // while ((inputLineLogin = inLogin.readLine()) != null)
+        //     System.out.println("Вот "+inputLineLogin);
         inLogin.close();
 
+        JsonParser jsonParser = new JsonParser();
+        JsonElement parse = jsonParser.parse(inputLineLogin);
+        JsonObject asJsonObject = parse.getAsJsonObject();
+        JsonArray data = asJsonObject.getAsJsonArray("data");
+
+        System.err.println(inputLineLogin);
+        System.err.println(data.size());
+        for (int i = 0; i < data.size(); i++) {
+            JsonElement jsonElement = data.get(i);
+            JsonArray asJsonArray = jsonElement.getAsJsonArray();
+            for (int n = 0; n < asJsonArray.size(); n++) {
+                JsonElement jsonElement1 = asJsonArray.get(n);
+                JsonObject asJsonObject1 = jsonElement1.getAsJsonObject();
+                JsonPrimitive asJsonPrimitive = asJsonObject1.getAsJsonPrimitive("value");
+                System.err.println(i + " : " + n);
+                System.err.println("value " + asJsonPrimitive.getAsInt());
+            }
+            System.err.println(jsonElement.isJsonArray());
+            System.err.println(jsonElement.isJsonObject());
+        }
 
     }
 
     public static void postRequest ()throws Exception{
-
-        main();
 
     }
 

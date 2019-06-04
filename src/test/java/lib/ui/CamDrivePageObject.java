@@ -12,6 +12,7 @@ public class CamDrivePageObject extends MainPageObject{
             ENTER_BUTTON,
             CD120_EAF9_SERV_MS5,
             CD100_E75A_MS3_DEV,
+            CD100_E770_TEST,
             CD630_910D_MS6_DEV,
             CD320_AA06_MS3_DEV,
             CD100_E778_MS5,
@@ -33,6 +34,12 @@ public class CamDrivePageObject extends MainPageObject{
 
     public CamDrivePageObject(RemoteWebDriver driver) {super(driver);}
 
+    public void authorizationOnCamdriveTest(){
+        waitForElementAndSendKeys(LOGIN,"tester11","Not find the login field",15);
+        waitForElementAndSendKeys(PASSWORD,"tester11","Not find the password field", 15);
+        waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
+    }
+
     public void authorizationOnCamdrive(){
         waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
@@ -49,11 +56,19 @@ public class CamDrivePageObject extends MainPageObject{
     //play-loader
     public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 10 seconds",15);}
 
-    public void loadArchiveVideoAndroid(){
+    public void loadArchiveVideoAndroid() throws InterruptedException {
+        //TODO: Найти способ поймать окно загрузки и убрать тред
+        Thread.sleep(2000);
         waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
         waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
     }
-
+    //**************************************************************
+    public void loadArchiveVideoAndroidOnTest() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
+        waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
+    }
+    //**************************************************************
     public void loadArchiveVideoIOS() {
         waitForElementPresent("id:pl_va","Not found play button after 10 seconds wait",10);
         tryClickElementWithFewAttempts("id:pl_va","Video is not load after 10 seconds wait",30);
@@ -142,6 +157,9 @@ public class CamDrivePageObject extends MainPageObject{
     //************************************************************
     public void choiseCD100_E75A_MS3_DEV(){
         waitForElementAndClick(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
+    }
+    public void choiseCD100_E770_test(){
+        waitForElementAndClick(CD100_E770_TEST,"Not find camera CD100_E75A_MS3_DEV",15);
     }
     public void clickBackOnMinuteScreenCD100_E75A(){
         waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
