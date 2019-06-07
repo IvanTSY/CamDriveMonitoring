@@ -37,7 +37,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
 
@@ -160,7 +160,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"95100e92696c2163bef3185cd29deff2");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E772_MS4();
 
@@ -282,7 +282,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"aef64c10d39975425e711014dcb8a061");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E778_MS5();
 
@@ -404,7 +404,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
 
@@ -526,7 +526,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
 
@@ -648,7 +648,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA78_MS5();
 
@@ -770,7 +770,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.checkScheldue(currentHour,"");
+        CamDrivePageObject.checkScheldue(currentHour,"23d6fb09e101dc587b8b16db3cf7b5dd");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
 
@@ -888,7 +888,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD630_910D_MS6() throws Exception {
 
-        int scheldue = URLRequest.getScheduleCamera(currentHour,"");
+        int scheldue = URLRequest.getScheduleCamera(currentHour,"81037196ecb69d5306abcb8f61fba33c");
 
         FileWriter cleanFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
@@ -1011,7 +1011,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testN1001_3A00_bwd() throws Exception {
 
-        int scheldue = URLRequest.getScheduleCamera(currentHour,"");
+        int scheldue = URLRequest.getScheduleCamera(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
 
         FileWriter cleanFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
         cleanFile.close();
