@@ -27,12 +27,11 @@ public class AllCameraAndroidArchiveTestsPreviuslyDay extends CoreTestCase {
 
 
     @Test
-    public void testCD100_E75A_MS3() throws IOException, InterruptedException {
+    public void testCD100_E75A_MS3() throws Exception {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
-
 
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");

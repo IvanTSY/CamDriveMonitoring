@@ -84,7 +84,7 @@ public class Platform {
         capabilities.setCapability("platformVersion","6.0");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
-        capabilities.setCapability("appActivity",".main.MainActivity");
+        capabilities.setCapability("appActivity",".getScheduleCamera.MainActivity");
         capabilities.setCapability("app","C:\\Users\\FBI\\Desktop\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");
         return capabilities;
     }

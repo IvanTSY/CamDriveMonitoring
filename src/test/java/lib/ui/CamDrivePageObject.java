@@ -1,5 +1,6 @@
 package lib.ui;
 
+import lib.apiCamDrive.URLRequest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -332,4 +333,13 @@ public void choiseDay(
                 .replace("{Month}", Month);
     }
 //======================================================================================================================
+
+    //TODO Остановка теста при пустом расписании
+    public void checkScheldue(int currentHour, String channelID) throws Exception {
+        int scheldue = URLRequest.getScheduleCamera(currentHour,channelID);
+        if(scheldue > 3){
+            System.exit(0);
+            driver.quit();
+        }
+    }
 }

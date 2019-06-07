@@ -2,6 +2,7 @@ package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 
 import lib.CoreTestCase;
 import lib.Platform;
+import lib.apiCamDrive.URLRequest;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
@@ -30,14 +31,17 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
 
     @Test
-    public void testCD100_E75A_MS3() throws IOException, InterruptedException {
+    public void testCD100_E75A_MS3() throws Exception {
 //Чистим файл перед запуском теста
         FileWriter cleanFile = new FileWriter("TestRecordCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
+
+
 
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
@@ -149,11 +153,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD100_E772_MS4() throws IOException, InterruptedException {
+    public void testCD100_E772_MS4() throws Exception {
+
+
         FileWriter cleanFile = new FileWriter("TestRecordCD100_E772_MS4.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E772_MS4();
 
@@ -269,11 +276,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD100_E778_MS5() throws IOException, InterruptedException {
+    public void testCD100_E778_MS5() throws Exception {
+
         FileWriter cleanFile = new FileWriter("TestRecordCD100_E778_MS5.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E778_MS5();
 
@@ -389,11 +398,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD310_2E51_MS4() throws IOException, InterruptedException {
+    public void testCD310_2E51_MS4() throws Exception {
+
         FileWriter cleanFile = new FileWriter("TestRecordCD310_2E51_MS4.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
 
@@ -509,11 +520,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD320_AA06_MS3() throws IOException, InterruptedException {
+    public void testCD320_AA06_MS3() throws Exception {
+
         FileWriter cleanFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
 
@@ -629,11 +642,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD320_AA78_MS5() throws IOException, InterruptedException {
+    public void testCD320_AA78_MS5() throws Exception {
+
         FileWriter cleanFile = new FileWriter("TestRecordCD320_AA78_MS5.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA78_MS5();
 
@@ -749,11 +764,13 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD600_EF78_MS6() throws IOException, InterruptedException {
+    public void testCD600_EF78_MS6() throws Exception {
+
         FileWriter cleanFile = new FileWriter("TestRecordCD600_EF78_MS6_SERV.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
 
@@ -869,7 +886,10 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD630_910D_MS6() throws IOException, InterruptedException {
+    public void testCD630_910D_MS6() throws Exception {
+
+        int scheldue = URLRequest.getScheduleCamera(currentHour,"");
+
         FileWriter cleanFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
 
@@ -989,7 +1009,10 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testN1001_3A00_bwd() throws IOException, InterruptedException {
+    public void testN1001_3A00_bwd() throws Exception {
+
+        int scheldue = URLRequest.getScheduleCamera(currentHour,"");
+
         FileWriter cleanFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
         cleanFile.close();
 
