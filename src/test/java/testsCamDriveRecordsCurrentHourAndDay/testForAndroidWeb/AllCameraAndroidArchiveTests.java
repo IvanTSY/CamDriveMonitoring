@@ -1,17 +1,10 @@
 package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 
 import lib.CoreTestCase;
-import lib.Platform;
-import lib.apiCamDrive.URLRequest;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Calendar;
 
 public class AllCameraAndroidArchiveTests extends CoreTestCase {
@@ -56,11 +49,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             currentHour = 23;
             currentDay = currentDay -1;
 
-            if (currentDay <10){
-                currentDayCONVERTED = ""+(currentDay);
-            }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+            CamDrivePageObject.choiseDay(String.valueOf(currentDay),currentMonthCONVERTED);
         }else {
 
             if (currentDay <10){
@@ -402,7 +392,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
         FileWriter cleanFile = new FileWriter("TestRecordCD310_2E51_MS4.txt",false);
         cleanFile.close();
-
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
         CamDrivePageObject.authorizationOnCamdrive();
@@ -888,12 +877,11 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD630_910D_MS6() throws Exception {
 
-        int scheldue = URLRequest.getScheduleCamera(currentHour,"81037196ecb69d5306abcb8f61fba33c");
-
         FileWriter cleanFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"81037196ecb69d5306abcb8f61fba33c");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
 
@@ -1010,13 +998,11 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
     @Test
     public void testN1001_3A00_bwd() throws Exception {
-
-        int scheldue = URLRequest.getScheduleCamera(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
-
         FileWriter cleanFile = new FileWriter("TestRecordN1001_3A00_bwd.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseN1001_3A00_bwd();
 

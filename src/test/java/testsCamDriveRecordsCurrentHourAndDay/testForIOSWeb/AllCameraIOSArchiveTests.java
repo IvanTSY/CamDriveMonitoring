@@ -4,9 +4,7 @@ import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
-
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Calendar;
 
 public class AllCameraIOSArchiveTests extends CoreTestCase {
@@ -24,11 +22,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     int tick = 10;
 
     @Test
-    public void testCD100_E75A_MS3_IOS() throws InterruptedException, IOException {
+    public void testCD100_E75A_MS3_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
         if (currentHour <10){
@@ -138,11 +137,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD100_E772_MS4_IOS() throws InterruptedException, IOException {
+    public void testCD100_E772_MS4_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"95100e92696c2163bef3185cd29deff2");
+
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E772_MS4();
 
@@ -252,11 +253,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD100_E778_MS5_IOS() throws InterruptedException, IOException {
+    public void testCD100_E778_MS5_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"aef64c10d39975425e711014dcb8a061");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E778_MS5();
 
@@ -369,11 +371,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD310_2E51_MS4_IOS() throws InterruptedException, IOException {
+    public void testCD310_2E51_MS4_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD310_2E51_MS4_DEV();
 
@@ -483,11 +486,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD320_AA06_MS3_IOS() throws InterruptedException, IOException {
+    public void testCD320_AA06_MS3_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
 
@@ -598,11 +602,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD320_AA78_MS5_IOS() throws InterruptedException, IOException {
+    public void testCD320_AA78_MS5_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD320_AA78_MS5();
 
@@ -713,11 +718,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Закрытие потока для фантика
     }
     @Test
-    public void testCD600_EF78_MS6_IOS() throws InterruptedException, IOException {
+    public void testCD600_EF78_MS6_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"23d6fb09e101dc587b8b16db3cf7b5dd");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
 
@@ -828,12 +834,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testCD630_910D_MS6_IOS() throws InterruptedException, IOException {
+    public void testCD630_910D_MS6_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
 //========================================================
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"81037196ecb69d5306abcb8f61fba33c");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
 
@@ -945,11 +952,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     }
 
     @Test
-    public void testN1001_3A00_bwd_IOS() throws IOException, InterruptedException {
+    public void testN1001_3A00_bwd_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
+        CamDrivePageObject.checkScheldue(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
         CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseN1001_3A00_bwd();
 

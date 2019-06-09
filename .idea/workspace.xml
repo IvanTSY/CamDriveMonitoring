@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cecc024-d2a4-4b62-a467-dd57d4f61ae1" name="Default" comment="&quot;Экспериментальный класс для отправки GET\POST&quot;">
+    <list default="true" id="5cecc024-d2a4-4b62-a467-dd57d4f61ae1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/URLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E772_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E772_MS4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD100_E778_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD100_E778_MS5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD310_2E51_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD310_2E51_MS4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD320_AA06_MS3_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD320_AA06_MS3_DEV.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD320_AA78_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD320_AA78_MS5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD600_EF78_MS6_SERV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD600_EF78_MS6_SERV.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordCD630_910D_MS6_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordCD630_910D_MS6_DEV.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E75A_MS3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E75A_MS3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E772_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E772_MS4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD100_E778_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD100_E778_MS5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSCD630_910D_MS6_DEV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSCD630_910D_MS6_DEV.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestRecordN1001_3A00_bwd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestRecordN1001_3A00_bwd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,38 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#735#767#0" />
-                <element signature="e#1401#1437#0" />
-                <element signature="e#2236#2288#0" />
-                <element signature="e#4694#4742#0" />
-                <element signature="e#2521#2556#0" />
-                <element signature="e#3979#4024#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="AllCameraAndroidArchiveTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret line="1013" column="97" selection-start-line="1013" selection-start-column="97" selection-end-line="1013" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="338" column="46" lean-forward="true" selection-start-line="338" selection-start-column="46" selection-end-line="338" selection-end-column="46" />
+            <state relative-caret-position="153">
+              <caret line="57" column="69" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,50 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.java">
+      <file leaf-file-name="AllCameraIOSArchiveTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/ChannelID.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/TestClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="-2482">
+              <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,27 +75,7 @@
     <findStrings>
       <find>getAt</find>
       <find>Not fund back button on white</find>
-      <find>wait</find>
-      <find>Not set current Platform</find>
-      <find>back</find>
-      <find>clickBackOnMinuteScreenIOS()</find>
-      <find>-</find>
-      <find>59</find>
-      <find>-6</find>
-      <find>cd630</find>
-      <find>InterruptedException, IOException</find>
-      <find>n1001</find>
-      <find>aa</find>
-      <find>package com.sup.dev.android.libs.json.json_simple</find>
-      <find>package com.sup.dev.android.libs.json;</find>
-      <find>Line</find>
-      <find>Provider1</find>
-      <find>print</find>
     </findStrings>
-    <replaceStrings>
-      <replace>package lib.json.json_simple</replace>
-      <replace>package lib.json;</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,57 +83,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/CD600_EF78_ms6.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/CD630_910D_ms6.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/N1001_3A00_bwd.java" />
-        <option value="$PROJECT_DIR$/src/test/java/suites/iOSWEBSuit.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/CD100_E75A_ms3.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java" />
-        <option value="$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CD120_EAF9_SERV_MS5.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/Platform.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONArray.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONAware.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/json/Json.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/json/JsonArray.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/URLRequest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/URLRequest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/TestClass.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD630_910D_ms6.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD600_EF78_ms6.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD320_AA78_ms5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD320_AA06_ms3.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD310_2E51_ms4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD100_E778_ms5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD100_E772_ms4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD100_E75A_ms3.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD630_910D_ms6.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/N1001_3A00_bwd.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD600_EF78_ms6.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD320_AA78_ms5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD320_AA06_ms3.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD310_2E51_ms4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD100_E778_ms5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD100_E772_ms4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/CD100_E75A_ms3.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/factories/CamDrivePageObjectFactory.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/Platform.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd.java" />
+        <option value="$PROJECT_DIR$/src/test/java/suites/iOSWEBSuit.java" />
+        <option value="$PROJECT_DIR$/src/test/java/suites/IOSWEBSuit.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CD120_EAF9_SERV_MS5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/URLParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" />
       </list>
     </option>
   </component>
@@ -206,31 +144,16 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="JavaAppium" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="175" />
+    <option name="width" value="652" />
+    <option name="height" value="768" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-185" />
-    <option name="y" value="-15" />
-    <option name="width" value="1932" />
-    <option name="height" value="1045" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,11 +164,6 @@
             <path>
               <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
               <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -268,42 +186,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="apiCamDrive" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="mobile_web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="suites" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
@@ -329,31 +211,171 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="testsCamDriveRecordsCurrentHourAndDay" type="462c0819:PsiDirectoryNode" />
-              <item name="testForAndroidWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="testForIOSWeb" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559905324977" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/json-simple-1.1.1.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="testsCamDriveRecordsCurrentHourAndDay.experimentalTest" />
+      <recent name="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb" />
       <recent name="lib.ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaAppium\CamDriveMonitoring\src\test\java\testsCamDriveRecordsCurrentHourAndDay\testForIosWeb" />
       <recent name="D:\CamDriveMonitoring\src\test\java\lib\ui" />
       <recent name="D:\CamDriveMonitoring\src\test\java\lib" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSCD100_E75A_MS3.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSCD630_910D_MS6_DEV.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/Platform.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/CoreTestCase.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/Platform.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/ui/CamDrivePageObject.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/ui/mobile_web/MWCamDrive.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/apiCamDrive/ChannelID.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/TestClass.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/apiCamDrive/ChannelID.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/lib/apiCamDrive/URLRequest.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/TestClass.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CD120_EAF9_SERV_MS5.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CD120_EAF9_SERV_MS5.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -367,115 +389,139 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AllCameraAndroidArchiveTests.testN1001_3A00_bwd">
-    <configuration name="URLRequest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lib.apiCamDrive.URLRequest" />
-      <module name="JavaAppium" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lib.apiCamDrive.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
-    <configuration name="AllCameraAndroidArchiveTests.testN1001_3A00_bwd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllCameraIOSArchiveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.*" />
+          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb" />
-      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.AllCameraAndroidArchiveTests" />
-      <option name="METHOD_NAME" value="testN1001_3A00_bwd" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <envs>
-        <env name="PLATFORM" value="mobile_web_android" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CD100_E75A_ms3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb" />
-      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.CD100_E75A_ms3" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb" />
+      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.AllCameraIOSArchiveTests" />
       <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs>
-        <env name="PLATFORM" value="mobile_web_android" />
+        <env name="PLATFORM" value="mobile_web_ios" />
       </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <patterns />
     </configuration>
-    <configuration name="TestClass.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.*" />
+          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb" />
-      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.TestClass" />
-      <option name="METHOD_NAME" value="Test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb" />
+      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.AllCameraIOSArchiveTests" />
+      <option name="METHOD_NAME" value="testCD320_AA06_MS3_IOS" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs>
-        <env name="PLATFORM" value="mobile_web_android" />
+        <env name="PLATFORM" value="mobile_web_ios" />
       </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <patterns />
+    </configuration>
+    <configuration name="CD320_AA06_ms3_IOS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb" />
+      <option name="MAIN_CLASS_NAME" value="testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.CD320_AA06_ms3_IOS" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs>
+        <env name="PLATFORM" value="mobile_web_ios" />
+      </envs>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs>
-        <env name="PLATFORM" value="mobile_web_android" />
+        <env name="PLATFORM" value="mobile_web_ios" />
       </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <patterns />
     </configuration>
-    <configuration default="true" type="TestNG">
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AllCameraIOSArchiveTests" />
+      <item itemvalue="JUnit.CD320_AA06_ms3_IOS" />
+      <item itemvalue="JUnit.AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AllCameraAndroidArchiveTests.testN1001_3A00_bwd" />
-        <item itemvalue="JUnit.CD100_E75A_ms3" />
-        <item itemvalue="JUnit.TestClass.Test" />
-        <item itemvalue="Application.URLRequest" />
+        <item itemvalue="JUnit.AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS" />
+        <item itemvalue="JUnit.CD320_AA06_ms3_IOS" />
+        <item itemvalue="JUnit.AllCameraIOSArchiveTests" />
       </list>
     </recent_temporary>
   </component>
@@ -490,234 +536,117 @@
       <option name="presentableId" value="Default" />
       <updated>1556705438919</updated>
     </task>
-    <task id="LOCAL-00001" summary="Фантики+запись в файл">
-      <created>1557740575597</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1557740575597</updated>
-    </task>
-    <task id="LOCAL-00002" summary="&quot;Экспериментальный класс для отправки GET\POST&quot;">
-      <created>1559217928186</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1559217928186</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestClass_Test - 2019.06.10 at 10h 14m 57s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests - 2019.05.26 at 23h 24m 51s.xml">
+      <configuration name="AllCameraIOSArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestClass_Test - 2019.06.15 at 10h 15m 16s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests - 2019.05.27 at 00h 08m 36s.xml">
+      <configuration name="AllCameraIOSArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestClass_Test - 2019.07.12 at 10h 15m 47s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests - 2019.05.27 at 00h 09m 20s.xml">
+      <configuration name="AllCameraIOSArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestClass_Test - 2019.06.07 at 10h 20m 54s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="AllCameraAndroidArchiveTests - 2019.05.27 at 00h 16m 43s.xml">
+      <configuration name="AllCameraAndroidArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestClass_Test - 2019.06.07 at 13h 12m 56s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="AllCameraAndroidArchiveTests - 2019.06.09 at 12h 56m 01s.xml">
+      <configuration name="AllCameraAndroidArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestClass_Test - 2019.06.07 at 13h 13m 12s.xml">
-      <configuration name="TestClass.Test" configurationId="JUnit" />
+    <history-entry file="test - 2019.06.09 at 13h 16m 39s.xml">
+      <configuration name="test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CD100_E75A_ms3 - 2019.06.07 at 13h 56m 55s.xml">
-      <configuration name="CD100_E75A_ms3" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests - 2019.06.09 at 16h 02m 55s.xml">
+      <configuration name="AllCameraIOSArchiveTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CD100_E75A_ms3 - 2019.06.07 at 13h 57m 45s.xml">
-      <configuration name="CD100_E75A_ms3" configurationId="JUnit" />
+    <history-entry file="CD320_AA06_ms3_IOS - 2019.06.09 at 16h 05m 10s.xml">
+      <configuration name="CD320_AA06_ms3_IOS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CD100_E75A_ms3 - 2019.06.07 at 13h 58m 02s.xml">
-      <configuration name="CD100_E75A_ms3" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests_testCD320_AA06_MS3_IOS - 2019.06.09 at 16h 06m 40s.xml">
+      <configuration name="AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CD100_E75A_ms3 - 2019.06.07 at 13h 58m 22s.xml">
-      <configuration name="CD100_E75A_ms3" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveTests_testCD320_AA06_MS3_IOS - 2019.06.09 at 16h 07m 59s.xml">
+      <configuration name="AllCameraIOSArchiveTests.testCD320_AA06_MS3_IOS" configurationId="JUnit" />
     </history-entry>
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.12313433" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.3001066" side_tool="true" visible="true" weight="0.24593717" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.6076759" weight="0.40411702" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.45095947" weight="0.32719395" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4989339" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.6998934" weight="0.40628386" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.4946695" weight="0.39761648" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.32827735" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="8" weight="0.32995737" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32921174" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15724947" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.10355487" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.42194745" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="0" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22142857" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.2739872" side_tool="true" weight="0.31744313" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4989339" weight="0.24918744" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4749467" weight="0.32719395" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32921174" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.72601277" visible="true" weight="0.4301192" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.39802632" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49946696" weight="0.32894737" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info id="UI Designer" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39876354" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="8" />
-    </layout-to-restore>
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32921174" />
+    </layout>
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Фантики+запись в файл" />
-    <MESSAGE value="&quot;Экспериментальный класс для отправки GET\POST&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Экспериментальный класс для отправки GET\POST&quot;" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="18" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/N1001_3A00_bwd.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/suites/AndroidWEBSuit.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD100_E772_ms4.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsForAndroid/CD310_2E51_ms4.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" selection-end-column="2" />
+        <state relative-caret-position="119">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/factories/CamDrivePageObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/CD100_E75A_ms3.java" />
-    <entry file="file://$PROJECT_DIR$/TestRecordIOSCD310_2E51_MS4.txt">
+    <entry file="file://$PROJECT_DIR$/TestRecordCD630_910D_MS6_DEV.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRecordN1001_3A00_bwd.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="116">
+          <caret line="156" selection-start-line="156" selection-end-line="156" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/suites/AndroidWEBSuit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/factories/CamDrivePageObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="239">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="17" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -726,272 +655,278 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/suites/IOSWEBSuit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="208">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+        <state relative-caret-position="449">
+          <caret line="139" column="5" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="139" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state relative-caret-position="449">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="141" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state relative-caret-position="449">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="141" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+        <state relative-caret-position="449">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="140" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="449">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="140" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="142" column="5" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="142" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="186" column="5" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="186" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestRecordCD100_E75A_MS3.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" column="74" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="47" column="70" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" column="74" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.java">
+    <entry file="file://$PROJECT_DIR$/TestRecordIOSCD320_AA78_MS5.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="34" />
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.java">
+    <entry file="file://$PROJECT_DIR$/TestRecordIOSCD320_AA06_MS3_DEV.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRecordIOSCD100_E778_MS5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" column="75" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="75" />
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.java">
+    <entry file="file://$PROJECT_DIR$/TestRecordCD600_EF78_MS6_SERV.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRecordCD100_E778_MS5.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRecordCD100_E772_MS4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRecordIOSN1001_3A00_bwd.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="48" column="74" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="74" />
+        <state relative-caret-position="108">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8821">
-          <caret line="1061" column="1" selection-start-line="1061" selection-start-column="1" selection-end-line="1061" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar!/org/openqa/selenium/chrome/ChromeDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <element signature="e#1831#1832#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONAware.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONStreamAware.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONArray.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/json_simple/JSONObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/Json.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/JsonParsable.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/JsonPolimorf.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/json/JsonArray.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/JsonArray.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
-          <folding>
-            <element signature="e#2301#2302#0" expanded="true" />
-            <element signature="e#2344#2345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/JsonElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#2087#2088#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2567#2568#0" expanded="true" />
-            <element signature="e#2655#2656#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="59" column="74" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="1088">
+          <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="-96">
+          <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="146" column="5" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="146" selection-end-column="5" />
           <folding>
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2544#2545#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="91">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/ChannelID.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="2346">
+          <caret line="145" column="5" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CalendarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/CD120_EAF9_SERV_MS5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="146" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="26" column="4" selection-start-line="142" selection-start-column="57" selection-end-line="147" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.205/CookieAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <folding>
+            <element signature="e#0#5526#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        <state relative-caret-position="2346">
+          <caret line="145" column="30" lean-forward="true" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWCamDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="338" column="46" lean-forward="true" selection-start-line="338" selection-start-column="46" selection-end-line="338" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/URLParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#735#767#0" />
-            <element signature="e#1401#1437#0" />
-            <element signature="e#2236#2288#0" />
-            <element signature="e#4694#4742#0" />
-            <element signature="e#2521#2556#0" />
-            <element signature="e#3979#4024#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/TestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="244">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1000,85 +935,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="1013" column="97" selection-start-line="1013" selection-start-column="97" selection-end-line="1013" selection-end-column="97" />
+        <state relative-caret-position="153">
+          <caret line="57" column="69" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>JavaAppium</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>json-simple-1.1.1</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2482">
+          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

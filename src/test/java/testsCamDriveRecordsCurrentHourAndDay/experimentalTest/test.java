@@ -24,13 +24,15 @@ public class test extends CoreTestCase {
 
 
     @Test
-    public void testCD100_E770_test() throws InterruptedException, IOException {
+    public void testCD100_E770_test() throws Exception {
 
         FileWriter cleanFile = new FileWriter("TestRecordCD100_E770.txt",false);
         cleanFile.close();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
-        CamDrivePageObject.authorizationOnCamdriveTest();
+        CamDrivePageObject.checkScheldue(currentHour,"e6ec711a6dc3b40f99b0be1bdbcc3eab");
+
+        CamDrivePageObject.authorizationOnCamdriveTest();//CamDrivePageObject.authorizationOnCamdrive();
         CamDrivePageObject.choiseCD100_E770_test();
 
         if (currentHour <10){
