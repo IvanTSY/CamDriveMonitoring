@@ -46,7 +46,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
 
@@ -164,7 +164,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -286,7 +286,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -407,7 +407,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -529,7 +529,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -651,7 +651,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -773,7 +773,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -895,7 +895,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -1016,7 +1016,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         //==========================================================
 //обработка ситуации с полуночью
         if(currentHour <0){
-            currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){

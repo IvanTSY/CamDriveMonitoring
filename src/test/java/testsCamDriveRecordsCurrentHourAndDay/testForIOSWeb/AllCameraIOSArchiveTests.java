@@ -41,6 +41,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -158,6 +159,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -273,6 +275,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -391,6 +394,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -506,6 +510,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -622,6 +627,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -738,6 +744,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -855,6 +862,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
@@ -972,6 +980,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //обработка ситуации с полуночью
         if(currentHour <0){
             currentHour = 23;
+            currentHourCONVERTED = "23";
             currentDay = currentDay -1;
 
             if (currentDay <10){
