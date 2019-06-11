@@ -1,21 +1,21 @@
-Data: 2019/5/30
-Start test in 12 hour and 59 minutes 
+Data: 2019/6/11
+Start test in 17 hour and 59 minutes 
 Camera: CD100_E75A_MS3 
 Imitation web iPhone
- Block:1 Play archive block of 12:00h. 00min-09min
-608.176961 sec
+ Block:1 Play archive block of 17:00h. 00min-09min
+610.64 sec
 
- Block:2 Play archive block of 12:00h. 10min-19min
+ Block:2 Play archive block of 17:00h. 10min-19min
+609.32 sec
+
+ Block:3 Play archive block of 17:00h. 20min-29min
+606.4 sec
+
+ Block:4 Play archive block of 17:00h. 30min-39min
+608.547982 sec
+
+ Block:5 Play archive block of 17:00h. 40min-49min
+608.686984 sec
+
+ Block:6 Play archive block of 17:00h. 50min-59min
 608.036961 sec
-
- Block:3 Play archive block of 12:00h. 20min-29min
-607.293968 sec
-
- Block:4 Play archive block of 12:00h. 30min-39min
-609.2 sec
-
- Block:5 Play archive block of 12:00h. 40min-49min
-610.88 sec
-
- Block:6 Play archive block of 12:00h. 50min-59min
-614.4 sec

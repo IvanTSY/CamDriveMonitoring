@@ -167,7 +167,7 @@ public class CamDrivePageObject extends MainPageObject{
         tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_IOS,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",50);
     }
     public void clickBackOnHourScreenCD100_E75A(){
-        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",10);
+        tryClickElementWithFewAttempts(BACK_BTN_ON_HOUR_SCREEN,"Not find back button on hour screen for CD120_EAF9_SERV_MS5",20);
     }
     //************************************************************
     public void choiseCD630_910D_MS6_DEV(){
@@ -338,8 +338,20 @@ public void choiseDay(
     public void checkScheldue(int currentHour, String channelID) throws Exception {
         int scheldue = URLRequest.getScheduleCamera(currentHour,channelID);
         if(scheldue > 3){
-            System.exit(0);
             driver.quit();
+            System.exit(0);
         }
     }
+
+    public void exitTest(){
+        driver.quit();
+        System.exit(0);
+    }
+
+    public int returnCurrentScheldueStatus(int currentHour, String channelID) throws Exception {
+        int scheldue = URLRequest.getScheduleCamera(currentHour,channelID);
+        return scheldue;
+    }
+
+
 }

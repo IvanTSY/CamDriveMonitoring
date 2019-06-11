@@ -1,21 +1,21 @@
-Data: 2019/6/4
-Start test in 8 hour and 59 minutes 
+Data: 2019/6/9
+Start test in -1 hour and 59 minutes 
 Camera: CD630_910D_MS6 
 Imitation web iPhone
- Block:1 Play archive block of 08:00h. 00min-09min
-604.976 sec
+ Block:1 Play archive block of 23:00h. 00min-09min
+No records. Block: 23:00h. 00min-09min
 
- Block:2 Play archive block of 08:00h. 10min-19min
-606.887 sec
+ Block:2 Play archive block of 23:00h. 10min-19min
+No records. Block: 23:00h. 10min-19min
 
- Block:3 Play archive block of 08:00h. 20min-29min
-605.987 sec
+ Block:3 Play archive block of 23:00h. 20min-29min
+No records. Block: 23:00h. 20min-29min
 
- Block:4 Play archive block of 08:00h. 30min-39min
-605.874 sec
+ Block:4 Play archive block of 23:00h. 30min-39min
+No records. Block: 23:00h. 30min-39min
 
- Block:5 Play archive block of 08:00h. 40min-49min
-604.95 sec
+ Block:5 Play archive block of 23:00h. 40min-49min
+No records. Block: 23:00h. 40min-49min
 
- Block:6 Play archive block of 08:00h. 50min-59min
-606.85 sec
+ Block:6 Play archive block of 23:00h. 50min-59min
+No records. Block: 23:00h. 50min-59min

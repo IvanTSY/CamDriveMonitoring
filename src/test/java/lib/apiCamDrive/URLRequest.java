@@ -13,6 +13,7 @@ public class URLRequest {
     public static int getScheduleCamera(int hour, String cameraChannelID) throws Exception {
         URL url = new URL("https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id="+cameraChannelID);
         URLConnection conn = url.openConnection();
+        conn.setConnectTimeout(5000);
 //TODO: Авторизация + парсинг куки + парсинг Json + запрос расписания камеры
 //Вызов метода авторизации в ЛК
         List<HttpCookie> cookies = getRequestAuthorization();
@@ -93,6 +94,7 @@ public class URLRequest {
         CookieHandler.setDefault(manager);
         URL url = new URL(urlString);
         URLConnection connection = url.openConnection();
+        connection.setConnectTimeout(5000);
         Object obj = connection.getContent();
         url = new URL(urlString);
         connection = url.openConnection();

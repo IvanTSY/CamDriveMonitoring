@@ -4,6 +4,8 @@ import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.util.Calendar;
 
@@ -20,7 +22,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
     int currentMinute = 59;
     int tick = 10;
-
+    //int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
@@ -74,6 +76,18 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
+//--------------------------------------------------------------------------------------------------------------------
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
+
+        int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aee40e829262b7930f529c4fee6d326a");
+//-----------------------------------------------------------------------------------------------------------
+        //Открытие потока на запись Error файла
+        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD100_E75A_MS3.txt",true);
+        errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E75A_MS3 \n"+"Imitation web Android\n");
+//-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
@@ -99,6 +113,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 CamDrivePageObject.scrollIntoView();
             }
 //            CamDrivePageObject.checkLoadVideoPlayerForIosMW();
+
+//-----------------------------------------------------------------------------------------------------------
             try{
                 CamDrivePageObject.clickMinute(
                         currentDayCONVERTED,
@@ -108,32 +124,49 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                         currentLastMinuteCONVERTED);
             }catch (RuntimeException e){
 //Фантик
-                System.out.println("No records. Block "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-                testFile.write("No records. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+                if((schedule == 1)||(schedule == 3)) {
+                    System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    testFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                }else{
+                    errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+
+                }
 //*Фантик
                 continue;
             }
-
+//-----------------------------------------------------------------------------------------------------------------------
             CamDrivePageObject.loadArchiveVideoIOS(); //добавить трайклик
 
             try {
                 CamDrivePageObject.checkLoadVideoPlayerForIosMW();
             }catch (RuntimeException e){
 //Фантик
-                System.out.println("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
-                testFile.write("Error load archive video. Block: "+currentHourCONVERTED+":00h. "+currentFirstMinuteCONVERTED+"min-"+currentLastMinuteCONVERTED+"min\n" );
+                if((schedule == 1)||(schedule == 3)) {
+                    System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    testFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                }else{
+                    System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
                 continue;
             }
+//-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
-            Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+            Double attribute = (Double) CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
+            if(attribute<590.00){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            }
+//-----------------------------------------------------------------------------------------------------------------------
             System.out.println(attribute+" sec");
             testFile.write(attribute+" sec\n");
             CamDrivePageObject.clickBackOnMinuteScreenIOS();
         }
 //Закрытие потока для фантика
         testFile.close();
+        errorFile.close();
 //*Закрытие потока для фантика
     }
 
