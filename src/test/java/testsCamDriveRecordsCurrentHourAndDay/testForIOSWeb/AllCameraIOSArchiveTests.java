@@ -171,7 +171,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 time = Integer.parseInt(result.substring(0,indexEndResult));
             }
             if((schedule == 0) & (time<590)){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/600 seconds\n");
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());

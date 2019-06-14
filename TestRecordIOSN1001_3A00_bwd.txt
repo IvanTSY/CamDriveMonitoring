@@ -1,21 +1,21 @@
 Data: 2019/6/14
-Start test in 14 hour and 59 minutes 
+Start test in 16 hour and 59 minutes 
 Camera: N1001_3A00_bwd 
 Imitation web iPhone
- Block:1 Play archive block of 14:00h. 00min-09min
-605.471 sec
+ Block:1 Play archive block of 16:00h. 00min-09min
+601.969 sec
 
- Block:2 Play archive block of 14:00h. 10min-19min
-598.568 sec
+ Block:2 Play archive block of 16:00h. 10min-19min
+605.546 sec
 
- Block:3 Play archive block of 14:00h. 20min-29min
-608.34 sec
+ Block:3 Play archive block of 16:00h. 20min-29min
+601.254 sec
 
- Block:4 Play archive block of 14:00h. 30min-39min
-606.147 sec
+ Block:4 Play archive block of 16:00h. 30min-39min
+549.058957 sec
 
- Block:5 Play archive block of 14:00h. 40min-49min
-595.126984 sec
+ Block:5 Play archive block of 16:00h. 40min-49min
+382.067 sec
 
- Block:6 Play archive block of 14:00h. 50min-59min
-599.493 sec
+ Block:6 Play archive block of 16:00h. 50min-59min
+604.421 sec
