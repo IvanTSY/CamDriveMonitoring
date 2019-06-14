@@ -28,7 +28,7 @@ public class CD100_E75A_ms3_IOS extends CoreTestCase {
     public void testCD100_E75A_MS3_IOS() throws InterruptedException, IOException {
 
         currentYear = Calendar.getInstance().getWeekYear();
-        currentHour = Calendar.getInstance().getTime().getHours();
+        currentHour = Calendar.getInstance().getTime().getHours() -1;
         currentDay = Calendar.getInstance().getTime().getDate();
         currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
         currentMinute = Calendar.getInstance().getTime().getMinutes();
@@ -83,7 +83,7 @@ public class CD100_E75A_ms3_IOS extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        for (int m = 0; m < (currentMinute -6)/tick; m ++){
+        for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
             currentLastMinute = currentLastMinute + tick;
@@ -137,7 +137,26 @@ public class CD100_E75A_ms3_IOS extends CoreTestCase {
             }
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            System.out.println(attribute+" sec");
+            attribute.getClass();
+
+            int time = 0;
+
+            String result = attribute.toString();
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println("RESULT!   "+result);
+            System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
             CamDrivePageObject.clickBackOnMinuteScreenIOS();
         }

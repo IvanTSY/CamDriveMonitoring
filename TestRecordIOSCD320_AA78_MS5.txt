@@ -1,21 +1,21 @@
-Data: 2019/5/30
-Start test in 12 hour and 59 minutes 
+Data: 2019/6/14
+Start test in 14 hour and 59 minutes 
 Camera: CD320_AA78_MS5 
 Imitation web iPhone
- Block:1 Play archive block of 12:00h. 00min-09min
+ Block:1 Play archive block of 14:00h. 00min-09min
 605.946984 sec
 
- Block:2 Play archive block of 12:00h. 10min-19min
+ Block:2 Play archive block of 14:00h. 10min-19min
 603.950975 sec
 
- Block:3 Play archive block of 12:00h. 20min-29min
-603.950975 sec
+ Block:3 Play archive block of 14:00h. 20min-29min
+601.906984 sec
 
- Block:4 Play archive block of 12:00h. 30min-39min
-599.909977 sec
-
- Block:5 Play archive block of 12:00h. 40min-49min
-605.946984 sec
-
- Block:6 Play archive block of 12:00h. 50min-59min
+ Block:4 Play archive block of 14:00h. 30min-39min
 604.971973 sec
+
+ Block:5 Play archive block of 14:00h. 40min-49min
+606.96898 sec
+
+ Block:6 Play archive block of 14:00h. 50min-59min
+605.946984 sec

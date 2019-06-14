@@ -1,0 +1,21 @@
+Data: 2019/6/14
+Start test in 14 hour and 59 minutes 
+Camera: CD310_2E51_MS4 
+Imitation web iPhone
+ Block:1 Play archive block of 14:00h. 00min-09min
+564.986984 sec
+
+ Block:2 Play archive block of 14:00h. 10min-19min
+606.96898 sec
+
+ Block:3 Play archive block of 14:00h. 20min-29min
+605.03 sec
+
+ Block:4 Play archive block of 14:00h. 30min-39min
+606.96898 sec
+
+ Block:5 Play archive block of 14:00h. 40min-49min
+606.96898 sec
+
+ Block:6 Play archive block of 14:00h. 50min-59min
+605.99 sec

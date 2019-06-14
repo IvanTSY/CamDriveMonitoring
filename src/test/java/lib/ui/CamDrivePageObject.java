@@ -91,7 +91,7 @@ public class CamDrivePageObject extends MainPageObject{
     public Object getTimeDurationVideoForIOSArchive() throws InterruptedException {
         JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
         Object js_result = null ;
-        for(int i = 0; i <10; i++ ){
+        for(int i = 0; i <15; i++ ){
             if(js_result == null){
                 Thread.sleep(1000);
                 js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
