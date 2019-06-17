@@ -21,8 +21,11 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
     int currentMinute = 59;
     int tick = 10;
+
+
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
@@ -128,7 +131,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -146,6 +149,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -172,6 +176,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if((schedule == 0) & (time<590)){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -183,11 +188,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD100_E772_MS4_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
         cleanFile.close();
 
@@ -294,7 +302,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -312,6 +320,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -338,6 +347,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -349,11 +359,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD100_E778_MS5_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
         cleanFile.close();
 
@@ -462,7 +475,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -480,6 +493,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -506,6 +520,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -517,11 +532,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD310_2E51_MS4_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
         cleanFile.close();
 
@@ -627,7 +644,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -645,6 +662,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -671,6 +689,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -682,11 +701,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD320_AA06_MS3_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         cleanFile.close();
 
@@ -792,7 +814,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -810,6 +832,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -836,6 +859,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -847,11 +871,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD320_AA78_MS5_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         cleanFile.close();
 
@@ -959,7 +986,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -977,6 +1004,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -1003,6 +1031,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -1014,10 +1043,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
     @Test
     public void testCD600_EF78_MS6_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
         cleanFile.close();
 
@@ -1124,7 +1156,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1142,6 +1174,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -1168,6 +1201,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -1179,11 +1213,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD630_910D_MS6_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
 //========================================================
@@ -1292,7 +1329,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1310,6 +1347,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -1336,6 +1374,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -1347,11 +1386,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testN1001_3A00_bwd_IOS() throws Exception {
+        int statisticOfError = 0;
         FileWriter cleanFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
         cleanFile.close();
 
@@ -1458,7 +1500,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1476,6 +1518,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -1502,6 +1545,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if(((schedule == 0) & (time<590))){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+                statisticOfError++;
             }
 
             System.out.println(attribute+" sec "+attribute.getClass());
@@ -1513,6 +1557,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
 //*Закрытие потока для фантика
     }
 }

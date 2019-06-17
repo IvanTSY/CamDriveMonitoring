@@ -27,6 +27,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E75A_MS3() throws Exception {
 //Чистим файл перед запуском теста
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E75A_MS3.txt");
         cleanFile.delete();
 
@@ -106,6 +107,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -148,7 +150,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -166,6 +168,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -176,6 +179,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -189,13 +193,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD100_E772_MS4() throws Exception {
-
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E772_MS4.txt");
         cleanFile.delete();
 
@@ -272,6 +277,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -314,7 +320,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -332,6 +338,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -342,6 +349,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -355,12 +363,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD100_E778_MS5() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E778_MS5.txt");
         cleanFile.delete();
 
@@ -445,6 +455,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -488,7 +499,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -506,6 +517,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -516,6 +528,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 
 
@@ -530,12 +543,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD310_2E51_MS4() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD310_2E51_MS4.txt");
         cleanFile.delete();
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
@@ -617,6 +632,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -659,7 +675,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -677,6 +693,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -687,6 +704,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //Фантик
             System.out.println(attribute+" sec");
@@ -699,12 +717,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD320_AA06_MS3() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD320_AA06_MS3_DEV.txt");
         cleanFile.delete();
 
@@ -787,6 +807,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -830,7 +851,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -848,6 +869,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -858,6 +880,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -871,12 +894,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD320_AA78_MS5() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD320_AA78_MS5.txt");
         cleanFile.delete();
 
@@ -959,6 +984,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -1002,7 +1028,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1020,6 +1046,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -1030,6 +1057,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -1043,13 +1071,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
 
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD600_EF78_MS6() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD600_EF78_MS6_SERV.txt");
         cleanFile.delete();
 
@@ -1131,6 +1160,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -1172,7 +1202,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1190,6 +1220,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -1200,6 +1231,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -1213,12 +1245,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testCD630_910D_MS6() throws Exception {
-
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordCD630_910D_MS6_DEV.txt");
         cleanFile.delete();
 
@@ -1301,6 +1335,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -1342,7 +1377,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1360,6 +1395,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -1370,6 +1406,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -1383,11 +1420,14 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 
     @Test
     public void testN1001_3A00_bwd() throws Exception {
+        int statisticOfError =0;
         File cleanFile = new File("TestRecordN1001_3A00_bwd.txt");
         cleanFile.delete();
 
@@ -1468,6 +1508,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }catch (RuntimeException e){
                 errorFile.write("Current hour "+currentHour+":00 not have records!");
                 errorFile.close();
+                statisticOfError++;
                 CamDrivePageObject.exitTest();
             }
         }
@@ -1510,7 +1551,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-
+                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -1528,6 +1569,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenAndroid();
@@ -1538,6 +1580,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
             if(attribute<290.00){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+                statisticOfError++;
             }
 //---------------------------------------------
 //Фантик
@@ -1551,6 +1594,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        if (statisticOfError == 0) errorLog.delete();
+
 //*Закрытие потока для фантика
     }
 }
