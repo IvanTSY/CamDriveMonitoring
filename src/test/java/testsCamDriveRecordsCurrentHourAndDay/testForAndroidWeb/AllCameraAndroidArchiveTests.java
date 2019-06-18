@@ -176,9 +176,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -346,9 +365,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
             //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -525,9 +563,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 
@@ -701,9 +758,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //Фантик
@@ -877,9 +953,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -1054,9 +1149,29 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -1228,9 +1343,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -1403,9 +1537,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
@@ -1577,9 +1730,28 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
             }
             CamDrivePageObject.clickOnVideoForm();
 //---------------------------------------------
-            double attribute = Double.parseDouble(CamDrivePageObject.getTime("max"));
-            if(attribute<290.00){
-                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/300 seconds\n");
+            int time = 0;
+
+            Object attribute = CamDrivePageObject.getTime("max");
+
+            String result = String.valueOf(attribute);
+
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+
+            if(((schedule == 0) & (time<290))){
+                errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then must be: "+attribute+"/290 seconds\n");
                 statisticOfError++;
             }
 //---------------------------------------------
