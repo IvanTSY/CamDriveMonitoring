@@ -161,7 +161,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -333,7 +333,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -507,7 +507,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -677,7 +677,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -848,7 +848,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -1021,7 +1021,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);//attribute.toString().valueOf();
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -1192,7 +1192,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -1366,7 +1366,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {
@@ -1538,7 +1538,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             int time = 0;
 
-            String result = attribute.toString();
+            String result = String.valueOf(attribute);
             int indexEndResult = result.lastIndexOf(".");
 
             if(indexEndResult == -1) {

@@ -284,7 +284,7 @@ public class MainPageObject {
     }
 //TODO Переделать. Написать адекватное поведение
     public void scrollIntoView() throws InterruptedException {
-        WebElement element = this.waitForElementPresent("xpath://div[contains(text(),'23:00')]","123",10);
+        WebElement element = this.waitForElementPresent("xpath://div[contains(text(),'23:00')]","123",20);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
     }
 
