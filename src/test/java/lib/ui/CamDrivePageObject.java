@@ -63,12 +63,7 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
         waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
     }
-    //**************************************************************
-    public void loadArchiveVideoAndroidOnTest() throws InterruptedException {
-        Thread.sleep(2000);
-        waitForElementPresent("id:container_pl","Not found play button after 10 seconds wait",10);
-        waitForElementAndClick("id:container_pl","Video is not load after 10 seconds wait",10);
-    }
+
     //**************************************************************
     public void loadArchiveVideoIOS() {
         waitForElementPresent("id:pl_va","Not found play button after 10 seconds wait",10);

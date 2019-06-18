@@ -158,7 +158,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -170,6 +169,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -329,7 +330,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -341,6 +341,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -502,7 +504,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -514,6 +515,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -671,7 +674,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -683,6 +685,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -841,7 +845,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -853,6 +856,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -1013,7 +1018,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -1025,6 +1029,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -1183,7 +1189,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -1195,6 +1200,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -1356,7 +1363,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -1368,6 +1374,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));
@@ -1527,7 +1535,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------------------
             //TODO : JSE в тесте
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive(); //допилить джаваскрипт
-            attribute.getClass();
 
             int time = 0;
 
@@ -1539,6 +1546,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
+                    statisticOfError++;
+                    errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));

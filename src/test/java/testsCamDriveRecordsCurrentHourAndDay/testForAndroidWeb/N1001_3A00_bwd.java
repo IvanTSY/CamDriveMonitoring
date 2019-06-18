@@ -86,9 +86,6 @@ public class N1001_3A00_bwd extends CoreTestCase {
         //==========================================================
 
 
-
-
-
         if(Platform.getInstance().isMWAndroid()){
             CamDrivePageObject.clickHour(
                     currentDayCONVERTED,
