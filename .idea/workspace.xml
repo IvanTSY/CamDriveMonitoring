@@ -2,61 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cecc024-d2a4-4b62-a467-dd57d4f61ae1" name="Default" comment="&quot;Экспериментальный класс для отправки GET\POST&quot;">
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/logging/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/apiCamDrive/ChannelID.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lib/Platform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/ui/CamDrivePageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lib/ui/CamDrivePageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/FullTestCD120_EAF9_SERV_MS5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/N1001_3A00_bwd_android_and_ios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/experimentalTest/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTestsPreviuslyDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E75A_ms3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E772_ms4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD100_E778_ms5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD310_2E51_ms4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA06_ms3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD320_AA78_ms5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD600_EF78_ms6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/CD630_910D_ms6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/N1001_3A00_bwd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E75A_ms3_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E772_ms4_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD100_E778_ms5_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD310_2E51_ms4_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA06_ms3_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD320_AA78_ms5_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD600_EF78_ms6_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/CD630_910D_ms6_IOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/N1001_3A00_bwd_IOS.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,29 +20,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="835" column="42" lean-forward="true" selection-start-line="835" selection-start-column="42" selection-end-line="835" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForAndroidWeb/AllCameraAndroidArchiveTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="1612" lean-forward="true" selection-start-line="1612" selection-end-line="1612" />
+            <state relative-caret-position="306">
+              <caret line="98" column="185" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="185" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lib/logging/Logger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="54" column="57" lean-forward="true" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5049">
+              <caret line="315" column="36" lean-forward="true" selection-start-line="315" selection-start-column="36" selection-end-line="315" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -151,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/N1001_3A00_bwd.java" />
         <option value="$PROJECT_DIR$/src/test/java/suites/iOSWEBSuit.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIosWeb/CD100_E75A_ms3.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -202,6 +171,7 @@
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/logging/Logger.java" />
       </list>
     </option>
   </component>
@@ -224,8 +194,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="194" />
-    <option name="y" value="-10" />
+    <option name="x" value="1736" />
+    <option name="y" value="-24" />
     <option name="width" value="1556" />
     <option name="height" value="940" />
   </component>
@@ -290,27 +260,7 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CamDriveMonitoring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="mobile_web" type="462c0819:PsiDirectoryNode" />
+              <item name="logging" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CamDriveMonitoring" type="b2602c69:ProjectViewProjectNode" />
@@ -363,7 +313,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561102481014" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561116531310" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/json-simple-1.1.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -516,7 +466,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -605,9 +555,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Экспериментальный класс для отправки GET\POST&quot;" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ErrorRecordN1001_3A00_bwd.txt" />
-    <entry file="file://$PROJECT_DIR$/ErrorRecordCD630_910D_MS6.txt" />
-    <entry file="file://$PROJECT_DIR$/ErrorRecordCD320_AA78_MS5.txt" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -874,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/ChannelID.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -919,17 +856,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="835" column="42" lean-forward="true" selection-start-line="835" selection-start-column="42" selection-end-line="835" selection-end-column="42" />
+        <state relative-caret-position="510">
+          <caret line="54" column="57" lean-forward="true" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/junit/framework/TestCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
-          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+          <caret line="517" column="19" selection-start-line="517" selection-start-column="19" selection-end-line="517" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveRecordsCurrentHourAndDay/testForIOSWeb/AllCameraIOSArchiveTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="98" column="185" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/logging/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

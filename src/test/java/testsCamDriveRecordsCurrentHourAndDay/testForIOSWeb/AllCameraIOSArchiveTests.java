@@ -3,12 +3,15 @@ package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
+import org.apache.commons.logging.impl.Log4JLogger;
 import org.junit.Test;
 import org.openqa.selenium.remote.ScreenshotException;
+import sun.rmi.log.ReliableLog;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Calendar;
+import java.util.logging.LogRecord;
 
 public class AllCameraIOSArchiveTests extends CoreTestCase {
     String currentFirstMinuteCONVERTED;
@@ -66,6 +69,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
             CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt");
         }
+        tearDown();
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
