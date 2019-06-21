@@ -59,12 +59,12 @@ public class test extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("TestRecordCD100_E770.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes ");
-        FileWriter testFile = new FileWriter("TestRecordCD100_E770.txt",false);
+        FileWriter testFile = new FileWriter("TestRecordCD100_E770.txt",true);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n");
         System.out.println("Camera: CD100_E770 \n");
         testFile.write("Camera: CD100_E770 \n");

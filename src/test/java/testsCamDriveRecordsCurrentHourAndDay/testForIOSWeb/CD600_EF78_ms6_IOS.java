@@ -46,7 +46,7 @@ public class CD600_EF78_ms6_IOS extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD600_EF78_MS6_SERV();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");

@@ -345,5 +345,36 @@ public class MainPageObject {
             System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
     }
+//TODO:Рассмотреть возможность скрытой обработки граничных значений
+
+//    public String nightTimeControll(int currentHour,int currentMonth,int currentDay){
+//        if (currentHour <10){
+//            currentHourCONVERTED = "0"+currentHour;
+//        }else currentHourCONVERTED = Integer.toString(currentHour);
+//        //==========================================================
+//        if (currentMonth <10){
+//            currentMonthCONVERTED = "0"+currentMonth;
+//        }else currentMonthCONVERTED = Integer.toString(currentMonth);
+//        //==========================================================
+////обработка ситуации с полуночью
+//        if(currentHour <0){
+//            currentHour = 23;
+//            currentHourCONVERTED = "23";
+//            currentDay = currentDay -1;
+//
+//            if (currentDay <10){
+//                currentDayCONVERTED = ""+(currentDay);
+//            }else currentDayCONVERTED = Integer.toString(currentDay);
+//
+//            CamDrivePageObject.choiseDay(currentDayCONVERTED,currentMonthCONVERTED);
+//        }else {
+//
+//            if (currentDay <10){
+//                currentDayCONVERTED = ""+(currentDay);
+//            }else currentDayCONVERTED = Integer.toString(currentDay);
+//
+//            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt");
+//        }
+//    }
 
 }

@@ -42,7 +42,7 @@ public class CD320_AA06_ms3 extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD320_AA06_MS3_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD320_AA06_MS3_DEV.txt",false);

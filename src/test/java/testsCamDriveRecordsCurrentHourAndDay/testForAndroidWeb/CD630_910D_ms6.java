@@ -43,7 +43,7 @@ public class CD630_910D_ms6 extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD630_910D_MS6_DEV();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordCD630_910D_MS6_DEV.txt",false);

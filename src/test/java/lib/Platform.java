@@ -31,6 +31,7 @@ public class Platform {
             instance = new Platform();
         }
         return instance;
+
     }
 
     public RemoteWebDriver getDriver() throws Exception // метод который отвечает за выбраный драйвер

@@ -47,7 +47,7 @@ public class N1001_3A00_bwd_IOS extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseN1001_3A00_bwd();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");

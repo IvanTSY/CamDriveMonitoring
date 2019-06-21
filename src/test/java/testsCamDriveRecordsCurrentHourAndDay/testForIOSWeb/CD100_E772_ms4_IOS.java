@@ -46,7 +46,7 @@ public class CD100_E772_ms4_IOS extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD100_E772_MS4();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");

@@ -5,6 +5,7 @@ import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.Calendar;
 
 public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
@@ -22,7 +23,7 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
     String currentMonthCONVERTED;
 
     @Test
-    public void testMonitoringCamDriveRecords() throws InterruptedException {
+    public void testMonitoringCamDriveRecords() throws InterruptedException, IOException {
 
         currentHour = Calendar.getInstance().getTime().getHours();
         currentDay = Calendar.getInstance().getTime().getDate();
@@ -33,7 +34,7 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD120MS5();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 
 
         //*******************************

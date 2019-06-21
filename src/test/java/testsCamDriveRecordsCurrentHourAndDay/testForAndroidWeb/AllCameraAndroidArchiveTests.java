@@ -30,6 +30,9 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E75A_MS3.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD100_E75A_MS3.txt");
+        errorLog.delete();
+
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
@@ -59,7 +62,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD100_E75A_MS3.txt");
+
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -75,8 +79,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aee40e829262b7930f529c4fee6d326a");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD100_E75A_MS3.txt");
-        errorLog.delete();
 
 
 
@@ -222,6 +224,9 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E772_MS4.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD100_E772_MS4.txt");
+        errorLog.delete();
+
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"95100e92696c2163bef3185cd29deff2");
@@ -252,7 +257,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD100_E772_MS4.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -264,8 +269,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         System.out.println("Imitation web Android");
         testFile.write("Imitation web Android");
 //*Открытие потока для фантика
-        File errorLog = new File("ErrorRecordCD100_E772_MS4.txt");
-        errorLog.delete();
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"95100e92696c2163bef3185cd29deff2");
 
@@ -411,6 +414,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD100_E778_MS5.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD100_E778_MS5.txt");
+        errorLog.delete();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"aef64c10d39975425e711014dcb8a061");
@@ -441,7 +446,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD100_E778_MS5.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -461,8 +466,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
         //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD100_E778_MS5.txt");
-        errorLog.delete();
+
 
 
 
@@ -610,6 +614,9 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD310_2E51_MS4.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD310_2E51_MS4.txt");
+        errorLog.delete();
+
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
         CamDrivePageObject.authorizationOnCamdrive();
@@ -639,7 +646,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD310_2E51_MS4.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -657,8 +664,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD310_2E51_MS4.txt");
-        errorLog.delete();
+
 
 
 
@@ -803,6 +809,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD320_AA06_MS3_DEV.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD320_AA06_MS3.txt");
+        errorLog.delete();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
@@ -833,7 +841,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD320_AA06_MS3.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -851,8 +859,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD320_AA06_MS3.txt");
-        errorLog.delete();
 
 
 
@@ -999,7 +1005,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD320_AA78_MS5.txt");
         cleanFile.delete();
-
+        File errorLog = new File("ErrorRecordCD320_AA78_MS5.txt");
+        errorLog.delete();
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
         CamDrivePageObject.authorizationOnCamdrive();
@@ -1029,7 +1036,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD320_AA78_MS5.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -1047,8 +1054,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD320_AA78_MS5.txt");
-        errorLog.delete();
+
 
 
 
@@ -1196,6 +1202,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD600_EF78_MS6_SERV.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD600_EF78_MS6.txt");
+        errorLog.delete();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"23d6fb09e101dc587b8b16db3cf7b5dd");
@@ -1226,7 +1234,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD600_EF78_MS6.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -1243,8 +1251,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD600_EF78_MS6.txt");
-        errorLog.delete();
+
 
 
 
@@ -1389,6 +1396,9 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordCD630_910D_MS6_DEV.txt");
         cleanFile.delete();
+        File errorLog = new File("ErrorRecordCD630_910D_MS6.txt");
+        errorLog.delete();
+
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"81037196ecb69d5306abcb8f61fba33c");
@@ -1419,7 +1429,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordCD630_910D_MS6.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -1437,8 +1447,6 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"81037196ecb69d5306abcb8f61fba33c");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordCD630_910D_MS6.txt");
-        errorLog.delete();
 
 
 
@@ -1583,7 +1591,8 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int statisticOfError =0;
         File cleanFile = new File("TestRecordN1001_3A00_bwd.txt");
         cleanFile.delete();
-
+        File errorLog = new File("ErrorRecordN1001_3A00_bwd.txt");
+        errorLog.delete();
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
         CamDrivePageObject.authorizationOnCamdrive();
@@ -1613,7 +1622,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordN1001_3A00_bwd.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -1629,8 +1638,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
 //------------------------------------------------------------------------------------------------------------------------
         //Отчёт с ошибками
-        File errorLog = new File("ErrorRecordN1001_3A00_bwd.txt");
-        errorLog.delete();
+
 
 
 

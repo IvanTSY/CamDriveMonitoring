@@ -53,7 +53,7 @@ public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseN1001_3A00_bwd();
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
@@ -123,7 +123,7 @@ public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO : исправить !!!
             if (currentHour <11){
                 CamDrivePageObject.scrollIntoView();
             }

@@ -4,6 +4,7 @@ import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
+import org.openqa.selenium.remote.ScreenshotException;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -29,10 +30,15 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
+        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
+        errorLog.delete();
+
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
         CamDrivePageObject.authorizationOnCamdrive();
+
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
+
         if (currentHour <10){
             currentHourCONVERTED = "0"+currentHour;
         }else currentHourCONVERTED = Integer.toString(currentHour);
@@ -58,7 +64,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -79,8 +85,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
 //--------------------------------------------------------------------------------------------------------------------
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
-        errorLog.delete();
+
         //Удаление репорта ошибок
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aee40e829262b7930f529c4fee6d326a");
@@ -109,7 +114,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -180,7 +185,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -197,6 +202,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E772_MS4_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD100_E772_MS4.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
         cleanFile.close();
 
@@ -231,7 +240,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E772_MS4.txt");
         }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
@@ -250,10 +259,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD100_E772_MS4.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"95100e92696c2163bef3185cd29deff2");
 //-----------------------------------------------------------------------------------------------------------
@@ -281,7 +287,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :   исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -352,7 +358,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -369,6 +375,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E778_MS5_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD100_E778_MS5.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
         cleanFile.close();
 
@@ -402,7 +412,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E778_MS5.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -424,10 +434,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD100_E778_MS5.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aef64c10d39975425e711014dcb8a061");
 //-----------------------------------------------------------------------------------------------------------
@@ -455,7 +462,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :   исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -526,7 +533,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -542,6 +549,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD310_2E51_MS4_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD310_2E51_MS4.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
         cleanFile.close();
 
@@ -575,7 +586,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD310_2E51_MS4.txt");
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -594,10 +605,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD310_2E51_MS4.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
 //-----------------------------------------------------------------------------------------------------------
@@ -625,7 +633,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :   исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -696,7 +704,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -713,6 +721,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA06_MS3_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD320_AA06_MS3.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         cleanFile.close();
 
@@ -746,7 +758,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD320_AA06_MS3.txt");
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
@@ -765,10 +777,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD320_AA06_MS3.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
 //-----------------------------------------------------------------------------------------------------------
@@ -796,7 +805,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :   исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -867,7 +876,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -884,6 +893,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA78_MS5_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD320_AA78_MS5.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         cleanFile.close();
 
@@ -917,7 +930,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD320_AA78_MS5.txt");
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
@@ -938,10 +951,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD320_AA78_MS5.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
 //-----------------------------------------------------------------------------------------------------------
@@ -969,7 +979,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :  исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -1040,7 +1050,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -1056,6 +1066,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD600_EF78_MS6_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD600_EF78_MS6.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
         cleanFile.close();
 
@@ -1089,7 +1103,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD600_EF78_MS6.txt");
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
@@ -1109,10 +1123,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD600_EF78_MS6.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"23d6fb09e101dc587b8b16db3cf7b5dd");
 //-----------------------------------------------------------------------------------------------------------
@@ -1140,7 +1151,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :  исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -1211,7 +1222,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -1228,6 +1239,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD630_910D_MS6_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSCD630_910D_MS6.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
         cleanFile.close();
 //========================================================
@@ -1262,8 +1277,9 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD630_910D_MS6.txt");
         }
+
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
@@ -1283,10 +1299,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD630_910D_MS6.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"81037196ecb69d5306abcb8f61fba33c");
 //-----------------------------------------------------------------------------------------------------------
@@ -1314,7 +1327,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :   исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -1385,7 +1398,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");
@@ -1402,6 +1415,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testN1001_3A00_bwd_IOS() throws Exception {
         int statisticOfError = 0;
+        //Удаление репорта ошибок
+        File errorLog = new File("ErrorRecordIOSN1001_3A00_bwd.txt");
+        errorLog.delete();
+        //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
         cleanFile.close();
 
@@ -1435,7 +1452,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay();
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSN1001_3A00_bwd.txt");
         }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
@@ -1455,10 +1472,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentLastMinute = -1;
 
         //--------------------------------------------------------------------------------------------------------------------
-        //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSN1001_3A00_bwd.txt");
-        errorLog.delete();
-        //Удаление репорта ошибок
+
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
 //-----------------------------------------------------------------------------------------------------------
@@ -1486,7 +1500,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //*Фантик
 
             //CamDrivePageObject.scrollWebPageTitleElementNotVisible("id:2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentFirstMinuteCONVERTED+"-00_2019-"+currentMonthCONVERTED+"-"+currentDayCONVERTED+"-"+currentHourCONVERTED+"-"+currentLastMinuteCONVERTED+"-59","WTF",5);
-//TODO : Очень грязный фикс , СРОЧНО исправить !!!
+//TODO :     исправить !!!
             if (currentHour >11){
                 CamDrivePageObject.scrollIntoView();
             }
@@ -1557,7 +1571,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 statisticOfError++;
             }
 
-            System.out.println(attribute+" sec "+attribute.getClass());
+            System.out.println(attribute+" sec ");
             System.out.println("RESULT!   "+result);
             System.out.println("Parse and cut. Result "+ time);
             testFile.write(attribute+" sec\n");

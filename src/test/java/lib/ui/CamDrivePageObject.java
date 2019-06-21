@@ -1,8 +1,13 @@
 package lib.ui;
 
 import lib.apiCamDrive.URLRequest;
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import testsCamDriveRecordsCurrentHourAndDay.experimentalTest.test;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class CamDrivePageObject extends MainPageObject{
@@ -46,9 +51,17 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
-    public void choiseTheCurrentDay(){
-        waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
+    public void choiseTheCurrentDay(String file) throws IOException {
+        FileWriter errorLog = new FileWriter(file,false);
+        try {
+            waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
+        }catch (Exception e){
+            errorLog.write("Current day not have the record");
+            errorLog.close();
+            test.fail("Current day not have the record");
+        }
     }
+
     //TODO: Проверка появления видео формы
     public void checkLoadVideoPlayerForAndroidMW(){  waitForElementPresent(ClOSE_BTN,"Not found close button on Archive play video after 25 seconds",25);}
     public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'play play-loader')][contains(@id,'pl_va')]","Not found video on Archive play video after 25 seconds",25);}
@@ -65,7 +78,8 @@ public class CamDrivePageObject extends MainPageObject{
     }
 
     //**************************************************************
-    public void loadArchiveVideoIOS() {
+    public void loadArchiveVideoIOS() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementPresent("id:pl_va","Not found play button after 10 seconds wait",10);
         tryClickElementWithFewAttempts("id:pl_va","Video is not load after 10 seconds wait",30);
     }
@@ -244,7 +258,7 @@ public class CamDrivePageObject extends MainPageObject{
     }
 
     public void clickBackOnMinuteScreenAndroid() throws InterruptedException {
-        Thread.sleep(2000); //TODO:: Исправить к хуям , на имплисити вэйт или что то еще ... сервак от нагрузки начинает тупить
+        Thread.sleep(2000); //TODO:: Исправить
         waitForElementPresent(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",15);
         tryClickElementWithFewAttempts(BACK_BTN_ON_MINUTE_SCREEN_ANDROID,"Not find back button on minute screen for CD120_EAF9_SERV_MS5",10);
     }

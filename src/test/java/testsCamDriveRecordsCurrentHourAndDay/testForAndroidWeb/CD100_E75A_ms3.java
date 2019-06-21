@@ -3,6 +3,7 @@ package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.FileWriter;
@@ -47,7 +48,7 @@ public class CD100_E75A_ms3 extends CoreTestCase {
 
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
         //CamDrivePageObject.choiseDay("10","05");
-        CamDrivePageObject.choiseTheCurrentDay();
+        CamDrivePageObject.choiseTheCurrentDay("");
 
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");

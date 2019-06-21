@@ -74,7 +74,7 @@ public class URLRequest {
         //TODO Синхронизация индексов массива с индексами дней недели
         int dayOfWeek = Calendar.getInstance().getTime().getDay() - 1;
         if (dayOfWeek < 0) dayOfWeek = 6;
-        //TODO Исключаем ошибку с Полуночью 00-00 для Парсера
+//TODO Исключаем ошибку с Полуночью 00-00 для Парсера
         if (hour < 0){
             hour = 23;
             dayOfWeek = dayOfWeek -1;
