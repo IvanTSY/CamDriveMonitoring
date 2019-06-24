@@ -35,7 +35,7 @@ public class CD100_E75A_ms3_IOS extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
         CamDrivePageObject.authorizationOnCamdrive();
-
+        System.out.println(statisticOfError);
         CamDrivePageObject.choiseCD100_E75A_MS3_DEV();
 
         if (currentHour <10){
@@ -63,7 +63,8 @@ public class CD100_E75A_ms3_IOS extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt");
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt",statisticOfError);
+            System.out.println(statisticOfError);
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика

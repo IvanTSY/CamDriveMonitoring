@@ -1,7 +1,6 @@
 package lib.ui;
 
 import lib.apiCamDrive.URLRequest;
-import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import testsCamDriveRecordsCurrentHourAndDay.experimentalTest.test;
@@ -51,8 +50,18 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
+    public int choiseTheCurrentDay(String file, int i) throws IOException {
+        FileWriter errorLog = new FileWriter(file,true);
+        try {
+            waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
+        }catch (Exception e){
+            errorLog.write("Current day not have the record");
+            errorLog.close();
+            test.fail("Current day not have the record");
+        }return i++;
+    }
     public void choiseTheCurrentDay(String file) throws IOException {
-        FileWriter errorLog = new FileWriter(file,false);
+        FileWriter errorLog = new FileWriter(file,true);
         try {
             waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
         }catch (Exception e){
