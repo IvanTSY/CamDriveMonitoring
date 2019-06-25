@@ -20,7 +20,8 @@ public class test extends CoreTestCase {
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
-
+    String cameraName = "";
+    String errorLogFile = "";
 
 
     @Test
@@ -59,7 +60,13 @@ public class test extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("TestRecordCD100_E770.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика

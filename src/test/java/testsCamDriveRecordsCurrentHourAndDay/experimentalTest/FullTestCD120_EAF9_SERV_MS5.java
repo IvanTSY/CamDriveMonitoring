@@ -15,12 +15,16 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
     int currentHour;
     int currentDay;
     int currentMonth;
+    int currentYear;
+
 
     String currentFirstMinuteCONVERTED;
     String currentLastMinuteCONVERTED;
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
+    String cameraName = "";
+    String errorLogFile = "";
 
     @Test
     public void testMonitoringCamDriveRecords() throws InterruptedException, IOException {
@@ -34,7 +38,13 @@ public class FullTestCD120_EAF9_SERV_MS5 extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseCD120MS5();
-        CamDrivePageObject.choiseTheCurrentDay("");
+        CamDrivePageObject.choiseTheCurrentDay(
+                errorLogFile,
+                cameraName,
+                currentYear,
+                currentMonth,
+                currentDay,
+                currentHour);
 
 
         //*******************************

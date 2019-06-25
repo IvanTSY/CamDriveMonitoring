@@ -8,7 +8,7 @@ public class MWCamDrive extends CamDrivePageObject {
         LOGIN = "xpath://input[@name='username']"; //"css:#ext-gen1129";
         PASSWORD = "xpath://input[@name='password']"; //"css:#ext-gen1134";
         ENTER_BUTTON = "xpath://span[text()='Войти']";//"css:#ext-gen1142";
-        DAY_TODAY = "id:2019/06/26";//"xpath://*[contains(@class,'day today')]"; //текущий день
+        DAY_TODAY = "xpath://*[contains(@class,'day today')]"; //текущий день
         DAY = "id:2019/{Month}/{Day}"; //любой день
 
         ClOSE_BTN = "css:#conteiner_vac > div.closeFullscreen";

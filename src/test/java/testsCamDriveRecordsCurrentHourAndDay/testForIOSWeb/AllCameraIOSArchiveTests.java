@@ -30,10 +30,12 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD100_E75A_MS3";
+        String errorLogFile = "ErrorRecordIOSCD100_E75A_MS3.txt";
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
-        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
@@ -67,17 +69,23 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 //TODO: Доделать ШАПКУ
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt"," "," ","","","");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
-        tearDown();
+
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD100_E75A_MS3 \n");
-        testFile.write("Camera: CD100_E75A_MS3 \n");
+        System.out.println(cameraName+"\n");
+        testFile.write(cameraName+"\n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -95,7 +103,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aee40e829262b7930f529c4fee6d326a");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD100_E75A_MS3.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E75A_MS3 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -206,8 +214,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E772_MS4_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD100_E772_MS4";
+        String errorLogFile = "ErrorRecordIOSCD100_E772_MS4.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD100_E772_MS4.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
@@ -244,15 +254,21 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E772_MS4.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E772_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD100_E772_MS4 \n");
-        testFile.write("Camera: CD100_E772_MS4 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -268,7 +284,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"95100e92696c2163bef3185cd29deff2");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD100_E772_MS4.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E772_MS4 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -379,8 +395,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD100_E778_MS5_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD100_E778_MS5 ";
+        String errorLogFile = "ErrorRecordIOSCD100_E778_MS5.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD100_E778_MS5.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
@@ -416,7 +434,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E778_MS5.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
@@ -424,8 +448,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD100_E778_MS5.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD100_E778_MS5 \n");
-        testFile.write("Camera: CD100_E778_MS5 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -443,7 +467,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aef64c10d39975425e711014dcb8a061");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD100_E778_MS5.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E778_MS5 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -553,8 +577,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD310_2E51_MS4_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD310_2E51_MS4";
+        String errorLogFile = "ErrorRecordIOSCD310_2E51_MS4.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD310_2E51_MS4.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
@@ -590,15 +616,21 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD310_2E51_MS4.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
 //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD310_2E51_MS4.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD310_2E51_MS4 \n");
-        testFile.write("Camera: CD310_2E51_MS4 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -614,7 +646,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"78cbbc49a31cdff1778023fc57e89f46");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD310_2E51_MS4.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD310_2E51_MS4 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -725,8 +757,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA06_MS3_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD320_AA06_MS3";
+        String errorLogFile = "ErrorRecordIOSCD320_AA06_MS3.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD320_AA06_MS3.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
@@ -762,15 +796,21 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD320_AA06_MS3.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA06_MS3_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD320_AA06_MS3 \n");
-        testFile.write("Camera: CD320_AA06_MS3 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -786,7 +826,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"2e6fb75139e4226198f9f6c0786e8b8a");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD320_AA06_MS3.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD320_AA06_MS3 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -897,8 +937,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD320_AA78_MS5_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD320_AA78_MS5";
+        String errorLogFile = "ErrorRecordIOSCD320_AA78_MS5.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD320_AA78_MS5.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
@@ -934,7 +976,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD320_AA78_MS5.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
@@ -942,8 +990,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD320_AA78_MS5.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD320_AA78_MS5 \n");
-        testFile.write("Camera: CD320_AA78_MS5 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -960,7 +1008,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"b63c65eeaa4410befcac0a2e96281f5c");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD320_AA78_MS5.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD320_AA78_MS5 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -1070,8 +1118,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD600_EF78_MS6_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD600_EF78_MS6";
+        String errorLogFile = "ErrorRecordIOSCD600_EF78_MS6.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD600_EF78_MS6.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
@@ -1107,7 +1157,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD600_EF78_MS6.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 // \обработка ситуации с полуночью
         //Открытие потока для фантика
@@ -1115,8 +1171,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD600_EF78_MS6_SERV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD600_EF78_MS6 \n");
-        testFile.write("Camera: CD600_EF78_MS6 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -1132,7 +1188,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"23d6fb09e101dc587b8b16db3cf7b5dd");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD600_EF78_MS6.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD600_EF78_MS6 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -1243,8 +1299,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testCD630_910D_MS6_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: CD630_910D_MS6";
+        String errorLogFile = "ErrorRecordIOSCD630_910D_MS6.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSCD630_910D_MS6.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
@@ -1281,7 +1339,13 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD630_910D_MS6.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 
 // \обработка ситуации с полуночью
@@ -1290,8 +1354,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSCD630_910D_MS6_DEV.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: CD630_910D_MS6 \n");
-        testFile.write("Camera: CD630_910D_MS6 \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -1308,7 +1372,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"81037196ecb69d5306abcb8f61fba33c");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSCD630_910D_MS6.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD630_910D_MS6 \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
@@ -1419,8 +1483,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     @Test
     public void testN1001_3A00_bwd_IOS() throws Exception {
         int statisticOfError = 0;
+        String cameraName = "Camera: N1001_3A00_bwd";
+        String errorLogFile = "ErrorRecordIOSN1001_3A00_bwd.txt";
         //Удаление репорта ошибок
-        File errorLog = new File("ErrorRecordIOSN1001_3A00_bwd.txt");
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
         //Удаление репорта ошибок
         FileWriter cleanFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
@@ -1456,15 +1522,21 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
 
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSN1001_3A00_bwd.txt");
+            CamDrivePageObject.choiseTheCurrentDay(
+                    errorLogFile,
+                    cameraName,
+                    currentYear,
+                    currentMonth,
+                    currentDay,
+                    currentHour);
         }
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
         FileWriter testFile = new FileWriter("TestRecordIOSN1001_3A00_bwd.txt",false);
         testFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes \n");
-        System.out.println("Camera: N1001_3A00_bwd \n");
-        testFile.write("Camera: N1001_3A00_bwd \n");
+        System.out.println(cameraName+" \n");
+        testFile.write(cameraName+" \n");
         System.out.println("Imitation web iPhone");
         testFile.write("Imitation web iPhone");
 
@@ -1481,7 +1553,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"4ac35c97e26af54c55caa2b36ceab0ca");
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
-        FileWriter errorFile = new FileWriter("ErrorRecordIOSN1001_3A00_bwd.txt",true);
+        FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: N1001_3A00_bwd \n"+"Imitation web iOS\n");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){

@@ -8,6 +8,8 @@ import testsCamDriveRecordsCurrentHourAndDay.experimentalTest.test;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.math.BigInteger;
+
 
 public class CamDrivePageObject extends MainPageObject{
 
@@ -65,8 +67,6 @@ public class CamDrivePageObject extends MainPageObject{
         try {
             waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
         }catch (Exception e){
-
-        }finally {
             FileWriter errorLog = new FileWriter(file,true);
             errorLog.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nCheck record in "+currentHour+" hour and 00 minutes \n"+cameraName+"\nCurrent day not have the record");
             errorLog.close();
@@ -114,13 +114,13 @@ public class CamDrivePageObject extends MainPageObject{
         Object js_result = null ;
         for(int i = 0; i <15; i++ ){
             if(js_result == null){
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 js_result = JSExecutor.executeScript("return document.getElementById('va').duration");
             }else{
                 break;
             }
         }
-        return js_result;
+        return   js_result;
 
 
         //JSExecutor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500)");

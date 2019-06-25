@@ -24,6 +24,8 @@ public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
+    String cameraName = "";
+    String errorLogFile = "";
 
     @Test
     public void testN1001_3A00_bwd() throws IOException, InterruptedException {
@@ -53,7 +55,13 @@ public class N1001_3A00_bwd_android_and_ios extends CoreTestCase {
         CamDrivePageObject.authorizationOnCamdrive();
 
         CamDrivePageObject.choiseN1001_3A00_bwd();
-        CamDrivePageObject.choiseTheCurrentDay("");
+        CamDrivePageObject.choiseTheCurrentDay(
+                errorLogFile,
+                cameraName,
+                currentYear,
+                currentMonth,
+                currentDay,
+                currentHour);
 //Открытие потока для фантика
 //======================================================Сделать красиво!
         System.out.println("\nData: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and "+currentMinute+" minutes ");
