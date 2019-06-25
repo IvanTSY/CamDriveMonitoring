@@ -66,8 +66,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             if (currentDay <10){
                 currentDayCONVERTED = ""+(currentDay);
             }else currentDayCONVERTED = Integer.toString(currentDay);
-
-            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt");
+//TODO: Доделать ШАПКУ
+            CamDrivePageObject.choiseTheCurrentDay("ErrorRecordIOSCD100_E75A_MS3.txt"," "," ","","","");
         }
         tearDown();
 // \обработка ситуации с полуночью
@@ -262,7 +262,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
 
-        //--------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
 
 
         int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"95100e92696c2163bef3185cd29deff2");
