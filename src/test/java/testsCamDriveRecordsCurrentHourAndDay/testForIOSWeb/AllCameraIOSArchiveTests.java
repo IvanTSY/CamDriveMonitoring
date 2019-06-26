@@ -1,17 +1,15 @@
 package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
+import com.sun.xml.internal.bind.v2.runtime.output.Encoded;
 import lib.CoreTestCase;
+import lib.logging.SuperVisor;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
-import org.apache.commons.logging.impl.Log4JLogger;
 import org.junit.Test;
-import org.openqa.selenium.remote.ScreenshotException;
-import sun.rmi.log.ReliableLog;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Calendar;
-import java.util.logging.LogRecord;
 
 public class AllCameraIOSArchiveTests extends CoreTestCase {
     String currentFirstMinuteCONVERTED;
@@ -19,6 +17,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
+    String keyWord = "Imitation web iOS";
     int currentYear = Calendar.getInstance().getWeekYear();
     int currentHour = Calendar.getInstance().getTime().getHours() - 1;
     int currentDay = Calendar.getInstance().getTime().getDate();
@@ -29,13 +28,14 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
-        int statisticOfError = 0;
+        SuperVisor operation = new SuperVisor();
         String cameraName = "Camera: CD100_E75A_MS3";
         String errorLogFile = "ErrorRecordIOSCD100_E75A_MS3.txt";
+
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
 
-        File errorLog = new File(errorLogFile);
+        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
         errorLog.delete();
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
@@ -105,6 +105,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
         //Открытие потока на запись Error файла
         FileWriter errorFile = new FileWriter(errorLogFile,true);
         errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E75A_MS3 \n"+"Imitation web iOS\n");
+        errorFile.close();
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
 
@@ -148,7 +149,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     errorFile.write("No records. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-                    statisticOfError++;
                 }
 //*Фантик
                 continue;
@@ -166,7 +166,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 }else{
                     System.out.println("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
                     errorFile.write("Error load archive video. Block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
-                    statisticOfError++;
                 }
 //*Фантик
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
@@ -186,7 +185,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
                     System.out.println("Cannot format type int current element :" + attribute);
-                    statisticOfError++;
                     errorFile.write("JS return incorrect type variable: "+ attribute);
                 }
             } else{
@@ -194,7 +192,6 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
             }
             if((schedule == 0) & (time<590)){
                 errorFile.write("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
-                statisticOfError++;
             }
 
             System.out.println(attribute+" sec ");
@@ -206,9 +203,11 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
-        if (statisticOfError == 0) errorLog.delete();
-
+        errorLog.delete();
 //*Закрытие потока для фантика
+
+       operation.checkerEmptyFile(keyWord, errorLogFile);
+
     }
 
     @Test

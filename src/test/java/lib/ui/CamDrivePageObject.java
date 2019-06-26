@@ -5,8 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import testsCamDriveRecordsCurrentHourAndDay.experimentalTest.test;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 import java.math.BigInteger;
 
@@ -63,14 +62,21 @@ public class CamDrivePageObject extends MainPageObject{
         }return i++;
     }
     public void choiseTheCurrentDay(String file,String cameraName, int currentYear, int currentMonth, int currentDay, int currentHour) throws IOException {
-
+        FileWriter errorLog = new FileWriter(file,true);
+        File clean = new File(file);
         try {
             waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
         }catch (Exception e){
-            FileWriter errorLog = new FileWriter(file,true);
             errorLog.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nCheck record in "+currentHour+" hour and 00 minutes \n"+cameraName+"\nCurrent day not have the record");
-            errorLog.close();
             test.fail("Current day not have the record");
+        }finally {
+            errorLog.close();
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            if ((br.readLine() == null)||clean.length()==0) {
+                System.out.println("No errors, and file empty");
+                clean.delete();
+            }
+
         }
     }
 
