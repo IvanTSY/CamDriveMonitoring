@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CamDriveMonitoring" />
-        <module name="JavaAppium" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CamDriveMonitoring" target="8" />
+      <module name="JavaAppium" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

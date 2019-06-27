@@ -1,6 +1,5 @@
 package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
 
-import com.sun.xml.internal.bind.v2.runtime.output.Encoded;
 import lib.CoreTestCase;
 import lib.logging.SuperVisor;
 import lib.ui.CamDrivePageObject;
@@ -11,19 +10,20 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Calendar;
 
+//@SuppressWarnings("ALL")
 public class AllCameraIOSArchiveTests extends CoreTestCase {
-    String currentFirstMinuteCONVERTED;
-    String currentLastMinuteCONVERTED;
-    String currentHourCONVERTED;
-    String currentDayCONVERTED;
-    String currentMonthCONVERTED;
-    String keyWord = "Imitation web iOS";
-    int currentYear = Calendar.getInstance().getWeekYear();
-    int currentHour = Calendar.getInstance().getTime().getHours() - 1;
-    int currentDay = Calendar.getInstance().getTime().getDate();
-    int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
-    int currentMinute = 59;
-    int tick = 10;
+    private String currentFirstMinuteCONVERTED;
+    private String currentLastMinuteCONVERTED;
+    private String currentHourCONVERTED;
+    private String currentDayCONVERTED;
+    private String currentMonthCONVERTED;
+    private String keyWord = "Imitation web iOS";
+    private int currentYear = Calendar.getInstance().getWeekYear();
+    private int currentHour = Calendar.getInstance().getTime().getHours() - 1;
+    private int currentDay = Calendar.getInstance().getTime().getDate();
+    private int currentMonth = Calendar.getInstance().getTime().getMonth() + 1;
+    private int currentMinute = 59;
+    private int tick = 10;
 
 
     @Test
@@ -34,9 +34,10 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 
         FileWriter cleanFile = new FileWriter("TestRecordIOSCD100_E75A_MS3.txt",false);
         cleanFile.close();
-
-        File errorLog = new File("ErrorRecordIOSCD100_E75A_MS3.txt");
+//+
+        File errorLog = new File(errorLogFile);
         errorLog.delete();
+
 
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.checkScheldue(currentHour,"aee40e829262b7930f529c4fee6d326a");
@@ -104,8 +105,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //-----------------------------------------------------------------------------------------------------------
         //Открытие потока на запись Error файла
         FileWriter errorFile = new FileWriter(errorLogFile,true);
-        errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E75A_MS3 \n"+"Imitation web iOS\n");
-        errorFile.close();
+        errorFile.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nStart test in "+currentHour+" hour and 00 minutes \n"+"Camera: CD100_E75A_MS3 \n"+"Imitation web iOS");
 //-----------------------------------------------------------------------------------------------------------
         for (int m = 0; m < 6; m ++){
 
@@ -203,11 +203,9 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
-        errorLog.delete();
 //*Закрытие потока для фантика
 
-       operation.checkerEmptyFile(keyWord, errorLogFile);
-
+        operation.checkerEmptyFile(keyWord, errorLogFile);
     }
 
     @Test
@@ -386,6 +384,7 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+
         if (statisticOfError == 0) errorLog.delete();
 
 //*Закрытие потока для фантика

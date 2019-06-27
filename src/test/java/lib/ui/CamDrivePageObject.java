@@ -51,16 +51,17 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
-    public int choiseTheCurrentDay(String file, int i) throws IOException {
-        FileWriter errorLog = new FileWriter(file,true);
-        try {
-            waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
-        }catch (Exception e){
-            errorLog.write("Current day not have the record");
-            errorLog.close();
-            test.fail("Current day not have the record");
-        }return i++;
-    }
+    //Перегрузка метода Скорее всего больше не понадобится
+//    public int choiseTheCurrentDay(String file, int i) throws IOException {
+//        FileWriter errorLog = new FileWriter(file,true);
+//        try {
+//            waitForElementAndClick(DAY_TODAY,"Current day not have the record",15);
+//        }catch (Exception e){
+//            errorLog.write("Current day not have the record");
+//            errorLog.close();
+//            test.fail("Current day not have the record");
+//        }return i++;
+//    }
     public void choiseTheCurrentDay(String file,String cameraName, int currentYear, int currentMonth, int currentDay, int currentHour) throws IOException {
         FileWriter errorLog = new FileWriter(file,true);
         File clean = new File(file);
@@ -69,14 +70,17 @@ public class CamDrivePageObject extends MainPageObject{
         }catch (Exception e){
             errorLog.write("Data: "+currentYear+"/"+currentMonth+"/"+currentDay+"\nCheck record in "+currentHour+" hour and 00 minutes \n"+cameraName+"\nCurrent day not have the record");
             test.fail("Current day not have the record");
+
         }finally {
-            errorLog.close();
+
             BufferedReader br = new BufferedReader(new FileReader(file));
             if ((br.readLine() == null)||clean.length()==0) {
                 System.out.println("No errors, and file empty");
                 clean.delete();
-            }
 
+            }
+            br.close();
+            errorLog.close();
         }
     }
 
