@@ -1,6 +1,7 @@
 package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
 
 import lib.CoreTestCase;
+import lib.logging.SuperVisor;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
@@ -19,10 +20,12 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
     String currentHourCONVERTED;
     String currentDayCONVERTED;
     String currentMonthCONVERTED;
+    String keyWord ="Imitation web Android";
 
 
     @Test
     public void testCD100_E75A_MS3() throws Exception {
+        SuperVisor operation = new SuperVisor();
 //Чистим файл перед запуском теста
         int statisticOfError =0;
         String cameraName = "Camera: CD100_E75A_MS3";
@@ -219,6 +222,7 @@ public class AllCameraAndroidArchiveTests extends CoreTestCase {
 //Закрытие потока для фантика
         testFile.close();
         errorFile.close();
+        operation.checkerEmptyFile(keyWord, errorLogFile);
         if (statisticOfError == 0) errorLog.delete();
 
 //*Закрытие потока для фантика
