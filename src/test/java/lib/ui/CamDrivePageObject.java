@@ -384,5 +384,9 @@ public void choiseDay(
         return scheldue;
     }
 
+    /////////////////////////////////////////////online new methods/////////////////////////////////
+    public void clickOnline(){
+        waitForElementAndClick();
+    }
 
 }

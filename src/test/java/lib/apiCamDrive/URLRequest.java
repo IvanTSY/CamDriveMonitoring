@@ -33,8 +33,6 @@ public class URLRequest {
         JsonElement parse = jsonParser.parse(inputLineLogin);
         JsonObject asJsonObject = parse.getAsJsonObject();
         JsonArray data = asJsonObject.getAsJsonArray("data");
-//        System.err.println( data);
-//        System.err.println(data.size());
         int[][] array= new int[8][24];
         for (int i = 0; i < data.size(); i++) {
             JsonElement jsonElement = data.get(i);
@@ -49,19 +47,9 @@ public class URLRequest {
                 }catch (ClassCastException ignored){
                     asJsonPrimitive = pull;
                 }
-//                System.err.println(i + " : " + n);
-//                System.err.println("value " + asJsonPrimitive.getAsInt());
                 array[i][n] = asJsonPrimitive.getAsInt();
             }
-            //System.err.println(jsonElement.isJsonArray());
-            //System.err.println(jsonElement.isJsonObject());
         }
-//        for (int [] anArr:array){
-//            for (int anAnArr:anArr){
-//                System.out.print(anAnArr + " ");
-//            }
-//        }
-//        System.out.println("\nElement = "+array[0][23]+" End");
 
         //Переменная [Hour] будет принимать значение из теста возвращать значение по которому тест будет запускаться
         //Значения при которых тест запустится -
