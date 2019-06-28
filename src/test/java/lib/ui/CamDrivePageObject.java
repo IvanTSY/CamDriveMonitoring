@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.appium.java_client.AppiumDriver;
 import lib.apiCamDrive.URLRequest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -50,6 +51,12 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
+    }
+    public void authForMobile()   {
+        waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
+        waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
+        waitForMobileElementAndClick(ENTER_BUTTON,"Not find the password field", 15);
+        ((AppiumDriver)driver).hideKeyboard();
     }
     //Перегрузка метода Скорее всего больше не понадобится
 //    public int choiseTheCurrentDay(String file, int i) throws IOException {
@@ -386,7 +393,7 @@ public void choiseDay(
 
     /////////////////////////////////////////////online new methods/////////////////////////////////
     public void clickOnline(){
-        waitForElementAndClick();
+        //waitForElementAndClick();
     }
 
 }

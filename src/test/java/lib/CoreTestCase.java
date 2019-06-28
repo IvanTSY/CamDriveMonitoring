@@ -58,6 +58,8 @@ public class CoreTestCase extends TestCase {
 
         if (Platform.getInstance().isMWAndroid()) {
             driver.get("https://www.camdrive.com/mobile/phone/");
+        }if (Platform.getInstance().isAndroid()) {
+            driver.get("https://www.camdrive.com/mobile/phone/");
         }if(Platform.getInstance().isMWIos()){
             driver.get("https://www.camdrive.com/mobile/ipad");
         }if (Platform.getInstance().isMWTest()){

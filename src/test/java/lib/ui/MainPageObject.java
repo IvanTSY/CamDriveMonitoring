@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
@@ -38,7 +39,28 @@ public class MainPageObject {
                 ExpectedConditions.presenceOfElementLocated(by)
         );
     }
+    //TODO: Новое взаимодействие - Мобильный элемент
+    public MobileElement waitForMobileElementPresent(String locator, String error_message, long timeoutInSeconds){
+        By by = this.getLocatorByString(locator);
+        WebDriverWait wait = new  WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n"); // с новой строки
+        return (MobileElement) wait.until(
+                ExpectedConditions.presenceOfElementLocated(by)
+        );
+    }
 
+    public MobileElement waitForMobileElementAndClick(String locator, String error_message, long timeoutInSeconds)
+    {
+        MobileElement element = (MobileElement) waitForElementPresent(locator, error_message, timeoutInSeconds);
+
+        Point a = element.getCenter();
+        System.out.println("Center element "+ a);
+
+        element.click();
+
+        return element;
+    }
+///////////////////////////////
     public List<WebElement> waitForAllElementsPresented(String locator, String errorMessage, long timeoutInSeconds)
     {
         By by = this.getLocatorByString(locator);

@@ -81,12 +81,19 @@ public class Platform {
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("deviceName","AVDNexus5");
-        capabilities.setCapability("platformVersion","6.0");
+        capabilities.setCapability("deviceName","LG X power");
+        capabilities.setCapability("platformVersion","6.0.1");
         capabilities.setCapability("automationName","Appium");
-        capabilities.setCapability("appPackage","org.wikipedia");
-        capabilities.setCapability("appActivity",".getScheduleCamera.MainActivity");
-        capabilities.setCapability("app","C:\\Users\\FBI\\Desktop\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");
+        capabilities.setCapability("browserName","Chrome");
+        //capabilities.setCapability("appPackage","com.android.chrome");
+        //capabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
+        //capabilities.setCapability("app","com.google.android.apps.chrome.Main");
+
+        //для апиум сервера 10
+        //capabilities.setCapability("automationName", "Appium");
+        //Капа для апиум сервера 12.1
+        //capabilities.setCapability("automationName", AppiumDriverLocalService);
+
         return capabilities;
     }
 
