@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb;
+package testsCamDriveMonitoring.testForIOSWeb;
 
 import lib.CoreTestCase;
 import lib.logging.SuperVisor;
@@ -539,8 +539,8 @@ public class AllCameraIOSArchiveTests extends CoreTestCase {
                 try {
                     time = Integer.parseInt(result);
                 } catch (Exception e) {
-                    System.out.println("Cannot format type int current element :" + attribute);
-                    errorFile.write("JS return incorrect type variable: "+ attribute);
+                    System.out.println("Cannot format type int current element :" + attribute+"\n");
+                    errorFile.write("JS return incorrect type variable: "+ attribute+"\n");
                 }
             } else{
                 time = Integer.parseInt(result.substring(0,indexEndResult));

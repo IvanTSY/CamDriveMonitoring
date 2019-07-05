@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.experimentalTest;
+package testsCamDriveMonitoring.experimentalTest;
 
 import lib.CoreTestCase;
 import lib.ui.CamDrivePageObject;
@@ -6,7 +6,6 @@ import lib.ui.factories.CamDrivePageObjectFactory;
 import org.junit.Test;
 
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Calendar;
 
 public class test extends CoreTestCase {

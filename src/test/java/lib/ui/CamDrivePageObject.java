@@ -1,14 +1,15 @@
 package lib.ui;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileDriver;
 import lib.apiCamDrive.URLRequest;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import testsCamDriveRecordsCurrentHourAndDay.experimentalTest.test;
+import testsCamDriveMonitoring.experimentalTest.test;
 
 import java.io.*;
 
-import java.math.BigInteger;
+import java.util.regex.Pattern;
 
 
 public class CamDrivePageObject extends MainPageObject{
@@ -16,7 +17,9 @@ public class CamDrivePageObject extends MainPageObject{
     protected static String
             LOGIN,
             PASSWORD,
+            BALANCE,
             ENTER_BUTTON,
+            ENTER_BUTTON_MOBILE_WEB,
             CD120_EAF9_SERV_MS5,
             CD100_E75A_MS3_DEV,
             CD100_E770_TEST,
@@ -52,11 +55,15 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
-    public void authForMobile()   {
+    public void authForMobile() throws InterruptedException {
+
+        System.out.println("Это размер окна по мобильному драйверу"+((MobileDriver)driver).manage().window().getSize());
         waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
-        waitForMobileElementAndClick(ENTER_BUTTON,"Not find the password field", 15);
-        ((AppiumDriver)driver).hideKeyboard();
+        waitForElementPresent(ENTER_BUTTON_MOBILE_WEB,"Enter button not visible",15);
+        waitForMobileElementAndClick();
+        waitForElementNotPresent(ENTER_BUTTON_MOBILE_WEB,"Enter stil present, somthing went wrong",15);
+
     }
     //Перегрузка метода Скорее всего больше не понадобится
 //    public int choiseTheCurrentDay(String file, int i) throws IOException {
@@ -118,6 +125,7 @@ public class CamDrivePageObject extends MainPageObject{
     public void clickOnVideoForm(){
         waitForElementAndClick("xpath://div[@id='conteiner_vac']/video","Not found player form after 10 seconds wait",10);
     }
+
 //TODO Тайм для веб андройда
     public String getTime(String attribute){
         attribute = this.waitForElementAndGetAtribute("xpath://*[contains(@class,'x-controlbar-Android-seek-loading-right')]","max","Time line is not visible",2);
@@ -174,10 +182,34 @@ public class CamDrivePageObject extends MainPageObject{
 //    }
 
 
+//TODO: Проверка баланса (Визуальная часть сверяется с API CamDrive)
+    public boolean checkBalance() throws Exception {
+//UI Ballance
+        double balance = checkCurrentBalance();
+//Api Ballance
+        double balance_api = Double.parseDouble(URLRequest.getBallanceAPI());
 
-    public String getTypeOfRecords(String attribute){
-        attribute = this.waitForElementAndGetAtribute(DYNAMIC_MINUTE_XPATH,"max","Time line is not visible",2);
-        return attribute;
+        boolean equals = false;
+        if(balance_api == balance ){
+            equals = true;
+        }else{
+            equals = false;
+        }
+        System.out.println("balance_api = "+balance_api);
+        System.out.println("balance = "+balance);
+
+        return equals;
+    }
+    //TODO Метод проверяет и возвращает текущий баланс в WEB
+    public double checkCurrentBalance(){
+        //UI Ballance
+        WebElement attribute = waitForElementPresent(BALANCE, "Balance is not visible",10);
+        String parse = attribute.getText();
+        String[] exploded_ballance = parse.split(Pattern.quote(" "),3);
+        String balance = exploded_ballance[1];
+        double intBalance = Double.parseDouble(balance);
+
+        return intBalance;
     }
 
     //=======================================================================================================================================================
@@ -195,7 +227,8 @@ public class CamDrivePageObject extends MainPageObject{
     }
     //************************************************************
     public void choiseCD100_E75A_MS3_DEV(){
-        waitForElementAndClick(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
+        tryClickElementWithFewAttempts(CD100_E75A_MS3_DEV,"Not find camera CD100_E75A_MS3_DEV",15);
+        waitForElementNotPresent(CD100_E75A_MS3_DEV,"Camera still presented CD100_E75A_MS3_DEV",15);
     }
     public void choiseCD100_E770_test(){
         waitForElementAndClick(CD100_E770_TEST,"Not find camera CD100_E75A_MS3_DEV",15);
@@ -389,11 +422,6 @@ public void choiseDay(
     public int returnCurrentScheldueStatus(int currentHour, String channelID) throws Exception {
         int scheldue = URLRequest.getScheduleCamera(currentHour,channelID);
         return scheldue;
-    }
-
-    /////////////////////////////////////////////online new methods/////////////////////////////////
-    public void clickOnline(){
-        //waitForElementAndClick();
     }
 
 }

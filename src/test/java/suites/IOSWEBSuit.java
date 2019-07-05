@@ -1,10 +1,6 @@
 package suites;
 
 
-import testsCamDriveRecordsCurrentHourAndDay.testForIOSWeb.*;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-
 //@RunWith(Suite.class)
 //@Suite.SuiteClasses({
 //        CD100_E75A_ms3_IOS.class,

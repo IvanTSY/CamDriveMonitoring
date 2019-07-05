@@ -38,16 +38,16 @@ public class Platform {
     {
         URL URL = new URL(APPIUM_URL);
         if(this.isAndroid()) {
-            return new AndroidDriver(URL, this.getAndroidDesiredcCapabilities());
-        } else if (this.isIOS()){
-            return new IOSDriver(URL, this.getIOSDesiredcCapabilities());
-        } else  if (this.isMWAndroid()){
+            return new AndroidDriver(URL,this.getAndroidDesiredcCapabilities());
+        } else if(this.isIOS()){
+            return new IOSDriver(URL,this.getIOSDesiredcCapabilities());
+        } else if(this.isMWAndroid()){
             return new ChromeDriver(this.getMWChromeOptionsForAndroid());
         } else if(this.isMWIos()){
             return new ChromeDriver(this.getMWChromeOptionsForIOS());
-        }else if(this.isMWTest()) {
+        } else if(this.isMWTest()) {
             return new ChromeDriver(this.getMWChromeOptionsForAndroid());
-        }else{
+        } else{
             throw new Exception("Cannot detect type of the Driver. Platform value:" + this.getPlatformVar());
         }
     }
@@ -84,10 +84,14 @@ public class Platform {
         capabilities.setCapability("deviceName","LG X power");
         capabilities.setCapability("platformVersion","6.0.1");
         capabilities.setCapability("automationName","Appium");
-        capabilities.setCapability("browserName","Chrome");
-        //capabilities.setCapability("appPackage","com.android.chrome");
-        //capabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
-        //capabilities.setCapability("app","com.google.android.apps.chrome.Main");
+//        capabilities.setCapability("browserName","Chrome");
+        capabilities.setCapability("unicodeKeyboard", true);
+        capabilities.setCapability("resetKeyboard", true);
+        capabilities.setCapability("connectHardwareKeyboard", false);
+        capabilities.setCapability("app","http://intercom.mobile.test/camdrive/camdrive_2019-05-27_1.2.0.505_release.apk");
+        capabilities.setCapability("appPackage","com.camdrive");
+        capabilities.setCapability("appActivity","presentation.gui.authorization.StartActivity");
+
 
         //для апиум сервера 10
         //capabilities.setCapability("automationName", "Appium");

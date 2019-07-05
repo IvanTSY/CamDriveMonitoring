@@ -1,25 +1,21 @@
 package lib.ui;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
+import io.appium.java_client.*;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import lib.Platform;
 import org.junit.Assert;
-import org.omg.CORBA.OBJ_ADAPTER;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
 
-import javax.management.timer.Timer;
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+
 
 public class MainPageObject {
 
@@ -40,25 +36,17 @@ public class MainPageObject {
         );
     }
     //TODO: Новое взаимодействие - Мобильный элемент
-    public MobileElement waitForMobileElementPresent(String locator, String error_message, long timeoutInSeconds){
-        By by = this.getLocatorByString(locator);
-        WebDriverWait wait = new  WebDriverWait(driver, timeoutInSeconds);
-        wait.withMessage(error_message + "\n"); // с новой строки
-        return (MobileElement) wait.until(
-                ExpectedConditions.presenceOfElementLocated(by)
-        );
-    }
 
-    public MobileElement waitForMobileElementAndClick(String locator, String error_message, long timeoutInSeconds)
-    {
-        MobileElement element = (MobileElement) waitForElementPresent(locator, error_message, timeoutInSeconds);
+//    public MobileElement waitForElementPresentMobile(String locator, String error_message, long timeoutInSeconds)
+//    {
+//        return null;
+//    }
 
-        Point a = element.getCenter();
-        System.out.println("Center element "+ a);
 
-        element.click();
+    public void waitForMobileElementAndClick() {
 
-        return element;
+        JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
+        Object js_result = JSExecutor.executeScript("Ext.getCmp('ext-comp-1015').handler()");
     }
 ///////////////////////////////
     public List<WebElement> waitForAllElementsPresented(String locator, String errorMessage, long timeoutInSeconds)
@@ -259,6 +247,8 @@ public class MainPageObject {
         List elements = driver.findElements(by);
         return elements.size();//  возврашаем кол-во которые были найдены при помощи функции driver.findElements
     }
+
+
 
     public void assertElementNotPresent(String locator, String error_message) // проверяем что в поиске нет ни одной статьи
     {

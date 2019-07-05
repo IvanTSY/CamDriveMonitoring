@@ -8,14 +8,15 @@ public class MWCamDrive extends CamDrivePageObject {
         LOGIN = "xpath://input[@name='username']"; //"css:#ext-gen1129";
         PASSWORD = "xpath://input[@name='password']"; //"css:#ext-gen1134";
         ENTER_BUTTON = "xpath://span[text()='Войти']";//"css:#ext-gen1142";
+        ENTER_BUTTON_MOBILE_WEB = "xpath://*[contains(@id,'ext-comp-1015')][contains(@class,'x-button btn-login x-button-normal')]/span[contains(@class,'x-button-label')][contains(@id,'ext-gen1143')][contains(text(),'Войти')]";//"id:ext-comp-1015";//"xpath://span[text()='Войти']";//"css:#ext-gen1143";
         DAY_TODAY = "xpath://*[contains(@class,'day today')]"; //текущий день
         DAY = "id:2019/{Month}/{Day}"; //любой день
-
+        BALANCE = "xpath://span[contains(text(),'Баланс: ')]";
         ClOSE_BTN = "css:#conteiner_vac > div.closeFullscreen";
         DYNAMIC_MINUTE_XPATH = "id:2019-{Month}-{Day}-{Hour}-{MinuteFirst}-00_2019-{Month}-{Day}-{Hour}-{MinuteLast}-59";
         DYNAMIC_HOUR_XPATH = "id:2019-{Month}-{Day}-{Hour}-00-00_2019-{Month}-{Day}-{Hour}-59-59";
         BACK_BTN_ON_MINUTE_SCREEN_IOS = "xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1040')]";
-                BACK_BTN_ON_MINUTE_SCREEN_ANDROID= "xpath://div[contains(@id,'ext-comp-1071')][contains(@class,'x-button white-back x-button-back')]/span[contains(text(),'Назад')]";
+        BACK_BTN_ON_MINUTE_SCREEN_ANDROID= "xpath://div[contains(@id,'ext-comp-1071')][contains(@class,'x-button white-back x-button-back')]/span[contains(text(),'Назад')]";
         BACK_BTN_ON_HOUR_SCREEN = "xpath://span[contains(@class,'x-button-label')][contains(@id,'ext-gen1226')]";
 //========================================================Dynamic_xpath_elements_"ext_gen"AND"ext_comp"
         CD120_EAF9_SERV_MS5 = "xpath://*[contains(@class,'x-list-item-body')][contains(text(),'CD120(EAF9)_serv_MS5')]";

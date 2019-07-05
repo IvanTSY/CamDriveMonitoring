@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb;
+package testsCamDriveMonitoring.testForAndroidWeb;
 
 import lib.CoreTestCase;
 import lib.logging.SuperVisor;

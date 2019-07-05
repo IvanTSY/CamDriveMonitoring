@@ -1,4 +1,4 @@
-package testsCamDriveRecordsCurrentHourAndDay.experimentalTest;
+package testsCamDriveMonitoring.experimentalTest;
 
 import org.junit.Test;
 

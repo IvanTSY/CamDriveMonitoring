@@ -1,12 +1,9 @@
-package testsCamDriveRecordsCurrentHourAndDay.experimentalTest;
+package testsCamDriveMonitoring.experimentalTest;
 
-import org.apache.http.HttpClientConnection;
-import org.apache.http.HttpConnection;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import javax.servlet.http.Cookie;
 import java.io.IOException;
 import java.util.List;
 

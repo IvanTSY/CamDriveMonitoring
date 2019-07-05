@@ -3,12 +3,78 @@ package lib.apiCamDrive;
 
 import com.google.gson.*;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
-import java.util.Calendar;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 public class URLRequest {
+
+
+
+
+
+    //Метод авторизации через AJAX запрос
+    public  static List<HttpCookie> getRequestAuthorizationTrue() throws IOException {
+        URL url = new URL("https://www.camdrive.com/mobile/phone/login");
+        URLConnection con = url.openConnection();
+        HttpURLConnection http = (HttpURLConnection)con;
+        http.setRequestMethod("POST"); // PUT is another valid option
+        http.setDoOutput(true);
+
+        Map<String,String> arguments = new HashMap<>();
+        arguments.put("username", "service");
+        arguments.put("password", "7ujm6yhn"); // This is a fake password obviously
+        StringJoiner sj = new StringJoiner("&");
+        for(Map.Entry<String,String> entry : arguments.entrySet())
+            sj.add(URLEncoder.encode(entry.getKey(), "UTF-8") + "="
+                    + URLEncoder.encode(entry.getValue(), "UTF-8"));
+        byte[] out = sj.toString().getBytes(StandardCharsets.UTF_8);
+        int length = out.length;
+
+        CookieManager manager = new CookieManager();
+        List<HttpCookie> cookies = manager.getCookieStore().getCookies();
+        System.out.println("КУКИИИИ  "+cookies);
+
+        return cookies;
+    }
+
+
+
+
+
+//Метод проверки баланса через АПИ
+    public static String getBallanceAPI() throws Exception {
+        URL ballance = new URL("https://camdrive.com/mobile/api_native/login?username=service&password=7ujm6yhn");
+
+        URLConnection conn = ballance.openConnection();
+        conn.setConnectTimeout(5000);
+        conn.connect();
+
+        BufferedReader getBallance = new BufferedReader(
+                new InputStreamReader(
+                        conn.getInputStream()));
+        String inputLine = getBallance.readLine();
+
+        //Закрываем чтение буфера
+        getBallance.close();
+
+        //Парсинг Json
+        JsonParser jsonParser = new JsonParser();
+        JsonElement parse = jsonParser.parse(inputLine);
+        JsonObject asJsonObject = parse.getAsJsonObject();
+
+        JsonObject data = asJsonObject.getAsJsonObject("data");
+        JsonElement cameras = data.getAsJsonArray("cameras");
+        JsonElement profile = data.getAsJsonObject("profile");
+
+
+        //Результат АПИ
+        JsonPrimitive pay_ballance = ((JsonObject) profile).getAsJsonPrimitive("pay_balance");
+
+        return pay_ballance.getAsString();
+    }
 
     public static int getScheduleCamera(int hour, String cameraChannelID) throws Exception {
         URL url = new URL("https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id="+cameraChannelID);
@@ -29,10 +95,13 @@ public class URLRequest {
         String inputLineLogin = getSchedule.readLine();
 //Закрываем чтение буфера
         getSchedule.close();
+
         JsonParser jsonParser = new JsonParser();
         JsonElement parse = jsonParser.parse(inputLineLogin);
         JsonObject asJsonObject = parse.getAsJsonObject();
         JsonArray data = asJsonObject.getAsJsonArray("data");
+
+
         int[][] array= new int[8][24];
         for (int i = 0; i < data.size(); i++) {
             JsonElement jsonElement = data.get(i);
@@ -83,20 +152,11 @@ public class URLRequest {
         URL url = new URL(urlString);
         URLConnection connection = url.openConnection();
         connection.setConnectTimeout(5000);
-        Object obj = connection.getContent();
-        url = new URL(urlString);
-        connection = url.openConnection();
-        obj = connection.getContent();
-
-        CookieStore cookieJar = manager.getCookieStore();
-
-        List<HttpCookie> cookies = cookieJar.getCookies();
-//        for (HttpCookie cookie : cookies) {
-//            System.out.println(cookie);
-//        }
+        List<HttpCookie> cookies = manager.getCookieStore().getCookies();
 
         return cookies;
     }
+
+
 }
 
-//https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id=2d9636b2bb3a06b4336adf481a30acb3
