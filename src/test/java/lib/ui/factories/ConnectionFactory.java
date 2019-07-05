@@ -13,9 +13,9 @@ public class ConnectionFactory {
     private double API_VERSION = 0;
     private String API = "";
 
-    private String USER_AGENT = "Mozilla/5.0";
+    private String USER_AGENT = "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36";
     private String METHOD = "POST";
-    private String TYPE = "application/x-www-form-urlencoded";
+    private String TYPE = "application/json";
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
