@@ -2,6 +2,8 @@ package lib;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -88,9 +90,9 @@ public class Platform {
         capabilities.setCapability("unicodeKeyboard", true);
         capabilities.setCapability("resetKeyboard", true);
         capabilities.setCapability("connectHardwareKeyboard", false);
-        capabilities.setCapability("app","http://intercom.mobile.test/camdrive/camdrive_2019-05-27_1.2.0.505_release.apk");
-        capabilities.setCapability("appPackage","com.camdrive");
-        capabilities.setCapability("appActivity","presentation.gui.authorization.StartActivity");
+        capabilities.setCapability(MobileCapabilityType.APP,"http://intercom.mobile.test/camdrive/camdrive_2019-05-27_1.2.0.505_release.apk");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.camdrive");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"presentation.gui.authorization.StartActivity");
 
 
         //для апиум сервера 10

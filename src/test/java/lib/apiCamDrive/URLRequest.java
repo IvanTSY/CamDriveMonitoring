@@ -11,42 +11,11 @@ import java.util.*;
 
 public class URLRequest {
 
-
-
-
-
-    //Метод авторизации через AJAX запрос
-    public  static List<HttpCookie> getRequestAuthorizationTrue() throws IOException {
-        URL url = new URL("https://www.camdrive.com/mobile/phone/login");
-        URLConnection con = url.openConnection();
-        HttpURLConnection http = (HttpURLConnection)con;
-        http.setRequestMethod("POST"); // PUT is another valid option
-        http.setDoOutput(true);
-
-        Map<String,String> arguments = new HashMap<>();
-        arguments.put("username", "service");
-        arguments.put("password", "7ujm6yhn"); // This is a fake password obviously
-        StringJoiner sj = new StringJoiner("&");
-        for(Map.Entry<String,String> entry : arguments.entrySet())
-            sj.add(URLEncoder.encode(entry.getKey(), "UTF-8") + "="
-                    + URLEncoder.encode(entry.getValue(), "UTF-8"));
-        byte[] out = sj.toString().getBytes(StandardCharsets.UTF_8);
-        int length = out.length;
-
-        CookieManager manager = new CookieManager();
-        List<HttpCookie> cookies = manager.getCookieStore().getCookies();
-        System.out.println("КУКИИИИ  "+cookies);
-
-        return cookies;
-    }
-
-
-
-
-
 //Метод проверки баланса через АПИ
     public static String getBallanceAPI() throws Exception {
         URL ballance = new URL("https://camdrive.com/mobile/api_native/login?username=service&password=7ujm6yhn");
+
+//        URL ballance = new URL("https://www.camdrive.com/mobile/phone/ajax?action=get_state");
 
         URLConnection conn = ballance.openConnection();
         conn.setConnectTimeout(5000);
@@ -75,6 +44,10 @@ public class URLRequest {
 
         return pay_ballance.getAsString();
     }
+
+
+
+
 
     public static int getScheduleCamera(int hour, String cameraChannelID) throws Exception {
         URL url = new URL("https://camdrive.com/mobile/api_native/cameras/?action=schedule&camera_channel_id="+cameraChannelID);
@@ -144,9 +117,10 @@ public class URLRequest {
     }
 
 
-    private static List<HttpCookie> getRequestAuthorization() throws Exception{
+    public static List<HttpCookie> getRequestAuthorization() throws Exception{
         /*Получаем куки при авторизации*/
         String urlString = "https://camdrive.com/mobile/api_native/login?username=service&password=7ujm6yhn";
+
         CookieManager manager = new CookieManager();
         CookieHandler.setDefault(manager);
         URL url = new URL(urlString);

@@ -19,7 +19,10 @@ public class CamDrivePageObject extends MainPageObject{
             PASSWORD,
             BALANCE,
             ENTER_BUTTON,
-            ENTER_BUTTON_MOBILE_WEB,
+            MOBILE_ENTER_BUTTON,
+            MOBILE_CAMERA_BUTTON,
+            MOBILE_LOGIN,
+            MOBILE_PASSWORD,
             CD120_EAF9_SERV_MS5,
             CD100_E75A_MS3_DEV,
             CD100_E770_TEST,
@@ -58,13 +61,33 @@ public class CamDrivePageObject extends MainPageObject{
     public void authForMobile() throws InterruptedException {
 
         System.out.println("Это размер окна по мобильному драйверу"+((MobileDriver)driver).manage().window().getSize());
-        waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
-        waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
-        waitForElementPresent(ENTER_BUTTON_MOBILE_WEB,"Enter button not visible",15);
-        waitForMobileElementAndClick();
-        waitForElementNotPresent(ENTER_BUTTON_MOBILE_WEB,"Enter stil present, somthing went wrong",15);
+        waitForElementAndSendKeys(MOBILE_LOGIN,"Service","Not find the login field",15);
+        waitForElementAndSendKeys(MOBILE_PASSWORD,"7ujm6yhn","Not find the password field", 15);
+        waitForElementPresent(MOBILE_ENTER_BUTTON,"Enter button not visible",15);
+        waitForElementAndClick(MOBILE_ENTER_BUTTON,"Enter button not visible, i can't click",15);
 
+        waitForElementNotPresent(MOBILE_ENTER_BUTTON,"Enter stil present, somthing went wrong",15);
     }
+
+    public void cameraChoiseForMobile(){
+        waitForElementAndClick("xpath://*[@contentDescription='Открыть боковое меню']","Not visible menu button",10);
+        waitForElementPresent("xpath://*[@text='Онлайн']","Not visible online button",10);
+        waitForElementAndClick("xpath://*[@text='Онлайн']","Not visible for click online button",10);
+
+        waitForElementPresent(MOBILE_CAMERA_BUTTON,"Camera button not visible",15);
+        waitForElementAndClick(MOBILE_CAMERA_BUTTON,"Camera button not visible",15);
+        waitForElementNotPresent(MOBILE_CAMERA_BUTTON,"Camera button still visible",15);
+
+        waitForElementPresent("xpath://*[contains(text(), 'CD100(E75A)_ms3_dev')]","Camera not visible ",10);
+        waitForElementAndClick("xpath://*[contains(text(), 'CD100(E75A)_ms3_dev')]","I can't click on camera",10);
+    }
+
+    public void cameraCheckVideo(){
+        //waitForElementPresent()
+    }
+
+
+
     //Перегрузка метода Скорее всего больше не понадобится
 //    public int choiseTheCurrentDay(String file, int i) throws IOException {
 //        FileWriter errorLog = new FileWriter(file,true);
