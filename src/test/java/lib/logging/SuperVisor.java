@@ -2,9 +2,9 @@ package lib.logging;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import org.junit.rules.Timeout;
+
+import java.io.*;
 //@SuppressWarnings("ALL")
 
 public class SuperVisor {
@@ -35,5 +35,47 @@ public class SuperVisor {
         }
 
     }
+
+    public static String logCat() throws IOException {
+//|grep statistic"
+        String command = "adb logcat com.camdrive/presentation.gui.online.PlaybackActivity";
+        Process process = Runtime.getRuntime().exec(command);
+
+        InputStream inputStream = process.getInputStream();
+
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        String log;
+        int i = 0;
+        String logFrame = null;
+
+        while (((log = bufferedReader.readLine()) != null)) {
+
+            if ((log.contains("beward_media_player: statistic videoframe:"))) {
+
+                logFrame = bufferedReader.readLine();
+                System.err.println(log);
+                i++;
+            } else {
+                i++;
+                System.err.println("Video not playing 5sec");
+            }
+            if (i == 1000) {
+                System.err.println("The end");
+                break;
+            }
+
+        }
+
+        inputStream.close();
+        bufferedReader.close();
+        inputStreamReader.close();
+        System.err.println("Log = " + log);
+        System.err.println("Proc = " + inputStream);
+        return logFrame;
+    }
+
 
 }

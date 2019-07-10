@@ -70,7 +70,7 @@ public class CamDrivePageObject extends MainPageObject{
     }
 
     public void cameraChoiseForMobile(){
-        waitForElementAndClick("xpath://*[@contentDescription='Открыть боковое меню']","Not visible menu button",10);
+        waitForElementAndClick("xpath://*[@content-desc='Открыть боковое меню']","Not visible menu button",15);
         waitForElementPresent("xpath://*[@text='Онлайн']","Not visible online button",10);
         waitForElementAndClick("xpath://*[@text='Онлайн']","Not visible for click online button",10);
 
@@ -78,8 +78,8 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(MOBILE_CAMERA_BUTTON,"Camera button not visible",15);
         waitForElementNotPresent(MOBILE_CAMERA_BUTTON,"Camera button still visible",15);
 
-        waitForElementPresent("xpath://*[contains(text(), 'CD100(E75A)_ms3_dev')]","Camera not visible ",10);
-        waitForElementAndClick("xpath://*[contains(text(), 'CD100(E75A)_ms3_dev')]","I can't click on camera",10);
+        waitForElementPresent("xpath://*[@text='CD100(E75A)_ms3_dev']","Camera not visible ",10);
+        waitForElementAndClick("xpath://*[@text='CD100(E75A)_ms3_dev']","I can't click on camera",10);
     }
 
     public void cameraCheckVideo(){
