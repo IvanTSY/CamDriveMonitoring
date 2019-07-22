@@ -14,8 +14,7 @@ public class AllCameraOnlineCheck extends CoreTestCase {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authForMobile();
         CamDrivePageObject.cameraChoiseForMobile();
-        Thread.sleep(1000);
-        System.err.println(SuperVisor.logCat());
+        SuperVisor.logCat();
         Thread.sleep(10000);
     }
 }
