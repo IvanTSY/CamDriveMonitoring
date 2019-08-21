@@ -3,10 +3,8 @@ package lib.apiCamDrive;
 
 import com.google.gson.*;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class URLRequest {
@@ -117,7 +115,7 @@ public class URLRequest {
     }
 
 
-    public static List<HttpCookie> getRequestAuthorization() throws Exception{
+    private static List<HttpCookie> getRequestAuthorization() throws Exception{
         /*Получаем куки при авторизации*/
         String urlString = "https://camdrive.com/mobile/api_native/login?username=service&password=7ujm6yhn";
 
@@ -126,7 +124,17 @@ public class URLRequest {
         URL url = new URL(urlString);
         URLConnection connection = url.openConnection();
         connection.setConnectTimeout(5000);
-        List<HttpCookie> cookies = manager.getCookieStore().getCookies();
+        //Object obj = connection.getContent();
+        url = new URL(urlString);
+        connection = url.openConnection();
+        Object obj = connection.getContent();
+
+        CookieStore cookieJar = manager.getCookieStore();
+
+        List<HttpCookie> cookies = cookieJar.getCookies();
+//        for (HttpCookie cookie : cookies) {
+//            System.out.println(cookie);
+//        }
 
         return cookies;
     }
