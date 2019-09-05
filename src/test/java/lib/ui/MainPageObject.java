@@ -133,7 +133,7 @@ public class MainPageObject {
                 swipeUpQuick();
             }
         }else {
-            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
+            System.out.println("Method swipe not exist for this platform" + Platform.getInstance().getPlatformVar());
         }
     }
 
@@ -151,7 +151,7 @@ public class MainPageObject {
                 ++already_swiped;
             }
         }else {
-            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform" + Platform.getInstance().getPlatformVar());
+            System.out.println("Method does nothing for platform" + Platform.getInstance().getPlatformVar());
         }
     }
 
@@ -299,6 +299,11 @@ public class MainPageObject {
         WebElement element = this.waitForElementPresent("xpath://div[contains(text(),'23:00')]","123",20);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
     }
+
+//    public void scrollIntoViewCamera(String camera) throws InterruptedException {
+//        WebElement element = this.waitForElementPresent(camera,"Camera not found in to page",20);
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
+//    }
 
     public void scrollWebPageTitleElementNotVisible(String locator, String error_message, int max_swipes) // делает скрол пока нужный элемент не появится на экране
     {

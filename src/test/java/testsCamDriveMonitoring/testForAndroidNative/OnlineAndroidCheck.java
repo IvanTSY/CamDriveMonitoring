@@ -8,13 +8,13 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class AllCameraOnlineCheck extends CoreTestCase {
+public class OnlineAndroidCheck extends CoreTestCase {
     @Test
     public void testOnline() throws InterruptedException, IOException {
         CamDrivePageObject CamDrivePageObject = CamDrivePageObjectFactory.get(driver);
         CamDrivePageObject.authForMobile();
         CamDrivePageObject.cameraChoiseForMobile();
         SuperVisor.logCat();
-        Thread.sleep(10000);
+        //Thread.sleep(100000);
     }
 }
