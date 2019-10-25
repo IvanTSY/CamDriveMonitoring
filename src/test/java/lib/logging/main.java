@@ -1,28 +1,18 @@
 package lib.logging;
 
+import lib.apiSlack.SlackSendMessaages;
 import org.junit.Test;
+
+import java.io.IOException;
 
 public class main {
 
     @Test
-    public void main () {
+    public void testMSG() throws IOException {
 
-        long i2 = System.currentTimeMillis()/1000;
-        long i = 0;
-        long z = i;
-        while(i<5){
-
-            i = (System.currentTimeMillis()/1000)-i2;
-            System.err.println(i);
-
-            if (z == i){
-                System.err.println("No");
-            }else{
-                System.err.println("Yes");
-            }
-
-
-        }
+        SlackSendMessaages ms = new SlackSendMessaages();
+        ms.sendMSG("test for Michail");
 
     }
+
 }
