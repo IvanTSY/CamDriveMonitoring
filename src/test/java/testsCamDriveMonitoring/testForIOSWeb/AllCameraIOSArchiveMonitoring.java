@@ -95,7 +95,7 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
                 CamDrivePageObject.scrollIntoView();
             }
 //            CamDrivePageObject.checkLoadVideoPlayerForIosMW();
-
+            int schedule = CamDrivePageObject.returnCurrentScheldueStatus(currentHour,"aee40e829262b7930f529c4fee6d326a");
 //-----------------------------------------------------------------------------------------------------------
             try{
                 CamDrivePageObject.clickMinute(
@@ -105,21 +105,48 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
                         currentFirstMinuteCONVERTED,
                         currentLastMinuteCONVERTED);
             }catch (RuntimeException e){
+//Фантик
+                if((schedule == 1)||(schedule == 3)) {
+                    System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                }else{
+                    System.out.println("No records. Block " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n");
+                }
+//*Фантик
                 continue;
             }
 //-----------------------------------------------------------------------------------------------------------------------
             CamDrivePageObject.loadArchiveVideoIOS(); //добавить трайклик
 
             try {
-                /*ms.sendMSG*/ System.out.println("IOS WEB:"+currentDay+"."+currentMonth+"Начало проверки архива камеры "+cameraName);
+                ms.sendMSG("IOS WEB:"+currentDay+"."+currentMonth+"Начало проверки архива камеры "+cameraName);
                 CamDrivePageObject.checkLoadVideoPlayerForIosMW();
-                /*ms.sendMSG*/ System.out.println("IOS WEB: Проверка архива камеры "+cameraName+" прошла успешно.");
+                ms.sendMSG("IOS WEB: Проверка архива камеры "+cameraName+" прошла успешно.");
             }catch (RuntimeException e){
-                /*ms.sendMSG*/ System.out.println("IOS WEB: Проверка архива камеры "+cameraName+" провалена.");
+                ms.sendMSG("IOS WEB: Проверка архива камеры "+cameraName+" провалена.");
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
                 continue;
             }
 //-----------------------------------------------------------------------------------------------------------------------
+
+            Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive();
+            int time = 0;
+
+            String result = String.valueOf(attribute);
+            int indexEndResult = result.lastIndexOf(".");
+
+            if(indexEndResult == -1) {
+                try {
+                    time = Integer.parseInt(result);
+                } catch (Exception e) {
+                    System.out.println("Cannot format type int current element :" + attribute);
+                    System.out.println("JS return incorrect type variable: "+ attribute);
+                }
+            } else{
+                time = Integer.parseInt(result.substring(0,indexEndResult));
+            }
+            if(((schedule == 0) & (time<590))){
+                System.out.println("Current block: " + currentHourCONVERTED + ":00h. " + currentFirstMinuteCONVERTED + "min-" + currentLastMinuteCONVERTED + "min\n"+"Record is less then 590 second. Current record is "+ time + "\n");
+            }
 
             CamDrivePageObject.clickBackOnMinuteScreenIOS();
         }
