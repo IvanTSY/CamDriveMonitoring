@@ -21,7 +21,7 @@ public class SlackSendMessaages {
 
 // Request parameters and other properties.
         List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-        params.add(new BasicNameValuePair("token", "xoxb-646834705505-810587823079-O5lIih1EnXw5rwgCkMaLZ3up"));
+        params.add(new BasicNameValuePair("token", "xoxb-646834705505-810587823079-qhzlprh2woBbRhXvOMJLD3jP"));
         params.add(new BasicNameValuePair("channel", "мониторинг_camdrive"));
         params.add(new BasicNameValuePair("text", text));
         params.add(new BasicNameValuePair("username", "Мониторинг"));
@@ -39,5 +39,9 @@ public class SlackSendMessaages {
                 instream.close();
             }
         }
+
+
     }
+
+
 }

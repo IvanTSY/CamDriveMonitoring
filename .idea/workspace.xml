@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="03fa5535-ee13-4c2b-9e0e-6a7914c55b4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/logging/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/logging/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/lib/logging/main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,35 +44,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="254">
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            <state relative-caret-position="450">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,12 +148,12 @@
         <option value="$PROJECT_DIR$/src/test/java/lib/Slack/SlackTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/Slack/SlacTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lib/logging/main.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/Platform.java" />
         <option value="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/logging/main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java" />
         <option value="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java" />
       </list>
     </option>
@@ -248,7 +241,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572242912901" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572251066184" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -258,6 +251,7 @@
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="lib.apiSlack" />
       <recent name="lib.Slack" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -279,7 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS">
     <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CamDriveMonitoring" />
       <extension name="coverage">
@@ -291,6 +285,26 @@
       <option name="PACKAGE_NAME" value="testsCamDriveMonitoring.testForIOSWeb" />
       <option name="MAIN_CLASS_NAME" value="testsCamDriveMonitoring.testForIOSWeb.AllCameraIOSArchiveMonitoring" />
       <option name="METHOD_NAME" value="testCD100_E75A_MS3_IOS" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <envs>
+        <env name="Platform" value="mobile_web_ios" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllCameraIOSArchiveMonitoring.testMSG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CamDriveMonitoring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testsCamDriveMonitoring.testForIOSWeb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testsCamDriveMonitoring.testForIOSWeb" />
+      <option name="MAIN_CLASS_NAME" value="testsCamDriveMonitoring.testForIOSWeb.AllCameraIOSArchiveMonitoring" />
+      <option name="METHOD_NAME" value="testMSG" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <envs>
@@ -337,6 +351,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" />
+        <item itemvalue="JUnit.AllCameraIOSArchiveMonitoring.testMSG" />
       </list>
     </recent_temporary>
   </component>
@@ -379,38 +394,45 @@
       <option name="project" value="LOCAL" />
       <updated>1572242007329</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;First messages to Slack on ChromeBrowser 77&quot;">
+      <created>1572242945434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572242945434</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AllCameraAndroidArchiveTests_testCD100_E75A_MS3 - 2019.10.28 at 10h 47m 16s.xml">
-      <configuration name="AllCameraAndroidArchiveTests.testCD100_E75A_MS3" configurationId="JUnit" />
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 19m 21s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 10h 52m 38s.xml">
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 22m 30s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 23m 08s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 24m 39s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 36m 49s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 50m 03s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testMSG - 2019.10.28 at 14h 52m 48s.xml">
+      <configuration name="AllCameraIOSArchiveMonitoring.testMSG" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 14h 53m 41s.xml">
       <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 10h 55m 02s.xml">
+    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 15h 03m 40s.xml">
       <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 10h 59m 27s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 11h 12m 33s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 11h 14m 43s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 11h 16m 16s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 11h 17m 36s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 12h 18m 10s.xml">
-      <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 12h 52m 43s.xml">
+    <history-entry file="AllCameraIOSArchiveMonitoring_testCD100_E75A_MS3_IOS - 2019.10.28 at 15h 04m 32s.xml">
       <configuration name="AllCameraIOSArchiveMonitoring.testCD100_E75A_MS3_IOS" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -425,25 +447,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info id="Structure" order="5" sideWeight="0.30592105" side_tool="true" visible="true" weight="0.21641791" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.6940789" visible="true" weight="0.21641791" />
+      <window_info id="Structure" order="5" sideWeight="0.30444205" side_tool="true" visible="true" weight="0.21641791" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.69555795" visible="true" weight="0.21641791" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49946696" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.31556502" side_tool="true" weight="0.4073673" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.6076759" weight="0.40411702" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" sideWeight="0.4989339" weight="0.32719395" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.68443495" visible="true" weight="0.34127843" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.68443495" weight="0.34127843" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.84115136" weight="0.33586133" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4360341" weight="0.2979452" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4360341" weight="0.2979415" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.21018419" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -509,7 +530,8 @@
     <MESSAGE value="&quot;Восстановил тесты - получение Cookie&quot;" />
     <MESSAGE value="&quot;Исправить драйвер Chrome&quot;" />
     <MESSAGE value="&quot;ChromeBrowser 77&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;ChromeBrowser 77&quot;" />
+    <MESSAGE value="&quot;First messages to Slack on ChromeBrowser 77&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;First messages to Slack on ChromeBrowser 77&quot;" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -677,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar!/org/openqa/selenium/remote/RemoteWebDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-799">
@@ -750,16 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/logging/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiCamDrive/URLRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -818,20 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/factories/CamDrivePageObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-3/selenium-remote-driver-4.0.0-alpha-3.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-544">
@@ -877,17 +865,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/CamDrivePageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/logging/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+        <state relative-caret-position="254">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/ui/factories/CamDrivePageObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+        <state relative-caret-position="306">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lib/apiSlack/SlackSendMessaages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

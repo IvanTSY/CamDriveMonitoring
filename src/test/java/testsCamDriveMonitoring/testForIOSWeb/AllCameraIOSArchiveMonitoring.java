@@ -9,7 +9,11 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 //@SuppressWarnings("ALL")
 public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
@@ -26,6 +30,13 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
     private int currentMinute = 59;
     private int tick = 10;
 
+    @Test
+    public void testMSG() throws IOException {
+
+        SlackSendMessaages ms = new SlackSendMessaages();
+        ms.sendMSG("test");
+
+    }
 
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
@@ -76,6 +87,8 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
 ////////////////////////////////////
         int currentFirstMinute = -tick;
         int currentLastMinute = -1;
+        int msg = 0;
+
         for (int m = 0; m < 6; m ++){
 
             currentFirstMinute = currentFirstMinute + tick;
@@ -115,17 +128,17 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
                 continue;
             }
 //-----------------------------------------------------------------------------------------------------------------------
+            if(msg < 2){
             CamDrivePageObject.loadArchiveVideoIOS(); //добавить трайклик
-
             try {
-                ms.sendMSG("IOS WEB:"+currentDay+"."+currentMonth+"Начало проверки архива камеры "+cameraName);
                 CamDrivePageObject.checkLoadVideoPlayerForIosMW();
-                ms.sendMSG("IOS WEB: Проверка архива камеры "+cameraName+" прошла успешно.");
+                /*ms.sendMSG*/System.out.println("IOS WEB:"+ new SimpleDateFormat("dd MMMM"+new Date()+" Проверка архива камеры "+cameraName+" прошла успешно."));
+                msg++;
             }catch (RuntimeException e){
-                ms.sendMSG("IOS WEB: Проверка архива камеры "+cameraName+" провалена.");
+                //ms.sendMSG("IOS WEB: Проверка архива камеры "+cameraName+" провалена.");
                 CamDrivePageObject.clickBackOnMinuteScreenIOS();
                 continue;
-            }
+            }}else break;
 //-----------------------------------------------------------------------------------------------------------------------
 
             Object attribute = CamDrivePageObject.getTimeDurationVideoForIOSArchive();
