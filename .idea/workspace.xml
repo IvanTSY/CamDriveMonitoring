@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03fa5535-ee13-4c2b-9e0e-6a7914c55b4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CamDriveMonitoring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CamDriveMonitoring.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/logging/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/logging/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveMonitoring.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-testsCamDriveRecordsCurrentHourAndDay.testForAndroidWeb.AllCameraAndroidArchiveTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/CamDriveMonitoring.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/JavaAppium.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/lib/CoreTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lib/CoreTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/Platform.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/logging/SuperVisor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/logging/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lib/ui/mobile_web/MWCamDrive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sip/CallTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/suites/AndroidWEBSuit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/suites/iOSWEBSuit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/AllBallanceCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/experimentalTest/Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/experimentalTest/ExperimentalSipCallTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/experimentalTest/FullTestCD120_EAF9_SERV_MS5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/experimentalTest/N1001_3A00_bwd_android_and_ios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/experimentalTest/URLParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/testForAndroidNative/OnlineAndroidCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testsCamDriveMonitoring/testForIOSWeb/AllCameraIOSArchiveTests.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+            <state relative-caret-position="391">
+              <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -258,7 +233,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572241893044" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572241962980" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -375,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572002058420</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;ChromeBrowser 77&quot;">
+      <created>1572241923449</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572241923449</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -504,7 +486,8 @@
     <MESSAGE value="&quot;Экспериментальный класс для отправки GET\POST&quot;" />
     <MESSAGE value="&quot;Восстановил тесты - получение Cookie&quot;" />
     <MESSAGE value="&quot;Исправить драйвер Chrome&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Исправить драйвер Chrome&quot;" />
+    <MESSAGE value="&quot;ChromeBrowser 77&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;ChromeBrowser 77&quot;" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -881,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        <state relative-caret-position="391">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
     </entry>
