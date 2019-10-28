@@ -7,12 +7,12 @@ import java.io.IOException;
 
 public class main {
 
-    @Test
-    public void testMSG() throws IOException {
-
-        SlackSendMessaages ms = new SlackSendMessaages();
-        ms.sendMSG("test for Michail");
-
-    }
+//    @Test
+//    public void testMSG() throws IOException {
+//
+//        SlackSendMessaages ms = new SlackSendMessaages();
+//        ms.sendMSG("test for Michail");
+//
+//    }
 
 }

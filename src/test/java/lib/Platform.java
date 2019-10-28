@@ -115,26 +115,26 @@ public class Platform {
 
     private ChromeOptions getMWChromeOptionsForAndroid() // запускает браузер Chrome
     {
-//        Map<String, Object> deviceMetrics = new HashMap<String, Object>();
-//        deviceMetrics.put("width", 360); //высота девайса
-//        deviceMetrics.put("height", 640); //ширина девайса
-//        deviceMetrics.put("pixelRation", 3.0); //плотность пикселей девайса
-//        Map<String, Object> mobileEmulation = new HashMap<String, Object>(); // параметры юзер агента
-//        mobileEmulation.put("deviceMetrics", deviceMetrics);
-//        mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-//
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("window-size=340,640");
-//============================================================
-        Map<String, String> mobileEmulation = new HashMap<>();
-
-        mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
-        //mobileEmulation.put("deviceName", "iPhone X");
-
+        Map<String, Object> deviceMetrics = new HashMap<String, Object>();
+        deviceMetrics.put("width", 360); //высота девайса
+        deviceMetrics.put("height", 640); //ширина девайса
+        deviceMetrics.put("pixelRation", 3.0); //плотность пикселей девайса
+        Map<String, Object> mobileEmulation = new HashMap<String, Object>(); // параметры юзер агента
+        mobileEmulation.put("deviceMetrics", deviceMetrics);
+        mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
 
         ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
-        chromeOptionsForAndroid.setExperimentalOption("mobileEmulation", mobileEmulation);
-        //WebDriver driver = new ChromeDriver(chromeOptions);
+        chromeOptionsForAndroid.addArguments("window-size=340,640");
+//============================================================
+//        Map<String, String> mobileEmulation = new HashMap<>();
+//
+//        mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
+//        //mobileEmulation.put("deviceName", "iPhone X");
+//
+//
+//        ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
+//        chromeOptionsForAndroid.setExperimentalOption("mobileEmulation", mobileEmulation);
+//        //WebDriver driver = new ChromeDriver(chromeOptions);
 //============================================================
         return chromeOptionsForAndroid;
     }

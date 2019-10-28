@@ -29,7 +29,6 @@ public class AllCameraIOSArchiveMonitoring extends CoreTestCase {
 
     @Test
     public void testCD100_E75A_MS3_IOS() throws Exception {
-        SuperVisor operation = new SuperVisor();
         SlackSendMessaages ms = new SlackSendMessaages();
         String cameraName = "CD100_E75A_MS3";
         String errorLogFile = "ErrorRecordIOSCD100_E75A_MS3.txt";
