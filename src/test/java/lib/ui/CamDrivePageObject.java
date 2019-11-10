@@ -53,10 +53,11 @@ public class CamDrivePageObject extends MainPageObject{
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
     }
 
-    public void authorizationOnCamdrive(){
+    public boolean authorizationOnCamdrive(){
         waitForElementAndSendKeys(LOGIN,"Service","Not find the login field",15);
         waitForElementAndSendKeys(PASSWORD,"7ujm6yhn","Not find the password field", 15);
         waitForElementAndClick(ENTER_BUTTON,"Not find the Login button",15);
+        return true;
     }
     public void authForMobile() throws InterruptedException {
 
@@ -113,7 +114,7 @@ public class CamDrivePageObject extends MainPageObject{
 
             BufferedReader br = new BufferedReader(new FileReader(file));
             if ((br.readLine() == null)||clean.length()==0) {
-                System.out.println("No errors, and file empty");
+                //System.out.println("No errors, and file empty");
                 clean.delete();
 
             }
@@ -128,7 +129,7 @@ public class CamDrivePageObject extends MainPageObject{
     //public void checkLoadVideoPlayerForIosMW(){  waitForElementNotPresent("xpath://video[contains(@class,'video noPlayBtn')][contains(@id,'va')]","Not found video on Archive play video after 25 seconds",25);}
 
     //play-loader
-    public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 10 seconds",15);}
+    public void clickCloseButtonOnPlayArchiveScreen(){ waitForElementAndClick(ClOSE_BTN,"Not found CLOSE BUTTON on Archive play video after 25 seconds",25);}
 
     public void loadArchiveVideoAndroid() throws InterruptedException {
         //TODO: Найти способ поймать окно загрузки и убрать тред
@@ -160,7 +161,7 @@ public class CamDrivePageObject extends MainPageObject{
 
     //TODO Переделать данный метод , нужно разобраться с JavaScript callBack function и убрать НАФИГ ТРЕД СЛИП!!!!!
     public Object getTimeDurationVideoForIOSArchive() throws InterruptedException {
-        JavascriptExecutor JSExecutor = (JavascriptExecutor)driver;
+        JavascriptExecutor JSExecutor = driver;
         Object js_result = null ;
         for(int i = 0; i <15; i++ ){
             if(js_result == null){
@@ -215,11 +216,7 @@ public class CamDrivePageObject extends MainPageObject{
         double balance_api = Double.parseDouble(URLRequest.getBallanceAPI());
 
         boolean equals = false;
-        if(balance_api == balance ){
-            equals = true;
-        }else{
-            equals = false;
-        }
+        equals = balance_api == balance;
         System.out.println("balance_api = "+balance_api);
         System.out.println("balance = "+balance);
 

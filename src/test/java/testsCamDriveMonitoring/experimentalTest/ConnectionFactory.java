@@ -73,7 +73,7 @@ public class ConnectionFactory {
     }
     private InputStream readWithAccess(URL url, String data){
         try {
-            byte[] out = data.toString().getBytes();
+            byte[] out = data.getBytes();
             finalConnection = (HttpURLConnection) url.openConnection();
             finalConnection.setRequestMethod(METHOD);
             finalConnection.setDoOutput(true);

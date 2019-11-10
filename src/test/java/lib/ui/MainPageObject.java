@@ -45,7 +45,7 @@ public class MainPageObject {
 
     public void waitForMobileElementAndClick() {
 
-        JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
+        JavascriptExecutor JSExecutor = driver;
         Object js_result = JSExecutor.executeScript("Ext.getCmp('ext-comp-1015').handler()");
     }
 ///////////////////////////////
@@ -160,7 +160,7 @@ public class MainPageObject {
         int element_location_by_y = this.waitForElementPresent(locator, "Cannot find element by locator",10).getLocation().getY();
         if (Platform.getInstance().isMWAndroid() || Platform.getInstance().isMWIos()) // этот if вычисление позиции для скрола в WEB
         {
-            JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
+            JavascriptExecutor JSExecutor = driver;
             Object js_result = JSExecutor.executeScript("return window.pageYOffset");
             element_location_by_y-= Integer.parseInt(js_result.toString());
         }
@@ -288,7 +288,7 @@ public class MainPageObject {
     public void scrollWebPageUp()  // скрол для web
     {
         if (Platform.getInstance().isMWAndroid() || Platform.getInstance().isMWIos()){
-            JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;  // исполнение джава скрипт на данной странице
+            JavascriptExecutor JSExecutor = driver;  // исполнение джава скрипт на данной странице
             JSExecutor.executeScript("window.scrollBy(0, 250)");  //  по пиксельный скролл от пикселя 0 до пикселя 250
         } else {
             System.out.println("Method scrollWebPageUp() does nothing for platform" + Platform.getInstance().getPlatformVar());

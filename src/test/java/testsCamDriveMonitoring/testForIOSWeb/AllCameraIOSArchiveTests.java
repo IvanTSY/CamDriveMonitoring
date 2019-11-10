@@ -1,6 +1,7 @@
 package testsCamDriveMonitoring.testForIOSWeb;
 
 import lib.CoreTestCase;
+import lib.Platform;
 import lib.logging.SuperVisor;
 import lib.ui.CamDrivePageObject;
 import lib.ui.factories.CamDrivePageObjectFactory;

@@ -1,8 +1,6 @@
 package lib.ui.factories;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileDriver;
-import io.appium.java_client.android.AndroidDriver;
+
 import lib.Platform;
 import lib.ui.CamDrivePageObject;
 import lib.ui.mobile_web.MWCamDrive;
@@ -17,12 +15,15 @@ public class CamDrivePageObjectFactory {
             return new MWCamDrive(driver);
         }else if(Platform.getInstance().isIOS()){
             return new MWCamDrive(driver);
-        }else {
+        }else if(Platform.getInstance().isMWTest()){
             return new MWCamDrive(driver);
-        }
+        }else{return new MWCamDrive(driver);       }
 //        if(Platform.getInstance().isMWAndroid()||Platform.getInstance().isMWIos()){
 //
 //        }return new MWCamDrive(driver);
 
     }
+
+
+
 }

@@ -21,10 +21,38 @@ public class SlackSendMessaages {
 
 // Request parameters and other properties.
         List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-        params.add(new BasicNameValuePair("token", "xoxb-646834705505-810587823079-qhzlprh2woBbRhXvOMJLD3jP"));
+        params.add(new BasicNameValuePair("token", "xxx")); //xoxb-646834705505-810587823079-YT97TKIfwnePMp1qQFlGNOX1
         params.add(new BasicNameValuePair("channel", "мониторинг_camdrive"));
-        params.add(new BasicNameValuePair("text", text));
+        params.add(new BasicNameValuePair("text", "_"+text+"_"));
         params.add(new BasicNameValuePair("username", "Мониторинг"));
+        httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+
+//Execute and get the response.
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+
+        if (entity != null) {
+            InputStream instream = entity.getContent();
+            try {
+                System.out.println(instream);
+            } finally {
+                instream.close();
+            }
+        }
+
+
+    }
+
+    public void sendTestMSG(String text) throws IOException {
+        HttpClient httpclient = HttpClients.createDefault();
+        HttpPost httppost = new HttpPost("https://slack.com/api/chat.postMessage");
+
+// Request parameters and other properties.
+        List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+        params.add(new BasicNameValuePair("token", "xxx")); //xoxb-646834705505-810587823079-YT97TKIfwnePMp1qQFlGNOX1
+        params.add(new BasicNameValuePair("channel", "тестовый_канал"));
+        params.add(new BasicNameValuePair("text", "_"+text+"_"));
+        params.add(new BasicNameValuePair("username", "Биба"));
         httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 
 //Execute and get the response.

@@ -63,6 +63,7 @@ public class SuperVisor {
 //thread.start();
 //thread.start();
 
+//      String command = "adb logcat| find 'D MtkOmxVdecEx:'"  для хрома
         String command = "adb logcat com.camdrive/presentation.gui.online.PlaybackActivity";
         Process process = Runtime.getRuntime().exec(command);
 
@@ -74,9 +75,9 @@ public class SuperVisor {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         String log = null;
-        String loger;
+        //String loger;
         int countMessages = 0;
-        int timeOfTest = 10000;
+        int timeOfTest = 15000;
 
         long timeStartOutOfPresent = System.currentTimeMillis();
         long timeIsVideoNotPlaying = 0;
@@ -85,10 +86,10 @@ public class SuperVisor {
         int i = 0;
         long xxx = -1;
 
-        while ((((log = bufferedReader.readLine()) != null))) {
+        while ((((log = bufferedReader.readLine()) != null)&(10000 <= System.currentTimeMillis() - timeStartOutOfPresent))) {
             i++;
             if (log.contains("beward_media_player: statistic videoframe:")) {
-                loger = log;
+            //    loger = log;
                 System.err.println(log);
                 countMessages++;
                 timeStartOutOfPresent = System.currentTimeMillis();

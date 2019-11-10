@@ -19,7 +19,7 @@ public class Platform {
     private static final String PLATFORM_ANDROID = "android";
     private static final String PLATFORM_MOBILE_WEB_ANDROID = "mobile_web_android";
     private static final String PLATFORM_MOBILE_WEB_IOS = "mobile_web_ios";
-    private static final String PLATFORM_TEST = "mobile_web_test";
+    private static final String PLATFORM_TEST = "test";
 
     private static final String APPIUM_URL = "http://0.0.0.0:4723/wd/hub";
 
@@ -48,11 +48,13 @@ public class Platform {
         } else if(this.isMWIos()){
             return new ChromeDriver(this.getMWChromeOptionsForIOS());
         } else if(this.isMWTest()) {
-            return new ChromeDriver(this.getMWChromeOptionsForAndroid());
+            return new AndroidDriver(URL, this.getAndroidTest());
         } else{
             throw new Exception("Cannot detect type of the Driver. Platform value:" + this.getPlatformVar());
         }
     }
+
+
 
 
     public boolean isAndroid() // определяет является ли платформа Android
@@ -84,7 +86,7 @@ public class Platform {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","LG X power");
-        capabilities.setCapability("platformVersion","9");
+        capabilities.setCapability("platformVersion","6");
         capabilities.setCapability("automationName","Appium");
 //        capabilities.setCapability("browserName","Chrome");
         capabilities.setCapability("unicodeKeyboard", true);
@@ -115,26 +117,26 @@ public class Platform {
 
     private ChromeOptions getMWChromeOptionsForAndroid() // запускает браузер Chrome
     {
-        Map<String, Object> deviceMetrics = new HashMap<String, Object>();
-        deviceMetrics.put("width", 360); //высота девайса
-        deviceMetrics.put("height", 640); //ширина девайса
-        deviceMetrics.put("pixelRation", 3.0); //плотность пикселей девайса
-        Map<String, Object> mobileEmulation = new HashMap<String, Object>(); // параметры юзер агента
-        mobileEmulation.put("deviceMetrics", deviceMetrics);
-        mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-
-        ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
-        chromeOptionsForAndroid.addArguments("window-size=340,640");
-//============================================================
-//        Map<String, String> mobileEmulation = new HashMap<>();
-//
-//        mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
-//        //mobileEmulation.put("deviceName", "iPhone X");
-//
+//        Map<String, Object> deviceMetrics = new HashMap<String, Object>();
+//        deviceMetrics.put("width", 360); //высота девайса
+//        deviceMetrics.put("height", 640); //ширина девайса
+//        deviceMetrics.put("pixelRation", 3.0); //плотность пикселей девайса
+//        Map<String, Object> mobileEmulation = new HashMap<String, Object>(); // параметры юзер агента
+//        mobileEmulation.put("deviceMetrics", deviceMetrics);
+//        mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
 //
 //        ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
-//        chromeOptionsForAndroid.setExperimentalOption("mobileEmulation", mobileEmulation);
-//        //WebDriver driver = new ChromeDriver(chromeOptions);
+//        chromeOptionsForAndroid.addArguments("window-size=340,640");
+//============================================================
+        Map<String, String> mobileEmulation = new HashMap<>();
+
+        mobileEmulation.put("deviceName", "Nexus 5");//iPhone X
+        //mobileEmulation.put("deviceName", "iPhone X");
+
+
+        ChromeOptions chromeOptionsForAndroid = new ChromeOptions();
+        chromeOptionsForAndroid.setExperimentalOption("mobileEmulation", mobileEmulation);
+        //WebDriver driver = new ChromeDriver(chromeOptions);
 //============================================================
         return chromeOptionsForAndroid;
     }
@@ -148,6 +150,26 @@ public class Platform {
         chromeOptionsForIOS.setExperimentalOption("mobileEmulation", mobileEmulation);
 //============================================================
         return chromeOptionsForIOS;
+    }
+
+    private DesiredCapabilities getAndroidTest()  // capabilities для Android
+    {
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName","Android");
+        capabilities.setCapability("deviceName","LG X power");
+        capabilities.setCapability("platformVersion","6");
+        capabilities.setCapability("automationName","Appium");
+        capabilities.setCapability("browserName","Chrome");
+        capabilities.setCapability("unicodeKeyboard", true);
+        capabilities.setCapability("resetKeyboard", true);
+        capabilities.setCapability("connectHardwareKeyboard", false);
+        capabilities.setCapability("search","google" );
+
+//        capabilities.setCapability(MobileCapabilityType.APP,"http://intercom.mobile.test/camdrive/camdrive_2019-05-27_1.2.0.505_release.apk");
+//        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.camdrive");
+//        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"presentation.gui.authorization.StartActivity");
+        return capabilities;
     }
 
     private boolean isPlatform(String my_platform)// сравнивание с переменной которая приходит на вход
