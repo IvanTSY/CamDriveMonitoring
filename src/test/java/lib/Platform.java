@@ -86,7 +86,7 @@ public class Platform {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","LG X power");
-        capabilities.setCapability("platformVersion","6");
+        capabilities.setCapability("platformVersion","6.0.1");
         capabilities.setCapability("automationName","Appium");
 //        capabilities.setCapability("browserName","Chrome");
         capabilities.setCapability("unicodeKeyboard", true);

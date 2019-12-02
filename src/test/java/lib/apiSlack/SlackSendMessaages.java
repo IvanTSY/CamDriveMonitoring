@@ -21,7 +21,7 @@ public class SlackSendMessaages {
 
 // Request parameters and other properties.
         List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-        params.add(new BasicNameValuePair("token", "xxx"));
+        params.add(new BasicNameValuePair("token", "xoxb-646834705505-810587823079-fKsn3miCDrsdiHk2frr5ZElH"));
         params.add(new BasicNameValuePair("channel", "мониторинг_camdrive"));
         params.add(new BasicNameValuePair("text", "_"+text+"_"));
         params.add(new BasicNameValuePair("username", "Мониторинг"));
